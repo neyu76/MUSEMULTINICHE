@@ -28,19 +28,24 @@ ElevenLabs credits uncapped; every regeneration needs a stated reason.
 - **Voice (step 2)**: `TS/bin/studio el plan voice EP` → send `el_requests_voice.json` through the ElevenLabs connector (host
   api.elevenlabs.io, key in header xi-api-key) → body to `voice/take1.mp3` → `TS/bin/studio el verify EP` → `TS/bin/studio voice EP`
   (`ok` must be true, words = script tokens; misread → regenerate the take once with the reason noted).
-- **Pictures (step 4)** — channel.json `images.tool` = `gemini_api` (Nano Banana, the model of the ATE01-004 reference):
-  once per account set up a connector with credentials.request_api_access: provider google-gemini, host
-  generativelanguage.googleapis.com, api_key in header `x-goog-api-key` (owner's Google AI Studio key, billing on).
-  Write `art_plan.json` (every picture of shots.md: name, kind, prompt from channel/prompts.md, ref) → `TS/bin/studio img plan EP` →
-  send each request in img_requests.json through the connector, write each RESPONSE JSON to its "response" path →
-  `TS/bin/studio img save EP` → repeat plan/send/save until 0 requests (base pictures first, chained poses/plates/heads after).
-  Follow the "Non-negotiable" section of channel/prompts.md: physical props are PHOTOS on green (never PIL/clip-art), plates are
-  photographic scenes (analogy = real miniature set in the habitat), and EVERY episode has a real person with a cartoon head
-  (≥ 3 expressions, ≥ 3 appearances). Minimum picture list ≈ the reference build: 8+ animal poses, 6–8 plates (incl. the analogy
-  set and the person's place), the person photo + head swap + 3 expressions, every physical prop of the shot list.
-  Look at every picture (`studio sheet`): limb counts, same individual, no text/watermark, no painted cartoon eyes, props look real.
-  Fallbacks only if the Gemini connector is impossible: `flow` (owner signs in to Google in the browser; skill flow-art) or
-  `muse` (media.generate_image — props must still be photoreal; reject clip-art results).
+- **Pictures (step 4)** — channel.json `images.tool` = `muse`: **media.generate_image**, with the visual level of the ATE01-004
+  reference (owner's decision: keep Muse's image tool, raise the look). Plan first, then make every picture:
+  1. Write `art_plan.json` from shots.md — every picture: name, kind (pose|plate|person|head|prop), prompt from channel/prompts.md,
+     ref (the picture it is chained from), white (true for green props). `TS/bin/studio img todo EP` prints the next wave (what can
+     be made now, where to save it, which reference to use). Generate each, chaining poses/plates/heads from their reference
+     (`resume_from_snapshot_id`, or attach the reference picture), save at the printed path, record the snapshot id in prompts.json.
+     Run `img todo` again until 0 left.
+  2. Follow the "Non-negotiable" section of channel/prompts.md: physical props are PHOTOS on green (never PIL/clip-art), plates are
+     photographic scenes (each analogy = a real miniature set in the habitat), EVERY episode has a real person with a cartoon head
+     (≥ 3 expressions, ≥ 3 appearances). Minimum list ≈ the reference: 8+ animal poses, 6–8 plates (incl. the analogy set and the
+     person's place), person photo + head swap + 3 expressions, every physical prop of the shot list.
+  3. Prompt for photo realism every time: start props with "A real photograph of …", name the material and wear ("old varnished
+     wood", "scratched red bakelite"), "natural light, sharp focus, product photo"; end with the PHOTO / GREEN tail. If a result looks
+     like an illustration, icon, 3D render or clip-art, or has text/watermarks — regenerate with the prompt made more literal
+     (never keep it). Ask for a vertical 9:16 frame; regenerate if it is not tall.
+  4. Look at all of them (`studio sheet EP out/look.jpg art/*.png props/green/*.png`): limb counts, same individual, no painted
+     cartoon eyes, props look real, light/colour family matches the plates.
+  Other image tools only when the owner says so: `flow` (skill flow-art in the browser) or `gemini_api` (studio img plan/save).
 - **SFX (step 6)**: write `audio/sfx_plan.json` (15–25 entries, one distinct sound per kind of action, 0.3–3 s, short concrete
   prompts like "soft cartoon boing", "paper stamp thump", "bubbly underwater pop") → `TS/bin/studio el plan sfx EP` → connector →
   `studio el verify EP`. Music: `studio el plan music EP` after the voice (length ≥ END + 5 s, instrumental forced).

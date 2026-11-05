@@ -22,11 +22,11 @@
   ]
  },
  "images": {
-  "tool": "gemini_api",
+  "tool": "muse",
   "tools": {
-   "gemini_api": "Nano Banana via the Gemini API through the agent's connector (host generativelanguage.googleapis.com, header x-goog-api-key): art_plan.json → studio img plan/save. Same model family as the Flow reference build. Owner's Google AI Studio key + billing.",
+   "gemini_api": "optional upgrade if the owner adds a Gemini key: studio img plan/save through a connector",
    "flow": "Google Flow web UI (Nano Banana 2.1) in a browser the owner signed in to (skill flow-art)",
-   "muse": "Muse media.generate_image — fallback only (pilot ATE01-901: props came out as symbolic clip-art)"
+   "muse": "Muse media.generate_image (default): art_plan.json → studio img todo → generate each, chaining with resume_from_snapshot_id / the reference attached; photoreal props and plates, real person every episode (channel/prompts.md Non-negotiable)"
   },
   "api_model": "gemini-nano-banana-2.1",
   "aspect": "9:16",

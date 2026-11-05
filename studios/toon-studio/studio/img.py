@@ -9,7 +9,10 @@ Host generativelanguage.googleapis.com, key in the HTTP header `x-goog-api-key` 
   3. send each request with the connector (method POST, url, headers, json body) and write the RESPONSE JSON to its "response"
   4. studio img save EP     → decodes every response into its picture ("out"), prints what is still missing
   Repeat 2–4 (wave by wave: base pictures first, then everything chained from them) until plan says 0 requests.
-Every call costs: send each request once; on an error JSON, read it, fix the prompt/ref, then plan again."""
+Every call costs: send each request once; on an error JSON, read it, fix the prompt/ref, then plan again.
+
+  studio img todo EP        (any image tool, e.g. Muse media.generate_image): the next wave from art_plan.json — name, where to
+                            save it, the reference picture(s) to chain from, the prompt. Save each result at the printed path."""
 import base64, json, mimetypes, os
 from . import cfg
 
@@ -67,3 +70,18 @@ def save():
         os.makedirs(os.path.dirname(r['out']), exist_ok=True); open(r['out'], 'wb').write(img); ok += 1; print('saved', r['out'])
         if r.get('white'): open(os.path.splitext(r['out'])[0] + '.white', 'w').close()   # studio cut props: shot on white
     print(f'{ok} saved, {bad} problem(s) — now look at them: studio sheet EP out/look.jpg art/*.png props/green/*.png')
+
+def todo():
+    if not os.path.exists('art_plan.json'): raise SystemExit('write art_plan.json first (see studio/img.py)')
+    items = json.load(open('art_plan.json')); nxt, waiting, done = [], [], 0
+    for it in items:
+        if _find(it['name']): done += 1; continue
+        refs = it.get('ref') or []; refs = [refs] if isinstance(refs, str) else refs
+        paths = [_find(r) for r in refs]
+        if all(paths): nxt.append((it, paths))
+        else: waiting.append(it['name'])
+    print(f'{done} done, {len(nxt)} to make now, {len(waiting)} waiting for their reference' + (f': {waiting}' if waiting else ''))
+    for it, paths in nxt:
+        print(f"\n[{it['name']}] {it.get('kind', '')} -> save as {_out(it)}" + (' (+ empty marker file ' + os.path.splitext(_out(it))[0] + '.white)' if it.get('white') else ''))
+        print('  reference: ' + (', '.join(paths) if paths else 'none (new picture)'))
+        print('  prompt: ' + it['prompt'])

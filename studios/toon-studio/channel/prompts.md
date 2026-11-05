@@ -1,4 +1,4 @@
-# Nano Banana prompt templates (Gemini API `studio img` / Google Flow, 9:16)
+# Image prompt templates (Muse media.generate_image by default; same prompts work in Google Flow / Gemini API), 9:16
 
 Fill the {slots}; keep the shared tail so every picture of an episode matches. Every pose after the base goes with the
 base picture as a reference chip.
