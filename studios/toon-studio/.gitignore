@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+local.json
+# media never goes in the repo (episodes live in work_dir)
+*.mp4
+*.mov
+*.wav
+*.mp3
+channel/style/qa/
+# samples keep only work/stills (QA compare sheet); proxies/audio stay out
+channel/style/samples/*/work/*.*

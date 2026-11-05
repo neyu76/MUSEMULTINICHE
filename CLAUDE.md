@@ -20,6 +20,7 @@ Reference episode: **T015 "The Cup That Punishes One Extra Pour"** (Tantalus cup
 | `docs/KIT_SKILL_v7.md` | full style/production rules (story structure, camera, transitions, captions, audio) — read before writing a new episode |
 | `docs/AUTOPILOT.md` | script in → finished video out: MAKER/CRITIC loop, script + visual checklists (facts, physics, era, framing, continuity), fix-round limits; `tools/ep/audit_sheets.py` makes the critic sheets |
 | `docs/MUSE_RUNBOOK.md` | brain + worker split on a CPU-only cloud VM (4 cores / 8 GB): 720p, 1 worker, 15-min watchdog, two review gates, worker-specific errors |
+| `studios/toon-studio/` | second engine for the `animal-toon-eyes` niche (photo cut-outs + toon eyes, vidclone EDL render); its own CLAUDE.md, CLI `bin/studio`, setup.sh |
 | `niches/<name>/channel.env` | per-channel identity (voice, tempo, music prompt, resolution, workers); `tools/ep/new_episode.sh <EP> <script> <channel>` scaffolds from it |
 | `plugins/rickclips/` | Claude Code plugin = the workflow knowledge: `/rickclips:episode <Notion link + script>` (whole episode), `/rickclips:setup`, `/rickclips:voice-id`, stage skills `voice audio-captions shots render finalize-qa prop-3d`. Marketplace: `.claude-plugin/marketplace.json` |
 

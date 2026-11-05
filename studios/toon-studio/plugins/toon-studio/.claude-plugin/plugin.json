@@ -1,0 +1,7 @@
+{
+  "name": "toon-studio",
+  "version": "0.1.0",
+  "description": "animal-toon-eyes channel studio: one input (script, outline or brief) -> finished vertical episode (ElevenLabs voice + music, Google Flow pictures, BiRefNet cut-outs, keyframed cut-out blocks with toon eyes, PIL diagrams, library SFX, QA, delivery, Notion tick). Code lives in the toon-studio repo.",
+  "author": {"name": "neyu76"},
+  "keywords": ["video", "shorts", "tiktok", "animal", "cartoon", "elevenlabs", "google-flow", "pipeline"]
+}

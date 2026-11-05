@@ -1,0 +1,74 @@
+{
+ "name": "animal-toon-eyes",
+ "prefix": "ATE01",
+ "language": "en",
+ "work_dir": "~/toon_work",
+ "notion": {
+  "enabled": false,
+  "note": "Owner pastes the script / outline / brief directly; no Notion read or tick."
+ },
+ "voice": {
+  "provider": "ElevenLabs REST via the agent's connector: studio el plan voice EP (no key in files)",
+  "model": "eleven_v4",
+  "voice_id": "UgBBYS2sOqTuMpoF3BR0",
+  "voice_name": "Mark",
+  "tag": "[casual, upbeat, fast-paced, playful, like telling a friend a funny animal fact]",
+  "takes": 1,
+  "max_gap": 0.25,
+  "target_wpm": 242,
+  "wpm_range": [
+   235,
+   250
+  ]
+ },
+ "images": {
+  "tool": "muse",
+  "tools": {
+   "muse": "Muse media.generate_image; chain poses with resume_from_snapshot_id (or the base picture attached)",
+   "flow": "Google Flow web UI (Nano Banana 2.1) in a browser the owner signed in to — only when the owner says to switch"
+  },
+  "model_flow": "Nano Banana 2.1",
+  "aspect": "9:16",
+  "never": "never draw with ElevenLabs",
+  "download": "largest size offered; studio cut upscales to 1080 wide"
+ },
+ "music": {
+  "provider": "ElevenLabs REST via connector: studio el plan music EP",
+  "length_s": 80,
+  "prompt": "Light quirky curious underscore, minor key, 110-140 bpm, pizzicato and soft plucks with light percussion, no vocals, loops cleanly, playful-mysterious documentary-for-kids feel"
+ },
+ "sfx": {
+  "provider": "ElevenLabs Sound Effects via connector: write audio/sfx_plan.json, then studio el plan sfx EP",
+  "per_episode": "15-25 distinct sounds, one per kind of action",
+  "buy": false
+ },
+ "build": {
+  "max_shot": 1.6,
+  "piece": 1.15,
+  "cam_gain": 1.0,
+  "handheld": 0.0,
+  "bed_db": -10,
+  "kick_amp": 0.008,
+  "grade": {
+   "saturation": 1.0,
+   "contrast": 1.04,
+   "brightness": -0.02,
+   "temperature": 5600
+  },
+  "idle": {
+   "breathe": 0.014,
+   "sway": 0.9
+  }
+ },
+ "qa": {
+  "known_false_fails": {
+   "hook_end_s": "reads the first Whisper segment, not the first sentence",
+   "jitter": "handheld jitter: keyframed block slides / loops / diagram swaps read as camera pan; ok when within ~1 % of the gate after kicks and handheld are minimised"
+  }
+ },
+ "deliver": {
+  "final": "{id}_{slug}_FINAL.mp4",
+  "preview": "{id}_{slug}_preview.mp4",
+  "preview_width": 720
+ }
+}

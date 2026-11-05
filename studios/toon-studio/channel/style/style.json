@@ -1,0 +1,41 @@
+{
+ "engine": "stills-motion",
+ "canvas": {"w": 1080, "h": 1920, "fps": 30},
+ "voice": {"tool": "elevenlabs", "voice_id": "UgBBYS2sOqTuMpoF3BR0", "model": null, "speed": 1.15,
+           "notes": "adult male, ~110-135 Hz, casual US 'buddy explaining a fun fact' tone, fast (230-290 wpm), almost no pauses (longest 0.3 s), slightly amused on the myth line, deadpan on the twist"},
+ "image_prompt": "Photorealistic wildlife photo, vertical 9:16, {subject}, centred full-body, natural habitat background with soft depth of field, even daylight, high detail fur, the animal faces the camera; then add flat 2D cartoon overlay eyes: big white circles with thick black outline and black pupils, thick black cartoon eyebrows, expression {expression}",
+ "image_edit_prompts": {
+  "eyes": "Replace the animal's eyes with flat 2D cartoon eyes (white circles, thick black outline, black pupils) and thick black cartoon eyebrows showing {expression}; keep the photo otherwise unchanged",
+  "tear": "Add a small flat cartoon blue teardrop under one eye",
+  "hand": "Add a realistic human hand and forearm entering from the {edge} edge of the frame, {action} the animal",
+  "human": "A real photo of a {role} (body photoreal) with a flat 2D cartoon head: round skin-tone head, simple black line face, big cartoon eyes, {expression}",
+  "bubble": "Add a white cartoon thought bubble with black outline above the animal containing {content}",
+  "silhouette": "Turn the animal into a solid black silhouette, its lower part filled flat yellow like a battery level gauge, same background",
+  "xray": "Cartoon flat anatomy overlay (pink intestines / organ) drawn on the animal's belly, the fur still visible around it"
+ },
+ "video_prompt": "Subtle natural motion of the animal (breathing, head tilt, chewing), camera locked, keep cartoon eyes fixed on the face",
+ "music_prompt": "Light quirky curious underscore, minor key (A/C/D/G minor), 110-140 bpm, pizzicato and soft plucks with light percussion, no vocals, loops cleanly, playful-mysterious documentary-for-kids feel",
+ "sfx_list": ["pop", "boing", "whoosh", "cartoon blink", "record scratch", "tick-tock clock", "sad trombone", "gulp", "ding"],
+ "grade": {"saturation": 1.05, "contrast": 1.0},
+ "captions": {"font": "Anton", "bold": 0, "size_per_cap": 1.9,
+              "upper": true, "pop": true, "pop_from": 1.4, "pop_ms": 140, "fill": "#ff8a1e", "edge": "#2a1200", "outline_rel": 0.07, "shadow_rel": 0.035,
+              "words_hist": {"1": 1.0}, "max_hold": 0.8, "strip_punct": true},
+ "creep": 0.03,
+ "kicks": {"amp": 0.01, "frames": 7, "use": "on impact / surprise words (NOPE, crash, slap, a prop slamming in), 1-3 per video"},
+ "frame_check": {"max_frozen_s": 0.4},
+ "edit": {"default_transition": {"kind": "dissolve", "dur": 0.4},
+          "transition_mix": {"cut": 0.55, "dissolve": 0.4, "whip": 0.05},
+          "moves": {"push": 0.35, "pull": 0.28, "pan": 0.12, "tilt": 0.08, "static": 0.17},
+          "move_amount": 0.08,
+          "beats": "new image every 1.3-1.7 s; within a shot swap to an edited copy (new eye expression / prop / hand) on the key word with a hard cut, so eyes and props change on the beat"},
+ "animation": {"eyes": "procedural (layers type eyes) over the real animal eyes; key on every 1-3 words, jitter darts ~0.55 s, auto blinks",
+               "bases": "generate the animal photoreal WITH its natural eyes (no cartoon), big in frame; image_model gemini-nano-banana-2.1",
+               "props": "generate each prop on flat pure green #00FF00, cut with vidclone.cutout, animate in with pop/slide_*",
+               "icons": ["question", "exclaim", "x", "check", "sweat", "tear", "zzz", "spark", "lines", "arrow_down"]},
+ "limits": [
+  "Animals themselves do not walk or run (only the camera, props and eyes move); a running animal needs an ai-video clip",
+  "The samples move cut-out animals across the frame (running dog, walking panda); stills-motion can only fake this with pans or short ai-video clips (ElevenLabs creative_generate_video) per shot",
+  "Image models redraw fur and backgrounds between edits; keep each animal's edits chained from one base image and check eye placement on every frame",
+  "Caption fill is solid orange; the samples use a yellow-to-orange vertical gradient with a thin shadow, which ASS cannot draw as-is"
+ ]
+}

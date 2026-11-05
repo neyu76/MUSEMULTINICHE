@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "toon-studio",
+  "description": "toon-studio: animal-toon-eyes episodes from a script / outline / brief",
+  "owner": {"name": "neyu76"},
+  "plugins": [
+    {
+      "name": "toon-studio",
+      "description": "Make animal-toon-eyes episodes end to end from one input (script, outline or brief): script, voice, Google Flow art, cut-outs, diagrams, SFX, music, build, QA, delivery.",
+      "version": "0.1.0",
+      "author": {"name": "neyu76"},
+      "category": "productivity",
+      "source": "./plugins/toon-studio"
+    }
+  ]
+}

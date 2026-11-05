@@ -1,0 +1,12 @@
+#!/bin/bash
+# toon-studio CLI from any directory (WSL / Linux). Python = local.json "python", else ~/.toonstudio/venv, else ~/.vidclone/venv.
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+PY="${STUDIO_PYTHON:-}"
+if [ -z "$PY" ] && [ -f "$ROOT/local.json" ]; then
+  PY=$(python3 -c "import json,sys;print(json.load(open(sys.argv[1])).get('python',''))" "$ROOT/local.json" 2>/dev/null)
+fi
+for c in "$PY" "$HOME/.toonstudio/venv/bin/python" "$HOME/.vidclone/venv/bin/python"; do
+  [ -n "$c" ] && [ -x "$c" ] && { PY="$c"; break; }
+done
+[ -x "$PY" ] || { echo "studio: no Python venv — run: bash \"$ROOT/setup.sh\"" >&2; exit 2; }
+PYTHONPATH="$ROOT${PYTHONPATH:+:$PYTHONPATH}" exec "$PY" -m studio "$@"

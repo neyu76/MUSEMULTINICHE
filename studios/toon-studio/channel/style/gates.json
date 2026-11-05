@@ -1,0 +1,402 @@
+[
+ {
+  "key": "duration_s",
+  "path": "info.dur",
+  "label": "Duration (s)",
+  "target": 50.039,
+  "lo": 8.1,
+  "hi": 75.9875,
+  "on": true
+ },
+ {
+  "key": "wpm",
+  "path": "speech.wpm",
+  "label": "Narration pace (words/min)",
+  "target": 248.6,
+  "lo": 213.532,
+  "hi": 316.656,
+  "on": true
+ },
+ {
+  "key": "hook_end_s",
+  "path": "speech.hook.end",
+  "label": "Hook sentence ends by (s)",
+  "target": 3.12,
+  "lo": null,
+  "hi": 5.3,
+  "on": true
+ },
+ {
+  "key": "closer_words",
+  "path": "speech.closer.words",
+  "label": "Closing sentence words",
+  "target": 18.0,
+  "lo": null,
+  "hi": 34,
+  "on": true
+ },
+ {
+  "key": "longest_pause_s",
+  "path": "speech.longest_pause",
+  "label": "Longest pause (s)",
+  "target": 0.3,
+  "lo": null,
+  "hi": 0.61,
+  "on": true
+ },
+ {
+  "key": "speech_start_s",
+  "path": "speech.speech_start",
+  "label": "First word starts by (s)",
+  "target": 0.0,
+  "lo": null,
+  "hi": 0.4,
+  "on": true
+ },
+ {
+  "key": "shot_len_median_s",
+  "path": "edit.summary.shot_len.median",
+  "label": "Median shot length (s)",
+  "target": 1.5,
+  "lo": 0.8557,
+  "hi": 2.7905,
+  "on": true
+ },
+ {
+  "key": "transitions_per_min",
+  "path": "edit.summary.transitions_per_min",
+  "label": "Transitions per minute",
+  "target": 31.64,
+  "lo": 13.332,
+  "hi": 53.914,
+  "on": true
+ },
+ {
+  "key": "cuts",
+  "path": "edit.summary.transition_mix.cut",
+  "label": "Hard cuts (count)",
+  "target": 13.0,
+  "lo": null,
+  "hi": 25,
+  "on": true
+ },
+ {
+  "key": "dissolve_dur_s",
+  "path": "edit.summary.dissolve_dur.median",
+  "label": "Dissolve length (s)",
+  "target": 0.433,
+  "lo": 0.1965,
+  "hi": 0.753,
+  "on": true
+ },
+ {
+  "key": "cuts_in_last_3s",
+  "path": "edit.summary.cuts_in_last_3s",
+  "label": "Hard cuts in last 3 s",
+  "target": 0.0,
+  "lo": null,
+  "hi": 1,
+  "on": true
+ },
+ {
+  "key": "static_share",
+  "path": "edit.summary.camera_share.static",
+  "label": "Camera static share",
+  "target": 0.119,
+  "lo": 0.0,
+  "hi": 0.765,
+  "on": true
+ },
+ {
+  "key": "push_share",
+  "path": "edit.summary.camera_share.push",
+  "label": "Camera push-in share",
+  "target": 0.339,
+  "lo": 0.0,
+  "hi": 0.969,
+  "on": true
+ },
+ {
+  "key": "pull_share",
+  "path": "edit.summary.camera_share.pull",
+  "label": "Camera pull-out share",
+  "target": 0.281,
+  "lo": 0.023,
+  "hi": 0.471,
+  "on": true
+ },
+ {
+  "key": "pan_share",
+  "path": "edit.summary.camera_share.pan",
+  "label": "Camera pan share",
+  "target": 0.04,
+  "lo": 0.0,
+  "hi": 0.474,
+  "on": true
+ },
+ {
+  "key": "move_run_median_s",
+  "path": "edit.summary.camera_move_run_s.median",
+  "label": "Camera move changes every (s)",
+  "target": 0.6333,
+  "lo": 0.2167,
+  "hi": 1.1501,
+  "on": true
+ },
+ {
+  "key": "jitter",
+  "path": "edit.summary.handheld_jitter",
+  "label": "Handheld jitter",
+  "target": 6.284,
+  "lo": 2.1396,
+  "hi": 12.1264,
+  "on": true
+ },
+ {
+  "key": "cam_hold_share",
+  "path": "edit.camera_grammar.hold_share",
+  "label": "Camera dead-still frames (< 0.3 px/f)",
+  "target": 0.086,
+  "lo": null,
+  "hi": 0.674,
+  "on": true
+ },
+ {
+  "key": "cam_move_share",
+  "path": "edit.camera_grammar.move_share",
+  "label": "Camera moving frames (≥ 2 px/f)",
+  "target": 0.484,
+  "lo": 0.129,
+  "hi": 0.888,
+  "on": true
+ },
+ {
+  "key": "moves_per_10s",
+  "path": "edit.camera_grammar.moves_per_10s",
+  "label": "Camera moves per 10 s",
+  "target": 4.93,
+  "lo": 1.086,
+  "hi": 12.894,
+  "on": true
+ },
+ {
+  "key": "move_peak_px",
+  "path": "edit.camera_grammar.move_peak_px720.median",
+  "label": "Camera move peak speed (px/f @720)",
+  "target": 17.05,
+  "lo": 3.85,
+  "hi": 37.8,
+  "on": true
+ },
+ {
+  "key": "move_peak_p90_px",
+  "path": "edit.camera_grammar.move_peak_px720.p90",
+  "label": "Fastest moves, p90 (px/f @720)",
+  "target": 28.72,
+  "lo": null,
+  "hi": 53.11,
+  "on": true
+ },
+ {
+  "key": "move_fwhm_f",
+  "path": "edit.camera_grammar.move_fwhm_f.median",
+  "label": "Camera move width at half speed (frames)",
+  "target": 7.5,
+  "lo": 3.0,
+  "hi": null,
+  "on": true
+ },
+ {
+  "key": "move_attack_f",
+  "path": "edit.camera_grammar.move_attack_f.median",
+  "label": "Camera move ease-in (frames)",
+  "target": 6.0,
+  "lo": 2.5,
+  "hi": null,
+  "on": true
+ },
+ {
+  "key": "quiet_push_rate",
+  "path": "edit.camera_grammar.quiet_push_rate_pct_f.median",
+  "label": "Push-in during holds (%/f)",
+  "target": 0.2254,
+  "lo": 0.0681,
+  "hi": 0.6434,
+  "on": true
+ },
+ {
+  "key": "hf_residual_px",
+  "path": "edit.camera_grammar.hf_residual_px720",
+  "label": "Hand-held float (px @720)",
+  "target": 0.052,
+  "lo": null,
+  "hi": 0.315,
+  "on": true
+ },
+ {
+  "key": "whips_per_min",
+  "path": "edit.camera_grammar.whips_per_min",
+  "label": "Whip pans per minute",
+  "target": 0.0,
+  "lo": null,
+  "hi": 7.08,
+  "on": true
+ },
+ {
+  "key": "picture_changes_per_min",
+  "path": "motion.changes_per_min",
+  "label": "Picture changes per minute (cuts + swaps + block moves)",
+  "target": 54.3,
+  "lo": 31.07,
+  "hi": 110.025,
+  "on": true
+ },
+ {
+  "key": "local_motion_share",
+  "path": "motion.local.active_share_median",
+  "label": "Share of the frame moving inside shots",
+  "target": 0.8188,
+  "lo": 0.4891,
+  "hi": 1.0,
+  "on": true
+ },
+ {
+  "key": "local_motion_p95",
+  "path": "motion.local.local_p95_median",
+  "label": "Local motion speed p95 (px/f @720)",
+  "target": 8.74,
+  "lo": 1.01,
+  "hi": 20.376,
+  "on": true
+ },
+ {
+  "key": "saturation",
+  "path": "look.saturation.median",
+  "label": "Saturation median",
+  "target": 69.0,
+  "lo": 43.35,
+  "hi": 125.35,
+  "on": true
+ },
+ {
+  "key": "brightness",
+  "path": "look.brightness.median",
+  "label": "Brightness median",
+  "target": 140.1577,
+  "lo": 102.0859,
+  "hi": 180.5917,
+  "on": true
+ },
+ {
+  "key": "contrast",
+  "path": "look.contrast.median",
+  "label": "Contrast (luma std)",
+  "target": 49.107,
+  "lo": 33.7765,
+  "hi": 67.9024,
+  "on": true
+ },
+ {
+  "key": "detail",
+  "path": "look.detail.median",
+  "label": "Fine detail ratio",
+  "target": 0.909,
+  "lo": 0.8479,
+  "hi": 1.0032,
+  "on": true
+ },
+ {
+  "key": "warmth",
+  "path": "look.warmth.median",
+  "label": "Warmth (Lab b*)",
+  "target": 6.0491,
+  "lo": -5.4823,
+  "hi": 18.3717,
+  "on": true
+ },
+ {
+  "key": "face_share",
+  "path": "look.face_share",
+  "label": "Frames with a face",
+  "target": 0.429,
+  "lo": 0.0,
+  "hi": 0.745,
+  "on": false,
+  "manual": true,
+  "note": "Haar face detector fires erratically on animals with drawn-on eyes; not style-defining"
+ },
+ {
+  "key": "caption_share",
+  "path": "text.captions.present_share",
+  "label": "Seconds with captions",
+  "target": 0.28,
+  "lo": 0.0,
+  "hi": 1.0,
+  "on": false,
+  "manual": true,
+  "note": "OCR misses the small condensed outlined caption font (reads 8-92 %); sheets show a caption on every spoken word - check by eye"
+ },
+ {
+  "key": "caption_baseline",
+  "path": "text.captions.baseline_rel.median",
+  "label": "Caption baseline (y / height)",
+  "target": 0.7219,
+  "lo": 0.4891,
+  "hi": 0.7519,
+  "on": true
+ },
+ {
+  "key": "caption_height",
+  "path": "text.captions.height_rel.median",
+  "label": "Caption letter height (/ height)",
+  "target": 0.0289,
+  "lo": 0.0203,
+  "hi": 0.0558,
+  "on": true
+ },
+ {
+  "key": "caption_words",
+  "path": "text.captions.words_on_screen.median",
+  "label": "Words on screen per caption",
+  "target": 1.0,
+  "lo": 0.0,
+  "hi": 2.0,
+  "on": true
+ },
+ {
+  "key": "lufs",
+  "path": "audio.lufs",
+  "label": "Loudness (LUFS)",
+  "target": -13.75,
+  "lo": -14.95,
+  "hi": -12.12,
+  "on": true
+ },
+ {
+  "key": "true_peak",
+  "path": "audio.true_peak",
+  "label": "True peak (dBTP)",
+  "target": 0.0,
+  "lo": null,
+  "hi": 0.67,
+  "on": true
+ },
+ {
+  "key": "bed_db",
+  "path": "audio.bed_under_voice_db",
+  "label": "Music/bed in gaps vs voice (dB)",
+  "target": -7.9,
+  "lo": -13.9,
+  "hi": -3.2,
+  "on": true
+ },
+ {
+  "key": "stereo_side_db",
+  "path": "audio.side_minus_mid_db",
+  "label": "Stereo side − mid (dB)",
+  "target": -19.3,
+  "lo": -31.9,
+  "hi": -9.1,
+  "on": true
+ }
+]
