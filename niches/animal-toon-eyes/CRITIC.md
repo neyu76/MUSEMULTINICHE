@@ -17,3 +17,15 @@ text/watermarks from the image model; people = real photo body + flat cartoon he
 - Text pops inside x 0.15–0.85, out of the caption band (y ≈ 0.57–0.79), never over the eyes; diagram cards w ≤ 0.84, not cropped
   by the split-long reframes; diagram facts match brief.md claims exactly.
 - Captions never covered; same animal everywhere; no copied logo/script/music/voice.
+
+**Found on the first Muse pilot (ATE01-901) — check these explicitly every time**
+- Run `studio audit EP` and open EVERY sheet (frame every 0.5 s): the gag-only frame grids missed all of the issues below.
+- Empty frames: a plate with nothing on it (only a caption) for ≥ 0.3 s = MAJOR (pilot 17.0, 19.5, 42.5 s). Every frame has the
+  character or a prop/diagram that illustrates the spoken word.
+- Cut-out leftovers: grey/sand blobs floating next to arm tips after BiRefNet (pilot 22–23 s, 32–40 s) = MAJOR — clean the alpha
+  (drop islands not connected to the body) or redo the cut; look at cut/*.png on the checker sheet before building.
+- Caption band (magenta lines y 0.57–0.79 on the audit sheets): no card, label or bubble may enter it (pilot 20–22 s card bottom
+  edge, 44 s "NINE PERSONALITIES" card over the caption) = MAJOR.
+- Safe area (blue 5 % lines): no text above y 0.05 (pilot 29 s "MORE NEURONS" at the top edge) = MAJOR.
+- Counts inside diagrams match the narration: an "8 ropes" / 8-arm diagram must draw exactly 8 (pilot 20–22 s drew ~10) = MAJOR.
+- Crossed-out cards: the ✗ must leave the word readable (draw it beside or semi-transparent), else the joke is lost = MINOR.

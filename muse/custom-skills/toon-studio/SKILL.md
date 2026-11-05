@@ -40,7 +40,8 @@ ElevenLabs credits uncapped; every regeneration needs a stated reason.
   `studio el verify EP`. Music: `studio el plan music EP` after the voice (length ≥ END + 5 s, instrumental forced).
 - **Build (step 7)**: `TS/bin/studio build EP --qa` takes ~3–6 min on CPU; run it in the background and poll. No watchdog cron needed
   unless a build exceeds ~30 min; keep `~/toon_work/<EP>/checkpoint.json` (stage, fix_rounds, critic_rounds) after every stage.
-- **QA (step 8)** + CRITIC-V: `studio qa` (known false fails: hook_end_s, handheld jitter within ~1 %), then the CRITIC opens
+- **QA (step 8)** + CRITIC-V: `studio qa` (known false fails: hook_end_s, handheld jitter within ~1 %), then `TS/bin/studio audit EP`
+  and the CRITIC opens EVERY `out/audit/audit_*.jpg` (whole video, 0.5 s, words + safe area + caption band), plus
   `out/qa/sheets/*.jpg` and `studio frames EP t0 t1 0.25 out/f_<t0>.jpg` around every gag, using AUTOPILOT.md CRITIC-V +
   niches/animal-toon-eyes/CRITIC.md. Spawn the CRITIC as a sub-agent (brief in muse/custom-skills/rickclips/SKILL.md, inputs =
   script.txt, brief.md, the sheets); if it cannot open images, do the pass yourself as a separate step.

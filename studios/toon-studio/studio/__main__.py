@@ -12,6 +12,7 @@
   studio qa EP                           QA the render against channel/style gates (known false fails marked)
   studio frames EP t0 t1 step out.jpg    frame grid of the render
   studio deliver EP                      <ID>_<slug>_FINAL.mp4 + _preview.mp4 in the episode folder
+  studio audit EP [step=0.5]             critic sheets of the whole render (words, safe area, caption band)
   studio el plan voice|music|sfx EP     ElevenLabs request files for a connector (no key here)   studio el verify EP
 EP = folder path, folder name or id (ATE01-004)."""
 import argparse, os, sys
@@ -30,6 +31,7 @@ def main():
     cr = sub.add_parser('crop'); cr.add_argument('ep'); cr.add_argument('specs', nargs='+')
     b = sub.add_parser('build'); b.add_argument('ep'); b.add_argument('--qa', action='store_true'); b.add_argument('--no-assemble', action='store_true')
     f = sub.add_parser('frames'); f.add_argument('ep'); f.add_argument('t0'); f.add_argument('t1'); f.add_argument('step'); f.add_argument('out')
+    au = sub.add_parser('audit'); au.add_argument('ep'); au.add_argument('step', nargs='?', default='0.5')
     e = sub.add_parser('el'); e.add_argument('action', choices=['plan', 'verify']); e.add_argument('a1'); e.add_argument('a2', nargs='?')
     x = ap.parse_args()
 
@@ -67,6 +69,8 @@ def main():
         from . import build, cfg as C
         import json
         build.frames(json.load(open('edl.json'))['out'], x.t0, x.t1, x.step, x.out)
+    elif x.cmd == 'audit':
+        from . import audit; audit.run(x.step)
     elif x.cmd == 'deliver':
         from . import build; build.deliver()
 
