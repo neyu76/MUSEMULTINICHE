@@ -1,0 +1,449 @@
+{
+ "id": "V10",
+ "n_caption_events": 87,
+ "n_words_est": 119,
+ "speech_span_s": 58.1,
+ "wpm_est": 122.9,
+ "words_per_caption_mean": 1.37,
+ "share_1w": 0.67,
+ "share_2w": 0.3,
+ "share_3plus": 0.03,
+ "caption_dur_median": 0.3,
+ "events": [
+  {
+   "t": 0.0,
+   "d": 0.4,
+   "text": "Aman"
+  },
+  {
+   "t": 0.4,
+   "d": 0.3,
+   "text": "snuck"
+  },
+  {
+   "t": 1.0,
+   "d": 0.4,
+   "text": "family's"
+  },
+  {
+   "t": 1.4,
+   "d": 0.3,
+   "text": "house"
+  },
+  {
+   "t": 1.7,
+   "d": 0.7,
+   "text": "every night"
+  },
+  {
+   "t": 2.6,
+   "d": 0.3,
+   "text": "moved."
+  },
+  {
+   "t": 2.9,
+   "d": 0.4,
+   "text": "every"
+  },
+  {
+   "t": 3.3,
+   "d": 0.3,
+   "text": "single"
+  },
+  {
+   "t": 3.6,
+   "d": 0.3,
+   "text": "thing"
+  },
+  {
+   "t": 3.9,
+   "d": 0.5,
+   "text": "one"
+  },
+  {
+   "t": 4.4,
+   "d": 0.3,
+   "text": "inch"
+  },
+  {
+   "t": 4.7,
+   "d": 0.2,
+   "text": "to the"
+  },
+  {
+   "t": 4.9,
+   "d": 0.4,
+   "text": "left."
+  },
+  {
+   "t": 5.3,
+   "d": 0.4,
+   "text": "The first"
+  },
+  {
+   "t": 5.7,
+   "d": 0.3,
+   "text": "night"
+  },
+  {
+   "t": 6.0,
+   "d": 0.4,
+   "text": "nobody"
+  },
+  {
+   "t": 6.4,
+   "d": 0.6,
+   "text": "notices"
+  },
+  {
+   "t": 7.4,
+   "d": 0.2,
+   "text": "who"
+  },
+  {
+   "t": 7.6,
+   "d": 0.3,
+   "text": "measures"
+  },
+  {
+   "t": 7.9,
+   "d": 0.7,
+   "text": "their couch?"
+  },
+  {
+   "t": 8.7,
+   "d": 0.3,
+   "text": "bythe"
+  },
+  {
+   "t": 9.8,
+   "d": 0.4,
+   "text": "the fridge"
+  },
+  {
+   "t": 10.4,
+   "d": 0.3,
+   "text": "blocking"
+  },
+  {
+   "t": 14.1,
+   "d": 0.3,
+   "text": "theycan"
+  },
+  {
+   "t": 14.8,
+   "d": 0.2,
+   "text": "thepotice. EP"
+  },
+  {
+   "t": 18.4,
+   "d": 0.4,
+   "text": "someone"
+  },
+  {
+   "t": 18.9,
+   "d": 0.2,
+   "text": "ee Coke"
+  },
+  {
+   "t": 19.8,
+   "d": 0.2,
+   "text": "furniture"
+  },
+  {
+   "t": 20.0,
+   "d": 0.4,
+   "text": "7 furniture"
+  },
+  {
+   "t": 20.4,
+   "d": 0.2,
+   "text": "am"
+  },
+  {
+   "t": 20.7,
+   "d": 0.3,
+   "text": "inch?"
+  },
+  {
+   "t": 21.0,
+   "d": 0.3,
+   "text": "He"
+  },
+  {
+   "t": 22.0,
+   "d": 0.3,
+   "text": "the way"
+  },
+  {
+   "t": 22.3,
+   "d": 0.2,
+   "text": "back"
+  },
+  {
+   "t": 22.5,
+   "d": 0.6,
+   "text": "to his car."
+  },
+  {
+   "t": 23.1,
+   "d": 0.4,
+   "text": "They start"
+  },
+  {
+   "t": 23.5,
+   "d": 0.4,
+   "text": "locking"
+  },
+  {
+   "t": 23.9,
+   "d": 0.6,
+   "text": "every door"
+  },
+  {
+   "t": 24.6,
+   "d": 0.3,
+   "text": "window"
+  },
+  {
+   "t": 25.0,
+   "d": 0.3,
+   "text": "night,"
+  },
+  {
+   "t": 25.3,
+   "d": 0.2,
+   "text": "but"
+  },
+  {
+   "t": 25.5,
+   "d": 0.2,
+   "text": "every"
+  },
+  {
+   "t": 26.2,
+   "d": 0.5,
+   "text": "everything"
+  },
+  {
+   "t": 30.7,
+   "d": 0.4,
+   "text": "point,"
+  },
+  {
+   "t": 31.2,
+   "d": 0.3,
+   "text": "daughter"
+  },
+  {
+   "t": 31.5,
+   "d": 0.3,
+   "text": "ee swears"
+  },
+  {
+   "t": 31.8,
+   "d": 0.3,
+   "text": "a swears"
+  },
+  {
+   "t": 32.1,
+   "d": 0.3,
+   "text": "she hears"
+  },
+  {
+   "t": 32.4,
+   "d": 0.3,
+   "text": "something"
+  },
+  {
+   "t": 32.7,
+   "d": 0.5,
+   "text": "sliding"
+  },
+  {
+   "t": 33.2,
+   "d": 0.4,
+   "text": "across"
+  },
+  {
+   "t": 33.6,
+   "d": 0.4,
+   "text": "the floor"
+  },
+  {
+   "t": 34.0,
+   "d": 0.4,
+   "text": "at 3"
+  },
+  {
+   "t": 34.4,
+   "d": 0.3,
+   "text": "a.m..."
+  },
+  {
+   "t": 34.7,
+   "d": 0.2,
+   "text": "So"
+  },
+  {
+   "t": 34.9,
+   "d": 0.4,
+   "text": "the dad"
+  },
+  {
+   "t": 35.3,
+   "d": 0.3,
+   "text": "camped"
+  },
+  {
+   "t": 35.7,
+   "d": 0.5,
+   "text": "on the couch"
+  },
+  {
+   "t": 36.3,
+   "d": 0.5,
+   "text": "baseball"
+  },
+  {
+   "t": 36.8,
+   "d": 0.3,
+   "text": "bat"
+  },
+  {
+   "t": 37.1,
+   "d": 0.3,
+   "text": "ready"
+  },
+  {
+   "t": 37.5,
+   "d": 0.3,
+   "text": "catch"
+  },
+  {
+   "t": 37.8,
+   "d": 0.6,
+   "text": "whoever's"
+  },
+  {
+   "t": 38.4,
+   "d": 0.2,
+   "text": "doing"
+  },
+  {
+   "t": 38.6,
+   "d": 0.3,
+   "text": "this."
+  },
+  {
+   "t": 38.9,
+   "d": 0.4,
+   "text": "He wakes up"
+  },
+  {
+   "t": 39.7,
+   "d": 0.4,
+   "text": "morning"
+  },
+  {
+   "t": 40.2,
+   "d": 0.5,
+   "text": "the couch"
+  },
+  {
+   "t": 46.0,
+   "d": 0.2,
+   "text": "and"
+  },
+  {
+   "t": 46.2,
+   "d": 0.4,
+   "text": "the family"
+  },
+  {
+   "t": 47.1,
+   "d": 0.2,
+   "text": "take it"
+  },
+  {
+   "t": 47.4,
+   "d": 0.2,
+   "text": "anymore."
+  },
+  {
+   "t": 47.9,
+   "d": 0.2,
+   "text": "They sell."
+  },
+  {
+   "t": 48.1,
+   "d": 0.4,
+   "text": "the house"
+  },
+  {
+   "t": 48.6,
+   "d": 0.3,
+   "text": "A half"
+  },
+  {
+   "t": 49.5,
+   "d": 0.2,
+   "text": "and"
+  },
+  {
+   "t": 49.7,
+   "d": 1.2,
+   "text": "the buyer"
+  },
+  {
+   "t": 52.0,
+   "d": 0.2,
+   "text": "that"
+  },
+  {
+   "t": 53.7,
+   "d": 0.2,
+   "text": "4 one"
+  },
+  {
+   "t": 53.9,
+   "d": 0.4,
+   "text": "key."
+  },
+  {
+   "t": 54.3,
+   "d": 0.3,
+   "text": "So"
+  },
+  {
+   "t": 55.3,
+   "d": 0.4,
+   "text": "month"
+  },
+  {
+   "t": 55.8,
+   "d": 0.3,
+   "text": "sliding"
+  },
+  {
+   "t": 56.6,
+   "d": 0.4,
+   "text": "to buy"
+  },
+  {
+   "t": 57.0,
+   "d": 0.3,
+   "text": "back"
+  },
+  {
+   "t": 57.4,
+   "d": 0.3,
+   "text": "half"
+  },
+  {
+   "t": 57.8,
+   "d": 0.3,
+   "text": "price."
+  }
+ ]
+}

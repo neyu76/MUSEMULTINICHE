@@ -1,0 +1,16 @@
+﻿VIDEO 03
+TITLE: Why Humans Can't Pick Random Numbers
+NHÓM: KHOA HỌC VÀ NÃO BỘ
+NGÔN NGỮ: Tiếng Anh (nguyên bản)
+
+======================================================================
+KỊCH BẢN / TRANSCRIPT
+======================================================================
+
+If you ever fake a number, there's a way to tell a human made it up. A man stole 2 million dollars with fake checks, made every amount look totally random, and still got caught. But how?
+
+Well, picture a building with 19 floors. Step into the elevator and look at the buttons. Floors 2 through 9 each start with a different number, but floor 1 and 10 all the way up to 19 all start with a 1.
+
+That's more than half the buttons! Real numbers work like that elevator, so 1s show up way more than anything else. On top of that, real randomness is streaky.
+
+Flip a coin a hundred times, and you'll usually get six heads in a row. His checks mostly began with a seven, eight, or nine, and he avoided doubles to make them look random, but truly random numbers are the opposite. So no matter how random you try to make yours, there's almost always a way to tell.

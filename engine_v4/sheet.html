@@ -1,0 +1,11 @@
+<!doctype html><html><body style="margin:0;background:#888"><canvas id=o width=2200 height=1400></canvas>
+<script type="module">
+import { makeCanvas, drawChar } from './chars2.js';
+const o=document.getElementById('o').getContext('2d'); o.fillStyle='#8fb3d9'; o.fillRect(0,0,2200,1400);
+const L=[['lustig',{expr:'smug',items:{cane:{hand:'r'}},arms:{r:[0.33,0.8]}}],['lustig',{expr:'grin',open:{r:true},arms:{r:[0.45,1.05]},items:{stamp:{hand:'l'}},fx:{sparkle:1}}],['lustig',{expr:'sigh',fx:{puff:0.5},items:{slip:{hand:'r'}},arms:{r:[0.38,1.0]}}],
+['poisson',{expr:'greedy',fx:{franc:1,drool:1,sparkle:1},arms:{l:[-0.08,0.95],r:[0.08,0.95]}}],['poisson',{expr:'squint',fx:{qmarks:1}}],['poisson',{expr:'ashamed',fx:{blush:1,sweat:2,shame:1},items:{paper:{hand:'r',stamp:1,title:'DEED',sub:'EIFFEL TOWER'}},arms:{r:[0.35,0.95]}}],
+['poisson',{expr:'grin',fx:{bulb:1}}],['d1',{expr:'shock',items:{paddle:{hand:'r',num:2}},arms:{r:[0.35,1.4]}}],['d2',{expr:'stare'}],['d3',{expr:'neutral',items:{envelope:{hand:'l',label:'1,000,000 FR'}},arms:{l:[-0.35,0.95]}}],['d4',{expr:'laugh'}],
+['n1',{expr:'neutral'}],['n2',{expr:'grin'}],['n3',{expr:'worried'}],['n4',{expr:'smug'}],['n5',{expr:'shock',items:{newspaper:{k:0.5}}}],['lustig',{expr:'wink',items:{suitcase:{hand:'r'}},arms:{r:[0.4,0.7]}}]];
+L.forEach(([ty,p],i)=>{const c=makeCanvas(); drawChar(c.getContext('2d'),ty,{...p,t:0.3}); o.drawImage(c,(i%6)*360-180,Math.floor(i/6)*460-40,720,720*c.height/c.width);});
+window.READY=true;
+</script></body></html>

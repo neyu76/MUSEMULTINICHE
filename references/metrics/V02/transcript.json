@@ -1,0 +1,389 @@
+{
+ "id": "V2",
+ "n_caption_events": 75,
+ "n_words_est": 105,
+ "speech_span_s": 57.1,
+ "wpm_est": 110.3,
+ "words_per_caption_mean": 1.4,
+ "share_1w": 0.65,
+ "share_2w": 0.29,
+ "share_3plus": 0.05,
+ "caption_dur_median": 0.3,
+ "events": [
+  {
+   "t": 0.3,
+   "d": 0.2,
+   "text": "scanii"
+  },
+  {
+   "t": 1.0,
+   "d": 0.4,
+   "text": "lottery:"
+  },
+  {
+   "t": 2.8,
+   "d": 0.4,
+   "text": "a million,"
+  },
+  {
+   "t": 3.2,
+   "d": 0.5,
+   "text": "dollars,"
+  },
+  {
+   "t": 3.9,
+   "d": 0.3,
+   "text": "said,"
+  },
+  {
+   "t": 4.2,
+   "d": 0.4,
+   "text": "Sorry,"
+  },
+  {
+   "t": 4.6,
+   "d": 0.2,
+   "text": "man."
+  },
+  {
+   "t": 5.7,
+   "d": 0.2,
+   "text": "The guy"
+  },
+  {
+   "t": 6.0,
+   "d": 0.2,
+   "text": "just"
+  },
+  {
+   "t": 6.2,
+   "d": 0.6,
+   "text": "shrugs,"
+  },
+  {
+   "t": 6.8,
+   "d": 0.3,
+   "text": "says!"
+  },
+  {
+   "t": 7.1,
+   "d": 0.2,
+   "text": "says a"
+  },
+  {
+   "t": 8.0,
+   "d": 0.4,
+   "text": "life"
+  },
+  {
+   "t": 8.9,
+   "d": 0.3,
+   "text": "out."
+  },
+  {
+   "t": 9.3,
+   "d": 0.5,
+   "text": "second"
+  },
+  {
+   "t": 9.8,
+   "d": 0.3,
+   "text": "the door"
+  },
+  {
+   "t": 10.3,
+   "d": 0.3,
+   "text": "closes,"
+  },
+  {
+   "t": 10.7,
+   "d": 0.5,
+   "text": "cashier"
+  },
+  {
+   "t": 11.2,
+   "d": 0.2,
+   "text": "is"
+  },
+  {
+   "t": 11.4,
+   "d": 0.5,
+   "text": "elbow"
+  },
+  {
+   "t": 11.9,
+   "d": 0.2,
+   "text": "deep"
+  },
+  {
+   "t": 12.1,
+   "d": 0.2,
+   "text": "in the"
+  },
+  {
+   "t": 12.3,
+   "d": 0.2,
+   "text": "trash"
+  },
+  {
+   "t": 13.0,
+   "d": 0.2,
+   "text": "fishing"
+  },
+  {
+   "t": 13.4,
+   "d": 0.3,
+   "text": "ticket"
+  },
+  {
+   "t": 13.7,
+   "d": 0.3,
+   "text": "back"
+  },
+  {
+   "t": 14.0,
+   "d": 0.4,
+   "text": "out and"
+  },
+  {
+   "t": 14.4,
+   "d": 0.5,
+   "text": "tucking it"
+  },
+  {
+   "t": 14.9,
+   "d": 0.2,
+   "text": "into"
+  },
+  {
+   "t": 15.1,
+   "d": 0.5,
+   "text": "his wallet"
+  },
+  {
+   "t": 15.7,
+   "d": 0.2,
+   "text": "it's"
+  },
+  {
+   "t": 15.9,
+   "d": 0.2,
+   "text": "been"
+  },
+  {
+   "t": 16.1,
+   "d": 0.4,
+   "text": "his all"
+  },
+  {
+   "t": 17.2,
+   "d": 0.5,
+   "text": "midnight,"
+  },
+  {
+   "t": 17.7,
+   "d": 0.3,
+   "text": "he's"
+  },
+  {
+   "t": 18.3,
+   "d": 0.3,
+   "text": "bought"
+  },
+  {
+   "t": 18.6,
+   "d": 0.5,
+   "text": "a boat,"
+  },
+  {
+   "t": 19.4,
+   "d": 0.2,
+   "text": "mansion,"
+  },
+  {
+   "t": 21.7,
+   "d": 0.2,
+   "text": "least"
+  },
+  {
+   "t": 21.9,
+   "d": 0.5,
+   "text": "in his head."
+  },
+  {
+   "t": 22.4,
+   "d": 0.5,
+   "text": "So"
+  },
+  {
+   "t": 22.9,
+   "d": 0.8,
+   "text": "the next morning,"
+  },
+  {
+   "t": 23.7,
+   "d": 0.4,
+   "text": "drives"
+  },
+  {
+   "t": 24.1,
+   "d": 0.7,
+   "text": "2 hours"
+  },
+  {
+   "t": 24.8,
+   "d": 0.2,
+   "text": "to the"
+  },
+  {
+   "t": 25.0,
+   "d": 0.4,
+   "text": "lottery"
+  },
+  {
+   "t": 25.4,
+   "d": 0.4,
+   "text": "office,"
+  },
+  {
+   "t": 25.8,
+   "d": 0.5,
+   "text": "slides"
+  },
+  {
+   "t": 38.3,
+   "d": 0.2,
+   "text": "from tiie store"
+  },
+  {
+   "t": 38.8,
+   "d": 0.7,
+   "text": "from thie store"
+  },
+  {
+   "t": 39.5,
+   "d": 0.2,
+   "text": "joo"
+  },
+  {
+   "t": 40.6,
+   "d": 0.2,
+   "text": "8 witha"
+  },
+  {
+   "t": 41.0,
+   "d": 0.2,
+   "text": "a haage"
+  },
+  {
+   "t": 41.7,
+   "d": 0.4,
+   "text": "2 followed"
+  },
+  {
+   "t": 42.2,
+   "d": 0.2,
+   "text": "byitwo"
+  },
+  {
+   "t": 42.4,
+   "d": 0.2,
+   "text": "FB byitwo"
+  },
+  {
+   "t": 43.0,
+   "d": 0.2,
+   "text": "5 officers."
+  },
+  {
+   "t": 43.2,
+   "d": 0.2,
+   "text": "3 officers."
+  },
+  {
+   "t": 43.4,
+   "d": 0.2,
+   "text": "5 officers."
+  },
+  {
+   "t": 44.3,
+   "d": 0.2,
+   "text": "real"
+  },
+  {
+   "t": 44.5,
+   "d": 0.3,
+   "text": "life,"
+  },
+  {
+   "t": 48.0,
+   "d": 0.3,
+   "text": "Sve ryone"
+  },
+  {
+   "t": 49.7,
+   "d": 0.3,
+   "text": "statistically"
+  },
+  {
+   "t": 50.0,
+   "d": 0.4,
+   "text": "little"
+  },
+  {
+   "t": 50.4,
+   "d": 0.7,
+   "text": "suspicious."
+  },
+  {
+   "t": 51.1,
+   "d": 0.3,
+   "text": "So"
+  },
+  {
+   "t": 51.6,
+   "d": 0.5,
+   "text": "they started"
+  },
+  {
+   "t": 52.5,
+   "d": 0.2,
+   "text": "winning"
+  },
+  {
+   "t": 53.8,
+   "d": 0.4,
+   "text": "sending"
+  },
+  {
+   "t": 54.2,
+   "d": 0.5,
+   "text": "undercover"
+  },
+  {
+   "t": 55.3,
+   "d": 0.5,
+   "text": "stores"
+  },
+  {
+   "t": 55.8,
+   "d": 0.6,
+   "text": "pretending"
+  },
+  {
+   "t": 56.4,
+   "d": 0.2,
+   "text": "to be"
+  },
+  {
+   "t": 56.6,
+   "d": 0.4,
+   "text": "regular"
+  },
+  {
+   "t": 57.1,
+   "d": 0.3,
+   "text": "customers."
+  }
+ ]
+}

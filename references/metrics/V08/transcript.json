@@ -1,0 +1,524 @@
+{
+ "id": "V8",
+ "n_caption_events": 102,
+ "n_words_est": 139,
+ "speech_span_s": 64.2,
+ "wpm_est": 129.9,
+ "words_per_caption_mean": 1.36,
+ "share_1w": 0.68,
+ "share_2w": 0.28,
+ "share_3plus": 0.04,
+ "caption_dur_median": 0.4,
+ "events": [
+  {
+   "t": 0.1,
+   "d": 0.2,
+   "text": "puta"
+  },
+  {
+   "t": 0.3,
+   "d": 0.5,
+   "text": "bronze"
+  },
+  {
+   "t": 2.2,
+   "d": 0.2,
+   "text": "and"
+  },
+  {
+   "t": 3.2,
+   "d": 0.2,
+   "text": "if"
+  },
+  {
+   "t": 3.4,
+   "d": 0.5,
+   "text": "this ever"
+  },
+  {
+   "t": 3.9,
+   "d": 0.3,
+   "text": "falls"
+  },
+  {
+   "t": 4.2,
+   "d": 0.3,
+   "text": "out,"
+  },
+  {
+   "t": 5.1,
+   "d": 0.9,
+   "text": "The whole court"
+  },
+  {
+   "t": 6.1,
+   "d": 0.3,
+   "text": "burst"
+  },
+  {
+   "t": 6.4,
+   "d": 0.2,
+   "text": "out"
+  },
+  {
+   "t": 6.6,
+   "d": 0.5,
+   "text": "laughing."
+  },
+  {
+   "t": 7.1,
+   "d": 0.2,
+   "text": "You"
+  },
+  {
+   "t": 7.3,
+   "d": 0.3,
+   "text": "see,"
+  },
+  {
+   "t": 7.6,
+   "d": 0.2,
+   "text": "there"
+  },
+  {
+   "t": 8.0,
+   "d": 0.3,
+   "text": "eight a"
+  },
+  {
+   "t": 8.3,
+   "d": 0.5,
+   "text": "dragons"
+  },
+  {
+   "t": 9.8,
+   "d": 0.2,
+   "text": "agiant"
+  },
+  {
+   "t": 10.1,
+   "d": 0.3,
+   "text": "bronze"
+  },
+  {
+   "t": 10.9,
+   "d": 0.2,
+   "text": "each a"
+  },
+  {
+   "t": 11.1,
+   "d": 0.3,
+   "text": "holding"
+  },
+  {
+   "t": 11.7,
+   "d": 0.2,
+   "text": "a ball"
+  },
+  {
+   "t": 11.9,
+   "d": 0.2,
+   "text": "over"
+  },
+  {
+   "t": 12.1,
+   "d": 0.5,
+   "text": "a frog's"
+  },
+  {
+   "t": 12.9,
+   "d": 0.4,
+   "text": "mouth."
+  },
+  {
+   "t": 13.3,
+   "d": 0.2,
+   "text": "But"
+  },
+  {
+   "t": 13.5,
+   "d": 0.5,
+   "text": "the emperor"
+  },
+  {
+   "t": 20.1,
+   "d": 0.2,
+   "text": "happened."
+  },
+  {
+   "t": 20.3,
+   "d": 0.2,
+   "text": "Not"
+  },
+  {
+   "t": 20.5,
+   "d": 0.2,
+   "text": "evena"
+  },
+  {
+   "t": 20.7,
+   "d": 0.5,
+   "text": "ripple"
+  },
+  {
+   "t": 21.3,
+   "d": 0.5,
+   "text": "emperor's"
+  },
+  {
+   "t": 21.8,
+   "d": 0.2,
+   "text": "7 wine."
+  },
+  {
+   "t": 22.2,
+   "d": 0.4,
+   "text": "Now"
+  },
+  {
+   "t": 22.6,
+   "d": 0.5,
+   "text": "they laughed"
+  },
+  {
+   "t": 23.1,
+   "d": 0.4,
+   "text": "even"
+  },
+  {
+   "t": 23.5,
+   "d": 0.6,
+   "text": "harder."
+  },
+  {
+   "t": 24.1,
+   "d": 0.5,
+   "text": "The Emperor"
+  },
+  {
+   "t": 24.6,
+   "d": 0.2,
+   "text": "ealled"
+  },
+  {
+   "t": 24.9,
+   "d": 0.5,
+   "text": "the world's"
+  },
+  {
+   "t": 26.0,
+   "d": 0.3,
+   "text": "3 expensive 7"
+  },
+  {
+   "t": 26.3,
+   "d": 0.4,
+   "text": "toy"
+  },
+  {
+   "t": 27.7,
+   "d": 0.3,
+   "text": "outof"
+  },
+  {
+   "t": 28.0,
+   "d": 0.4,
+   "text": "the city"
+  },
+  {
+   "t": 28.9,
+   "d": 0.2,
+   "text": "and"
+  },
+  {
+   "t": 29.3,
+   "d": 0.6,
+   "text": "Sohe"
+  },
+  {
+   "t": 29.9,
+   "d": 0.4,
+   "text": "dragged it"
+  },
+  {
+   "t": 31.7,
+   "d": 0.2,
+   "text": "and"
+  },
+  {
+   "t": 32.5,
+   "d": 0.2,
+   "text": "alone."
+  },
+  {
+   "t": 32.7,
+   "d": 0.5,
+   "text": "then"
+  },
+  {
+   "t": 33.8,
+   "d": 0.5,
+   "text": "a ball"
+  },
+  {
+   "t": 34.3,
+   "d": 0.4,
+   "text": "dropped,"
+  },
+  {
+   "t": 34.7,
+   "d": 0.8,
+   "text": "then"
+  },
+  {
+   "t": 35.5,
+   "d": 0.2,
+   "text": "Then 4"
+  },
+  {
+   "t": 35.7,
+   "d": 0.6,
+   "text": "alleight."
+  },
+  {
+   "t": 36.4,
+   "d": 0.5,
+   "text": "once."
+  },
+  {
+   "t": 36.9,
+   "d": 0.5,
+   "text": "He ran"
+  },
+  {
+   "t": 37.4,
+   "d": 0.2,
+   "text": "to the"
+  },
+  {
+   "t": 37.6,
+   "d": 0.3,
+   "text": "city"
+  },
+  {
+   "t": 37.9,
+   "d": 0.3,
+   "text": "gates,"
+  },
+  {
+   "t": 38.2,
+   "d": 0.7,
+   "text": "screaming"
+  },
+  {
+   "t": 39.0,
+   "d": 0.5,
+   "text": "everyone"
+  },
+  {
+   "t": 39.6,
+   "d": 0.7,
+   "text": "get out."
+  },
+  {
+   "t": 40.3,
+   "d": 0.5,
+   "text": "Hey,"
+  },
+  {
+   "t": 40.8,
+   "d": 0.2,
+   "text": "it's"
+  },
+  {
+   "t": 41.0,
+   "d": 0.4,
+   "text": "the toy"
+  },
+  {
+   "t": 41.4,
+   "d": 0.4,
+   "text": "guy."
+  },
+  {
+   "t": 41.8,
+   "d": 0.2,
+   "text": "Did"
+  },
+  {
+   "t": 42.0,
+   "d": 0.4,
+   "text": "your frogs"
+  },
+  {
+   "t": 42.4,
+   "d": 0.2,
+   "text": "get"
+  },
+  {
+   "t": 42.6,
+   "d": 0.4,
+   "text": "hungry"
+  },
+  {
+   "t": 43.0,
+   "d": 0.4,
+   "text": "again?"
+  },
+  {
+   "t": 43.4,
+   "d": 0.4,
+   "text": "The guards"
+  },
+  {
+   "t": 43.8,
+   "d": 0.4,
+   "text": "laughed"
+  },
+  {
+   "t": 44.6,
+   "d": 0.3,
+   "text": "the way"
+  },
+  {
+   "t": 44.9,
+   "d": 0.4,
+   "text": "back up"
+  },
+  {
+   "t": 45.3,
+   "d": 0.4,
+   "text": "the hill."
+  },
+  {
+   "t": 45.7,
+   "d": 0.5,
+   "text": "The next morning,"
+  },
+  {
+   "t": 46.2,
+   "d": 0.3,
+   "text": "a Thenext morning,"
+  },
+  {
+   "t": 48.5,
+   "d": 0.4,
+   "text": "inside"
+  },
+  {
+   "t": 50.2,
+   "d": 0.3,
+   "text": "pendulum"
+  },
+  {
+   "t": 51.5,
+   "d": 0.3,
+   "text": "teach"
+  },
+  {
+   "t": 51.9,
+   "d": 0.5,
+   "text": "dragon,"
+  },
+  {
+   "t": 52.4,
+   "d": 0.6,
+   "text": "the slightest"
+  },
+  {
+   "t": 53.9,
+   "d": 0.2,
+   "text": "Fendutum a"
+  },
+  {
+   "t": 55.1,
+   "d": 0.4,
+   "text": "The rod"
+  },
+  {
+   "t": 55.5,
+   "d": 0.4,
+   "text": "snapped"
+  },
+  {
+   "t": 56.2,
+   "d": 0.2,
+   "text": "dragons"
+  },
+  {
+   "t": 56.7,
+   "d": 0.3,
+   "text": "oe open"
+  },
+  {
+   "t": 57.3,
+   "d": 0.3,
+   "text": "ball"
+  },
+  {
+   "t": 57.6,
+   "d": 0.5,
+   "text": "dropped."
+  },
+  {
+   "t": 58.1,
+   "d": 0.4,
+   "text": "One"
+  },
+  {
+   "t": 58.5,
+   "d": 0.3,
+   "text": "ball"
+  },
+  {
+   "t": 58.8,
+   "d": 0.2,
+   "text": "meant"
+  },
+  {
+   "t": 59.0,
+   "d": 0.4,
+   "text": "a nudge"
+  },
+  {
+   "t": 59.4,
+   "d": 0.2,
+   "text": "from"
+  },
+  {
+   "t": 59.9,
+   "d": 0.3,
+   "text": "away."
+  },
+  {
+   "t": 60.6,
+   "d": 0.3,
+   "text": "eight"
+  },
+  {
+   "t": 60.9,
+   "d": 0.2,
+   "text": "meant"
+  },
+  {
+   "t": 61.2,
+   "d": 0.5,
+   "text": "biggest"
+  },
+  {
+   "t": 61.7,
+   "d": 0.4,
+   "text": "earthquake"
+  },
+  {
+   "t": 62.2,
+   "d": 0.5,
+   "text": "the Empire"
+  },
+  {
+   "t": 64.1,
+   "d": 0.2,
+   "text": "undgineath"
+  }
+ ]
+}

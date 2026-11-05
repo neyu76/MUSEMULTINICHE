@@ -1,0 +1,867 @@
+[
+{
+"word": "a",
+"start": 0.0,
+"end": 0.09
+},
+{
+"word": "man",
+"start": 0.09,
+"end": 0.3
+},
+{
+"word": "sold",
+"start": 0.3,
+"end": 0.59
+},
+{
+"word": "the(2)",
+"start": 0.59,
+"end": 0.7
+},
+{
+"word": "eiffel",
+"start": 0.7,
+"end": 0.92
+},
+{
+"word": "tower",
+"start": 0.92,
+"end": 1.32
+},
+{
+"word": "and(2)",
+"start": 1.32,
+"end": 1.41
+},
+{
+"word": "the",
+"start": 1.41,
+"end": 1.47
+},
+{
+"word": "buyer",
+"start": 1.47,
+"end": 1.73
+},
+{
+"word": "was(2)",
+"start": 1.73,
+"end": 1.87
+},
+{
+"word": "so",
+"start": 1.87,
+"end": 2.12
+},
+{
+"word": "embarrassed",
+"start": 2.12,
+"end": 2.69
+},
+{
+"word": "he",
+"start": 2.69,
+"end": 2.8
+},
+{
+"word": "let",
+"start": 2.8,
+"end": 2.93
+},
+{
+"word": "him(2)",
+"start": 2.93,
+"end": 3.02
+},
+{
+"word": "do",
+"start": 3.02,
+"end": 3.15
+},
+{
+"word": "it",
+"start": 3.15,
+"end": 3.21
+},
+{
+"word": "again",
+"start": 3.21,
+"end": 3.53
+},
+{
+"word": "in",
+"start": 3.77,
+"end": 3.9
+},
+{
+"word": "nineteen",
+"start": 3.9,
+"end": 4.28
+},
+{
+"word": "twenty(2)",
+"start": 4.28,
+"end": 4.53
+},
+{
+"word": "five",
+"start": 4.53,
+"end": 4.9
+},
+{
+"word": "paris",
+"start": 5.21,
+"end": 5.52
+},
+{
+"word": "newspapers",
+"start": 5.52,
+"end": 5.98
+},
+{
+"word": "said",
+"start": 5.98,
+"end": 6.12
+},
+{
+"word": "the",
+"start": 6.12,
+"end": 6.19
+},
+{
+"word": "tower",
+"start": 6.19,
+"end": 6.52
+},
+{
+"word": "was(2)",
+"start": 6.52,
+"end": 6.65
+},
+{
+"word": "rusting",
+"start": 6.65,
+"end": 7.08
+},
+{
+"word": "and",
+"start": 7.08,
+"end": 7.2
+},
+{
+"word": "costing",
+"start": 7.2,
+"end": 7.54
+},
+{
+"word": "a",
+"start": 7.54,
+"end": 7.58
+},
+{
+"word": "fortune",
+"start": 7.58,
+"end": 8.02
+},
+{
+"word": "so",
+"start": 8.25,
+"end": 8.44
+},
+{
+"word": "victor",
+"start": 8.44,
+"end": 8.73
+},
+{
+"word": "lustig",
+"start": 8.73,
+"end": 9.1
+},
+{
+"word": "printed",
+"start": 9.1,
+"end": 9.39
+},
+{
+"word": "fake",
+"start": 9.39,
+"end": 9.66
+},
+{
+"word": "government",
+"start": 9.66,
+"end": 9.97
+},
+{
+"word": "letterhead",
+"start": 9.97,
+"end": 10.42
+},
+{
+"word": "booked",
+"start": 10.59,
+"end": 10.76
+},
+{
+"word": "a",
+"start": 10.76,
+"end": 10.8
+},
+{
+"word": "fancy",
+"start": 10.8,
+"end": 11.16
+},
+{
+"word": "hotel",
+"start": 11.16,
+"end": 11.47
+},
+{
+"word": "suite",
+"start": 11.47,
+"end": 11.77
+},
+{
+"word": "and(2)",
+"start": 11.93,
+"end": 12.03
+},
+{
+"word": "invited(2)",
+"start": 12.03,
+"end": 12.39
+},
+{
+"word": "five",
+"start": 12.39,
+"end": 12.71
+},
+{
+"word": "scrap",
+"start": 12.71,
+"end": 13.11
+},
+{
+"word": "dealers",
+"start": 13.11,
+"end": 13.48
+},
+{
+"word": "to",
+"start": 13.48,
+"end": 13.59
+},
+{
+"word": "a",
+"start": 13.59,
+"end": 13.63
+},
+{
+"word": "secret(2)",
+"start": 13.63,
+"end": 14.06
+},
+{
+"word": "meeting",
+"start": 14.06,
+"end": 14.37
+},
+{
+"word": "the",
+"start": 14.57,
+"end": 14.66
+},
+{
+"word": "tower",
+"start": 14.66,
+"end": 15.0
+},
+{
+"word": "is",
+"start": 15.0,
+"end": 15.1
+},
+{
+"word": "coming",
+"start": 15.1,
+"end": 15.32
+},
+{
+"word": "down",
+"start": 15.32,
+"end": 15.67
+},
+{
+"word": "he",
+"start": 15.79,
+"end": 15.88
+},
+{
+"word": "whispered",
+"start": 15.88,
+"end": 16.29
+},
+{
+"word": "seven",
+"start": 16.43,
+"end": 16.75
+},
+{
+"word": "thousand",
+"start": 16.75,
+"end": 17.08
+},
+{
+"word": "tons",
+"start": 17.08,
+"end": 17.27
+},
+{
+"word": "of",
+"start": 17.27,
+"end": 17.33
+},
+{
+"word": "metal",
+"start": 17.33,
+"end": 17.61
+},
+{
+"word": "highest",
+"start": 17.8,
+"end": 18.22
+},
+{
+"word": "bidder",
+"start": 18.22,
+"end": 18.42
+},
+{
+"word": "wins",
+"start": 18.42,
+"end": 18.87
+},
+{
+"word": "one",
+"start": 19.13,
+"end": 19.38
+},
+{
+"word": "dealer",
+"start": 19.38,
+"end": 19.78
+},
+{
+"word": "andre",
+"start": 19.92,
+"end": 20.27
+},
+{
+"word": "poisson",
+"start": 20.27,
+"end": 20.67
+},
+{
+"word": "wanted",
+"start": 21.08,
+"end": 21.36
+},
+{
+"word": "it",
+"start": 21.36,
+"end": 21.44
+},
+{
+"word": "badly",
+"start": 21.44,
+"end": 21.83
+},
+{
+"word": "but",
+"start": 22.05,
+"end": 22.17
+},
+{
+"word": "something",
+"start": 22.17,
+"end": 22.45
+},
+{
+"word": "felt",
+"start": 22.45,
+"end": 22.71
+},
+{
+"word": "off",
+"start": 22.71,
+"end": 22.96
+},
+{
+"word": "then",
+"start": 23.23,
+"end": 23.4
+},
+{
+"word": "lustig",
+"start": 23.4,
+"end": 23.73
+},
+{
+"word": "sighed",
+"start": 23.73,
+"end": 24.1
+},
+{
+"word": "and(2)",
+"start": 24.1,
+"end": 24.24
+},
+{
+"word": "said",
+"start": 24.24,
+"end": 24.43
+},
+{
+"word": "a",
+"start": 24.43,
+"end": 24.47
+},
+{
+"word": "government",
+"start": 24.47,
+"end": 24.87
+},
+{
+"word": "salary",
+"start": 24.87,
+"end": 25.32
+},
+{
+"word": "is",
+"start": 25.32,
+"end": 25.47
+},
+{
+"word": "tiny",
+"start": 25.47,
+"end": 25.94
+},
+{
+"word": "and(2)",
+"start": 26.15,
+"end": 26.27
+},
+{
+"word": "a",
+"start": 26.27,
+"end": 26.31
+},
+{
+"word": "gentleman",
+"start": 26.31,
+"end": 26.75
+},
+{
+"word": "has",
+"start": 26.75,
+"end": 26.99
+},
+{
+"word": "expenses(2)",
+"start": 26.99,
+"end": 27.63
+},
+{
+"word": "you",
+"start": 27.86,
+"end": 27.95
+},
+{
+"word": "see",
+"start": 27.95,
+"end": 28.3
+},
+{
+"word": "that's",
+"start": 28.58,
+"end": 28.87
+},
+{
+"word": "what",
+"start": 28.87,
+"end": 28.99
+},
+{
+"word": "sold",
+"start": 28.99,
+"end": 29.3
+},
+{
+"word": "it",
+"start": 29.3,
+"end": 29.39
+},
+{
+"word": "a",
+"start": 29.61,
+"end": 29.69
+},
+{
+"word": "con",
+"start": 29.69,
+"end": 30.0
+},
+{
+"word": "man",
+"start": 30.0,
+"end": 30.21
+},
+{
+"word": "would",
+"start": 30.21,
+"end": 30.36
+},
+{
+"word": "never",
+"start": 30.36,
+"end": 30.76
+},
+{
+"word": "ask",
+"start": 30.76,
+"end": 31.01
+},
+{
+"word": "for(2)",
+"start": 31.01,
+"end": 31.13
+},
+{
+"word": "a",
+"start": 31.13,
+"end": 31.16
+},
+{
+"word": "bribe",
+"start": 31.16,
+"end": 31.49
+},
+{
+"word": "only",
+"start": 31.73,
+"end": 31.97
+},
+{
+"word": "a",
+"start": 31.97,
+"end": 32.0
+},
+{
+"word": "real",
+"start": 32.0,
+"end": 32.25
+},
+{
+"word": "official",
+"start": 32.25,
+"end": 32.61
+},
+{
+"word": "would",
+"start": 32.61,
+"end": 32.92
+},
+{
+"word": "poisson",
+"start": 33.15,
+"end": 33.58
+},
+{
+"word": "paid",
+"start": 33.58,
+"end": 33.82
+},
+{
+"word": "for(2)",
+"start": 33.82,
+"end": 33.93
+},
+{
+"word": "the",
+"start": 33.93,
+"end": 34.0
+},
+{
+"word": "tower",
+"start": 34.0,
+"end": 34.45
+},
+{
+"word": "paid",
+"start": 34.52,
+"end": 34.73
+},
+{
+"word": "the",
+"start": 34.73,
+"end": 34.8
+},
+{
+"word": "bribe",
+"start": 34.8,
+"end": 35.24
+},
+{
+"word": "and(2)",
+"start": 35.44,
+"end": 35.64
+},
+{
+"word": "lustig",
+"start": 35.64,
+"end": 36.14
+},
+{
+"word": "left",
+"start": 36.2,
+"end": 36.44
+},
+{
+"word": "for(2)",
+"start": 36.44,
+"end": 36.58
+},
+{
+"word": "austria",
+"start": 36.58,
+"end": 36.93
+},
+{
+"word": "with",
+"start": 36.93,
+"end": 37.05
+},
+{
+"word": "the",
+"start": 37.05,
+"end": 37.11
+},
+{
+"word": "cash",
+"start": 37.11,
+"end": 37.52
+},
+{
+"word": "then",
+"start": 37.77,
+"end": 37.98
+},
+{
+"word": "he",
+"start": 37.98,
+"end": 38.1
+},
+{
+"word": "waited",
+"start": 38.1,
+"end": 38.37
+},
+{
+"word": "for(2)",
+"start": 38.37,
+"end": 38.47
+},
+{
+"word": "the",
+"start": 38.47,
+"end": 38.54
+},
+{
+"word": "police",
+"start": 38.54,
+"end": 38.94
+},
+{
+"word": "nothing",
+"start": 39.19,
+"end": 39.59
+},
+{
+"word": "poisson",
+"start": 39.87,
+"end": 40.31
+},
+{
+"word": "was(2)",
+"start": 40.31,
+"end": 40.45
+},
+{
+"word": "too",
+"start": 40.45,
+"end": 40.6
+},
+{
+"word": "ashamed",
+"start": 40.6,
+"end": 40.9
+},
+{
+"word": "to(2)",
+"start": 40.9,
+"end": 40.96
+},
+{
+"word": "tell",
+"start": 40.96,
+"end": 41.15
+},
+{
+"word": "anyone",
+"start": 41.15,
+"end": 41.48
+},
+{
+"word": "he'd",
+"start": 41.48,
+"end": 41.61
+},
+{
+"word": "bought(2)",
+"start": 41.61,
+"end": 41.78
+},
+{
+"word": "the(2)",
+"start": 41.78,
+"end": 41.89
+},
+{
+"word": "eiffel",
+"start": 41.89,
+"end": 42.11
+},
+{
+"word": "tower",
+"start": 42.11,
+"end": 42.5
+},
+{
+"word": "so",
+"start": 42.74,
+"end": 42.96
+},
+{
+"word": "six",
+"start": 42.96,
+"end": 43.23
+},
+{
+"word": "months",
+"start": 43.23,
+"end": 43.45
+},
+{
+"word": "later",
+"start": 43.45,
+"end": 43.82
+},
+{
+"word": "lustig",
+"start": 44.04,
+"end": 44.29
+},
+{
+"word": "came",
+"start": 44.29,
+"end": 44.43
+},
+{
+"word": "back",
+"start": 44.43,
+"end": 44.61
+},
+{
+"word": "and",
+"start": 44.61,
+"end": 44.7
+},
+{
+"word": "sold",
+"start": 44.7,
+"end": 44.89
+},
+{
+"word": "it",
+"start": 44.89,
+"end": 44.95
+},
+{
+"word": "again",
+"start": 44.95,
+"end": 45.21
+},
+{
+"word": "the(2)",
+"start": 45.42,
+"end": 45.56
+},
+{
+"word": "eiffel",
+"start": 45.56,
+"end": 45.82
+},
+{
+"word": "tower",
+"start": 45.82,
+"end": 46.14
+},
+{
+"word": "was(2)",
+"start": 46.14,
+"end": 46.33
+},
+{
+"word": "never",
+"start": 46.33,
+"end": 46.67
+},
+{
+"word": "for(2)",
+"start": 46.67,
+"end": 46.82
+},
+{
+"word": "sale",
+"start": 46.82,
+"end": 47.14
+},
+{
+"word": "it",
+"start": 47.36,
+"end": 47.45
+},
+{
+"word": "just(2)",
+"start": 47.45,
+"end": 47.62
+},
+{
+"word": "got",
+"start": 47.62,
+"end": 47.78
+},
+{
+"word": "sold",
+"start": 47.78,
+"end": 48.04
+},
+{
+"word": "twice",
+"start": 48.04,
+"end": 48.55
+}
+]

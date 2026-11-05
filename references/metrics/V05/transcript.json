@@ -1,0 +1,374 @@
+{
+ "id": "V5",
+ "n_caption_events": 72,
+ "n_words_est": 99,
+ "speech_span_s": 63.3,
+ "wpm_est": 93.8,
+ "words_per_caption_mean": 1.38,
+ "share_1w": 0.69,
+ "share_2w": 0.24,
+ "share_3plus": 0.07,
+ "caption_dur_median": 0.3,
+ "events": [
+  {
+   "t": 0.1,
+   "d": 0.2,
+   "text": "Look at"
+  },
+  {
+   "t": 0.3,
+   "d": 0.2,
+   "text": "these"
+  },
+  {
+   "t": 0.8,
+   "d": 0.8,
+   "text": "scratcheards."
+  },
+  {
+   "t": 2.0,
+   "d": 0.4,
+   "text": "a winner"
+  },
+  {
+   "t": 3.2,
+   "d": 0.4,
+   "text": "garbage."
+  },
+  {
+   "t": 4.5,
+   "d": 0.2,
+   "text": "toten"
+  },
+  {
+   "t": 5.5,
+   "d": 0.2,
+   "text": "scratching"
+  },
+  {
+   "t": 5.7,
+   "d": 0.2,
+   "text": "either"
+  },
+  {
+   "t": 6.6,
+   "d": 0.6,
+   "text": "all started"
+  },
+  {
+   "t": 7.3,
+   "d": 0.3,
+   "text": "aguy"
+  },
+  {
+   "t": 7.6,
+   "d": 0.2,
+   "text": "got"
+  },
+  {
+   "t": 7.8,
+   "d": 0.4,
+   "text": "fired"
+  },
+  {
+   "t": 8.2,
+   "d": 0.2,
+   "text": "and"
+  },
+  {
+   "t": 8.4,
+   "d": 0.3,
+   "text": "spent"
+  },
+  {
+   "t": 8.7,
+   "d": 0.4,
+   "text": "five"
+  },
+  {
+   "t": 9.4,
+   "d": 0.4,
+   "text": "7 on two"
+  },
+  {
+   "t": 9.9,
+   "d": 0.3,
+   "text": "scratch"
+  },
+  {
+   "t": 10.2,
+   "d": 0.3,
+   "text": "cards"
+  },
+  {
+   "t": 10.5,
+   "d": 0.2,
+   "text": "on the"
+  },
+  {
+   "t": 10.8,
+   "d": 0.4,
+   "text": "home."
+  },
+  {
+   "t": 13.8,
+   "d": 0.5,
+   "text": "instead"
+  },
+  {
+   "t": 14.4,
+   "d": 0.6,
+   "text": "celebrating"
+  },
+  {
+   "t": 15.3,
+   "d": 0.3,
+   "text": "normal"
+  },
+  {
+   "t": 15.6,
+   "d": 0.5,
+   "text": "person,"
+  },
+  {
+   "t": 16.2,
+   "d": 1.0,
+   "text": "gets suspicious."
+  },
+  {
+   "t": 17.5,
+   "d": 0.2,
+   "text": "the lottery"
+  },
+  {
+   "t": 17.7,
+   "d": 0.2,
+   "text": "the lottery 7"
+  },
+  {
+   "t": 17.9,
+   "d": 0.3,
+   "text": "decides"
+  },
+  {
+   "t": 18.7,
+   "d": 0.2,
+   "text": "7 exactly"
+  },
+  {
+   "t": 22.7,
+   "d": 0.4,
+   "text": "he does"
+  },
+  {
+   "t": 23.1,
+   "d": 0.2,
+   "text": "what"
+  },
+  {
+   "t": 23.3,
+   "d": 0.3,
+   "text": "any"
+  },
+  {
+   "t": 23.6,
+   "d": 0.3,
+   "text": "sane"
+  },
+  {
+   "t": 23.9,
+   "d": 0.4,
+   "text": "person"
+  },
+  {
+   "t": 24.4,
+   "d": 0.3,
+   "text": "do."
+  },
+  {
+   "t": 24.8,
+   "d": 0.4,
+   "text": "blows"
+  },
+  {
+   "t": 25.3,
+   "d": 0.6,
+   "text": "entire"
+  },
+  {
+   "t": 25.9,
+   "d": 0.4,
+   "text": "severance"
+  },
+  {
+   "t": 26.3,
+   "d": 0.3,
+   "text": "check"
+  },
+  {
+   "t": 26.7,
+   "d": 0.4,
+   "text": "a huge"
+  },
+  {
+   "t": 27.1,
+   "d": 0.2,
+   "text": "a huge a"
+  },
+  {
+   "t": 27.3,
+   "d": 0.4,
+   "text": "stack,"
+  },
+  {
+   "t": 27.9,
+   "d": 0.3,
+   "text": "spreads"
+  },
+  {
+   "t": 28.7,
+   "d": 0.4,
+   "text": "apartment"
+  },
+  {
+   "t": 29.1,
+   "d": 0.4,
+   "text": "floor"
+  },
+  {
+   "t": 29.5,
+   "d": 0.7,
+   "text": "and stares"
+  },
+  {
+   "t": 31.6,
+   "d": 0.7,
+   "text": "Every card"
+  },
+  {
+   "t": 32.5,
+   "d": 0.2,
+   "text": "little"
+  },
+  {
+   "t": 36.5,
+   "d": 0.5,
+   "text": "times"
+  },
+  {
+   "t": 39.3,
+   "d": 0.3,
+   "text": "whenever"
+  },
+  {
+   "t": 39.6,
+   "d": 0.4,
+   "text": "three"
+  },
+  {
+   "t": 40.1,
+   "d": 0.2,
+   "text": "those"
+  },
+  {
+   "t": 40.7,
+   "d": 0.2,
+   "text": "line up A"
+  },
+  {
+   "t": 41.9,
+   "d": 0.2,
+   "text": "awiniter."
+  },
+  {
+   "t": 42.1,
+   "d": 0.2,
+   "text": "awinner."
+  },
+  {
+   "t": 42.4,
+   "d": 0.5,
+   "text": "Which means"
+  },
+  {
+   "t": 42.9,
+   "d": 0.3,
+   "text": "this"
+  },
+  {
+   "t": 44.3,
+   "d": 0.4,
+   "text": "the lottery,"
+  },
+  {
+   "t": 49.1,
+   "d": 0.6,
+   "text": "He calls"
+  },
+  {
+   "t": 50.0,
+   "d": 0.2,
+   "text": "lottery,"
+  },
+  {
+   "t": 51.1,
+   "d": 0.8,
+   "text": "impossible-"
+  },
+  {
+   "t": 52.1,
+   "d": 0.2,
+   "text": "Oxays"
+  },
+  {
+   "t": 53.2,
+   "d": 1.0,
+   "text": "a"
+  },
+  {
+   "t": 54.2,
+   "d": 2.6,
+   "text": "Te"
+  },
+  {
+   "t": 58.8,
+   "d": 0.3,
+   "text": "5"
+  },
+  {
+   "t": 60.1,
+   "d": 0.2,
+   "text": "the end of"
+  },
+  {
+   "t": 60.3,
+   "d": 0.5,
+   "text": "the week."
+  },
+  {
+   "t": 60.8,
+   "d": 0.5,
+   "text": "The game"
+  },
+  {
+   "t": 61.4,
+   "d": 0.5,
+   "text": "is gone"
+  },
+  {
+   "t": 61.9,
+   "d": 0.2,
+   "text": "from"
+  },
+  {
+   "t": 62.3,
+   "d": 0.2,
+   "text": "every"
+  },
+  {
+   "t": 62.5,
+   "d": 0.9,
+   "text": "store."
+  }
+ ]
+}

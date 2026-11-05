@@ -1,0 +1,464 @@
+{
+ "id": "V1",
+ "n_caption_events": 90,
+ "n_words_est": 116,
+ "speech_span_s": 44.9,
+ "wpm_est": 155.0,
+ "words_per_caption_mean": 1.29,
+ "share_1w": 0.72,
+ "share_2w": 0.27,
+ "share_3plus": 0.01,
+ "caption_dur_median": 0.3,
+ "events": [
+  {
+   "t": 0.0,
+   "d": 0.5,
+   "text": "Gambling"
+  },
+  {
+   "t": 0.6,
+   "d": 0.5,
+   "text": "illegal"
+  },
+  {
+   "t": 1.2,
+   "d": 0.6,
+   "text": "Japan."
+  },
+  {
+   "t": 1.8,
+   "d": 0.2,
+   "text": "Yet"
+  },
+  {
+   "t": 2.0,
+   "d": 0.3,
+   "text": "there's"
+  },
+  {
+   "t": 2.3,
+   "d": 0.5,
+   "text": "gambling"
+  },
+  {
+   "t": 2.8,
+   "d": 0.4,
+   "text": "hall on"
+  },
+  {
+   "t": 3.2,
+   "d": 0.3,
+   "text": "almost"
+  },
+  {
+   "t": 3.5,
+   "d": 0.3,
+   "text": "every"
+  },
+  {
+   "t": 4.4,
+   "d": 0.6,
+   "text": "inside,"
+  },
+  {
+   "t": 5.0,
+   "d": 0.7,
+   "text": "thousands"
+  },
+  {
+   "t": 8.1,
+   "d": 0.3,
+   "text": "carry"
+  },
+  {
+   "t": 8.4,
+   "d": 0.2,
+   "text": "out"
+  },
+  {
+   "t": 8.6,
+   "d": 0.5,
+   "text": "buckets"
+  },
+  {
+   "t": 9.1,
+   "d": 0.2,
+   "text": "full of"
+  },
+  {
+   "t": 9.4,
+   "d": 0.2,
+   "text": "steel a"
+  },
+  {
+   "t": 10.4,
+   "d": 0.2,
+   "text": "Police"
+  },
+  {
+   "t": 10.6,
+   "d": 0.3,
+   "text": "stroll"
+  },
+  {
+   "t": 10.9,
+   "d": 0.3,
+   "text": "right"
+  },
+  {
+   "t": 11.2,
+   "d": 0.8,
+   "text": "past the door,"
+  },
+  {
+   "t": 12.0,
+   "d": 0.2,
+   "text": "but"
+  },
+  {
+   "t": 12.2,
+   "d": 0.4,
+   "text": "nobody"
+  },
+  {
+   "t": 12.6,
+   "d": 0.2,
+   "text": "eve"
+  },
+  {
+   "t": 12.9,
+   "d": 0.6,
+   "text": "arrested,"
+  },
+  {
+   "t": 13.5,
+   "d": 0.4,
+   "text": "So"
+  },
+  {
+   "t": 13.9,
+   "d": 0.4,
+   "text": "you win"
+  },
+  {
+   "t": 14.4,
+   "d": 0.3,
+   "text": "bucket"
+  },
+  {
+   "t": 14.7,
+   "d": 0.5,
+   "text": "yourself"
+  },
+  {
+   "t": 15.3,
+   "d": 0.3,
+   "text": "try to"
+  },
+  {
+   "t": 15.6,
+   "d": 0.4,
+   "text": "cash it"
+  },
+  {
+   "t": 16.0,
+   "d": 0.2,
+   "text": "in."
+  },
+  {
+   "t": 16.2,
+   "d": 0.2,
+   "text": "But"
+  },
+  {
+   "t": 16.4,
+   "d": 0.5,
+   "text": "the counter"
+  },
+  {
+   "t": 18.7,
+   "d": 0.5,
+   "text": "Instead,"
+  },
+  {
+   "t": 20.5,
+   "d": 0.4,
+   "text": "chocolate,"
+  },
+  {
+   "t": 21.5,
+   "d": 0.4,
+   "text": "shampoo,"
+  },
+  {
+   "t": 22.3,
+   "d": 0.2,
+   "text": "few"
+  },
+  {
+   "t": 22.9,
+   "d": 0.4,
+   "text": "plastic a"
+  },
+  {
+   "t": 23.4,
+   "d": 0.2,
+   "text": "tokens. CO"
+  },
+  {
+   "t": 23.9,
+   "d": 1.1,
+   "text": "The guy"
+  },
+  {
+   "t": 26.1,
+   "d": 0.5,
+   "text": "outside."
+  },
+  {
+   "t": 26.9,
+   "d": 0.2,
+   "text": "follow"
+  },
+  {
+   "t": 27.1,
+   "d": 0.2,
+   "text": "him"
+  },
+  {
+   "t": 27.3,
+   "d": 0.2,
+   "text": "around"
+  },
+  {
+   "t": 27.5,
+   "d": 0.4,
+   "text": "the corner"
+  },
+  {
+   "t": 27.9,
+   "d": 0.3,
+   "text": "toa"
+  },
+  {
+   "t": 28.2,
+   "d": 0.2,
+   "text": "little"
+  },
+  {
+   "t": 28.4,
+   "d": 0.5,
+   "text": "window"
+  },
+  {
+   "t": 28.9,
+   "d": 0.4,
+   "text": "a wall"
+  },
+  {
+   "t": 29.3,
+   "d": 0.4,
+   "text": "with no"
+  },
+  {
+   "t": 29.7,
+   "d": 0.5,
+   "text": "sign."
+  },
+  {
+   "t": 30.3,
+   "d": 0.2,
+   "text": "see, af"
+  },
+  {
+   "t": 30.5,
+   "d": 0.2,
+   "text": "see,"
+  },
+  {
+   "t": 30.7,
+   "d": 0.3,
+   "text": "that"
+  },
+  {
+   "t": 31.0,
+   "d": 0.4,
+   "text": "window"
+  },
+  {
+   "t": 31.4,
+   "d": 0.3,
+   "text": "isn't"
+  },
+  {
+   "t": 31.7,
+   "d": 0.3,
+   "text": "part of"
+  },
+  {
+   "t": 32.1,
+   "d": 0.4,
+   "text": "gambling"
+  },
+  {
+   "t": 32.5,
+   "d": 0.3,
+   "text": "hall."
+  },
+  {
+   "t": 32.8,
+   "d": 0.3,
+   "text": "It's"
+  },
+  {
+   "t": 33.1,
+   "d": 0.5,
+   "text": "technically"
+  },
+  {
+   "t": 33.6,
+   "d": 0.5,
+   "text": "a separate"
+  },
+  {
+   "t": 34.1,
+   "d": 0.4,
+   "text": "shop"
+  },
+  {
+   "t": 34.6,
+   "d": 0.3,
+   "text": "just"
+  },
+  {
+   "t": 34.9,
+   "d": 0.5,
+   "text": "happens"
+  },
+  {
+   "t": 35.4,
+   "d": 0.3,
+   "text": "to buy"
+  },
+  {
+   "t": 35.7,
+   "d": 0.2,
+   "text": "those"
+  },
+  {
+   "t": 35.9,
+   "d": 0.4,
+   "text": "exact"
+  },
+  {
+   "t": 36.3,
+   "d": 0.6,
+   "text": "tokens."
+  },
+  {
+   "t": 37.0,
+   "d": 0.5,
+   "text": "the hall"
+  },
+  {
+   "t": 37.5,
+   "d": 0.3,
+   "text": "only"
+  },
+  {
+   "t": 38.0,
+   "d": 0.2,
+   "text": "gives"
+  },
+  {
+   "t": 38.2,
+   "d": 0.2,
+   "text": "out"
+  },
+  {
+   "t": 38.8,
+   "d": 0.2,
+   "text": "prizes."
+  },
+  {
+   "t": 39.1,
+   "d": 0.5,
+   "text": "the shop"
+  },
+  {
+   "t": 39.6,
+   "d": 0.3,
+   "text": "is just"
+  },
+  {
+   "t": 39.9,
+   "d": 0.4,
+   "text": "buying"
+  },
+  {
+   "t": 40.3,
+   "d": 0.3,
+   "text": "one."
+  },
+  {
+   "t": 40.6,
+   "d": 0.5,
+   "text": "He slides"
+  },
+  {
+   "t": 41.2,
+   "d": 0.4,
+   "text": "tokens"
+  },
+  {
+   "t": 41.6,
+   "d": 0.4,
+   "text": "through"
+  },
+  {
+   "t": 42.0,
+   "d": 0.4,
+   "text": "a hand,"
+  },
+  {
+   "t": 42.4,
+   "d": 0.3,
+   "text": "slides"
+  },
+  {
+   "t": 42.7,
+   "d": 0.2,
+   "text": "over"
+  },
+  {
+   "t": 42.9,
+   "d": 0.5,
+   "text": "cash,"
+  },
+  {
+   "t": 43.4,
+   "d": 0.3,
+   "text": "and on"
+  },
+  {
+   "t": 43.7,
+   "d": 0.2,
+   "text": "pa pe"
+  },
+  {
+   "t": 43.9,
+   "d": 0.2,
+   "text": "paper."
+  },
+  {
+   "t": 44.1,
+   "d": 0.5,
+   "text": "Nobody"
+  },
+  {
+   "t": 44.6,
+   "d": 0.3,
+   "text": "gambled."
+  }
+ ]
+}

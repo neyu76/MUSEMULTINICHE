@@ -1,0 +1,151 @@
+{
+ "source": "EditorNghiepDu SFX (MCP editornghiepdu-sfx), tải bằng sfx_resolve",
+ "cues": {
+  "whoosh": {
+   "ids": [
+    "sfx-23427",
+    "sfx-23408"
+   ],
+   "files": [
+    "1-whoosh-swoosh.wav",
+    "1-whoosh-swoosh-long.wav"
+   ]
+  },
+  "whoosh_fast": {
+   "ids": [
+    "sfx-23417",
+    "sfx-23407"
+   ],
+   "files": [
+    "1-whoosh-swoosh-short.wav",
+    "10-whoosh-swoosh-short.wav"
+   ]
+  },
+  "thump": {
+   "ids": [
+    "sfx-945",
+    "sfx-943"
+   ],
+   "files": [
+    "puts-a-stamp.wav",
+    "puts-a-stamp-2.wav"
+   ]
+  },
+  "paper": {
+   "ids": [
+    "sfx-25764",
+    "sfx-25763"
+   ],
+   "files": [
+    "paper-slide-03.wav",
+    "paper-flip-sound-effect.wav"
+   ]
+  },
+  "pop": {
+   "ids": [
+    "sfx-6035",
+    "sfx-6037"
+   ],
+   "files": [
+    "uimvmt-pop-up-tutorial.wav",
+    "uimvmt-pop-up-upfront.wav"
+   ]
+  },
+  "flipclick": {
+   "ids": [
+    "sfx-25761",
+    "sfx-6023"
+   ],
+   "files": [
+    "paper-flip-1.wav",
+    "uimisc-zap-fast-flip.wav"
+   ]
+  },
+  "sparkle": {
+   "ids": [
+    "sfx-5646",
+    "sfx-6036"
+   ],
+   "files": [
+    "shimmer-short-shine.wav",
+    "uimvmt-pop-up-twinkletide.wav"
+   ]
+  },
+  "boing": {
+   "ids": [
+    "sfx-4002",
+    "sfx-4003"
+   ],
+   "files": [
+    "boing-jaw-harp-high-short.wav",
+    "boing-jaw-harp-low-short.wav"
+   ]
+  },
+  "ting": {
+   "ids": [
+    "sfx-25597"
+   ],
+   "files": [
+    "ding-589b5c03.wav"
+   ]
+  },
+  "bell": {
+   "ids": [
+    "sfx-25597"
+   ],
+   "files": [
+    "ding-589b5c03.wav"
+   ]
+  },
+  "coins": {
+   "ids": [
+    "sfx-828",
+    "sfx-5624"
+   ],
+   "files": [
+    "threw-coins-on-the-table.wav",
+    "shimmer-coins-freq-shift-delay.wav"
+   ]
+  },
+  "riser": {
+   "ids": [
+    "sfx-364"
+   ],
+   "files": [
+    "riser-whoosh-ultra-fast.wav"
+   ]
+  },
+  "boom": {
+   "ids": [
+    "sfx-9283"
+   ],
+   "files": [
+    "dsgnimpt-impact-low-boom-mid-b00m-cick.wav"
+   ]
+  },
+  "wind": {
+   "ids": [
+    "sfx-23144"
+   ],
+   "files": [
+    "qp02-0139-wind-modern-light-variable-wires.wav"
+   ]
+  },
+  "flash": {
+   "ids": [
+    "sfx-30410"
+   ],
+   "files": [
+    "camera-1-a810089a.wav"
+   ]
+  },
+  "crickets": {
+   "ids": [
+    "sfx-23299"
+   ],
+   "files": [
+    "crickets-awkward-silence-gaming-sound-effect-hd.wav"
+   ]
+  }
+ }
+}

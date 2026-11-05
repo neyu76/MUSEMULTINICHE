@@ -1,0 +1,579 @@
+{
+ "id": "V9",
+ "n_caption_events": 113,
+ "n_words_est": 156,
+ "speech_span_s": 55.9,
+ "wpm_est": 167.4,
+ "words_per_caption_mean": 1.38,
+ "share_1w": 0.66,
+ "share_2w": 0.29,
+ "share_3plus": 0.04,
+ "caption_dur_median": 0.3,
+ "events": [
+  {
+   "t": 0.1,
+   "d": 0.5,
+   "text": "fastest"
+  },
+  {
+   "t": 0.6,
+   "d": 0.2,
+   "text": "gun"
+  },
+  {
+   "t": 0.9,
+   "d": 0.4,
+   "text": "West"
+  },
+  {
+   "t": 1.5,
+   "d": 0.3,
+   "text": "had one"
+  },
+  {
+   "t": 2.4,
+   "d": 0.3,
+   "text": "Never"
+  },
+  {
+   "t": 2.7,
+   "d": 0.3,
+   "text": "draw"
+  },
+  {
+   "t": 3.0,
+   "d": 0.5,
+   "text": "first."
+  },
+  {
+   "t": 3.5,
+   "d": 0.5,
+   "text": "Imagine"
+  },
+  {
+   "t": 4.0,
+   "d": 0.2,
+   "text": "you're"
+  },
+  {
+   "t": 4.2,
+   "d": 0.5,
+   "text": "standing"
+  },
+  {
+   "t": 4.7,
+   "d": 0.4,
+   "text": "the street"
+  },
+  {
+   "t": 5.1,
+   "d": 0.5,
+   "text": "at noon"
+  },
+  {
+   "t": 5.6,
+   "d": 0.5,
+   "text": "staring"
+  },
+  {
+   "t": 6.1,
+   "d": 0.2,
+   "text": "down"
+  },
+  {
+   "t": 6.3,
+   "d": 0.3,
+   "text": "a guy"
+  },
+  {
+   "t": 6.6,
+   "d": 0.5,
+   "text": "everyone"
+  },
+  {
+   "t": 7.1,
+   "d": 0.4,
+   "text": "calls"
+  },
+  {
+   "t": 7.5,
+   "d": 0.4,
+   "text": "Slow"
+  },
+  {
+   "t": 7.9,
+   "d": 0.4,
+   "text": "Eddie."
+  },
+  {
+   "t": 8.3,
+   "d": 0.4,
+   "text": "His hands"
+  },
+  {
+   "t": 8.7,
+   "d": 0.3,
+   "text": "are at"
+  },
+  {
+   "t": 9.0,
+   "d": 0.6,
+   "text": "his sides."
+  },
+  {
+   "t": 10.2,
+   "d": 0.2,
+   "text": "looked"
+  },
+  {
+   "t": 10.7,
+   "d": 0.4,
+   "text": "at his gun."
+  },
+  {
+   "t": 12.8,
+   "d": 0.7,
+   "text": "After you."
+  },
+  {
+   "t": 13.5,
+   "d": 0.3,
+   "text": "So'you"
+  },
+  {
+   "t": 13.8,
+   "d": 0.3,
+   "text": "grab"
+  },
+  {
+   "t": 14.6,
+   "d": 0.5,
+   "text": "faster"
+  },
+  {
+   "t": 18.7,
+   "d": 0.3,
+   "text": "clears"
+  },
+  {
+   "t": 19.2,
+   "d": 0.3,
+   "text": "holster."
+  },
+  {
+   "t": 20.3,
+   "d": 0.3,
+   "text": "we possible?"
+  },
+  {
+   "t": 21.0,
+   "d": 0.3,
+   "text": "isn't"
+  },
+  {
+   "t": 21.3,
+   "d": 0.2,
+   "text": "even"
+  },
+  {
+   "t": 21.5,
+   "d": 0.6,
+   "text": "fast."
+  },
+  {
+   "t": 22.1,
+   "d": 0.2,
+   "text": "He'd"
+  },
+  {
+   "t": 22.3,
+   "d": 0.2,
+   "text": "lose"
+  },
+  {
+   "t": 22.5,
+   "d": 0.4,
+   "text": "a race"
+  },
+  {
+   "t": 23.0,
+   "d": 0.5,
+   "text": "the saloon"
+  },
+  {
+   "t": 23.5,
+   "d": 0.3,
+   "text": "against"
+  },
+  {
+   "t": 23.8,
+   "d": 0.3,
+   "text": "a guy"
+  },
+  {
+   "t": 24.1,
+   "d": 0.4,
+   "text": "carrying"
+  },
+  {
+   "t": 24.5,
+   "d": 0.3,
+   "text": "two"
+  },
+  {
+   "t": 24.8,
+   "d": 0.6,
+   "text": "beers."
+  },
+  {
+   "t": 25.4,
+   "d": 0.4,
+   "text": "But men"
+  },
+  {
+   "t": 25.8,
+   "d": 0.4,
+   "text": "ride in"
+  },
+  {
+   "t": 26.2,
+   "d": 0.2,
+   "text": "from"
+  },
+  {
+   "t": 26.4,
+   "d": 0.4,
+   "text": "three"
+  },
+  {
+   "t": 26.8,
+   "d": 0.4,
+   "text": "states"
+  },
+  {
+   "t": 27.2,
+   "d": 0.4,
+   "text": "away to"
+  },
+  {
+   "t": 27.6,
+   "d": 0.3,
+   "text": "duel"
+  },
+  {
+   "t": 27.9,
+   "d": 0.2,
+   "text": "him,"
+  },
+  {
+   "t": 28.2,
+   "d": 0.5,
+   "text": "every"
+  },
+  {
+   "t": 28.7,
+   "d": 0.4,
+   "text": "one of them"
+  },
+  {
+   "t": 29.1,
+   "d": 0.3,
+   "text": "goes"
+  },
+  {
+   "t": 29.4,
+   "d": 0.2,
+   "text": "down"
+  },
+  {
+   "t": 29.6,
+   "d": 0.6,
+   "text": "the exact"
+  },
+  {
+   "t": 30.2,
+   "d": 0.3,
+   "text": "same"
+  },
+  {
+   "t": 30.5,
+   "d": 0.4,
+   "text": "way."
+  },
+  {
+   "t": 30.9,
+   "d": 0.4,
+   "text": "The only"
+  },
+  {
+   "t": 31.3,
+   "d": 0.3,
+   "text": "weird"
+  },
+  {
+   "t": 31.6,
+   "d": 0.3,
+   "text": "thing"
+  },
+  {
+   "t": 31.9,
+   "d": 0.3,
+   "text": "anyone"
+  },
+  {
+   "t": 32.2,
+   "d": 0.2,
+   "text": "ever"
+  },
+  {
+   "t": 32.4,
+   "d": 0.6,
+   "text": "notices"
+  },
+  {
+   "t": 33.0,
+   "d": 0.3,
+   "text": "is that"
+  },
+  {
+   "t": 33.3,
+   "d": 0.3,
+   "text": "Eddie"
+  },
+  {
+   "t": 33.6,
+   "d": 0.3,
+   "text": "never"
+  },
+  {
+   "t": 33.9,
+   "d": 0.3,
+   "text": "looks"
+  },
+  {
+   "t": 34.2,
+   "d": 0.7,
+   "text": "your face."
+  },
+  {
+   "t": 34.9,
+   "d": 0.7,
+   "text": "He just stares"
+  },
+  {
+   "t": 35.6,
+   "d": 0.2,
+   "text": "at your"
+  },
+  {
+   "t": 35.8,
+   "d": 0.5,
+   "text": "hand."
+  },
+  {
+   "t": 36.4,
+   "d": 0.3,
+   "text": "see,"
+  },
+  {
+   "t": 36.7,
+   "d": 0.3,
+   "text": "Think"
+  },
+  {
+   "t": 37.0,
+   "d": 0.2,
+   "text": "about"
+  },
+  {
+   "t": 37.2,
+   "d": 0.4,
+   "text": "the last"
+  },
+  {
+   "t": 37.6,
+   "d": 0.2,
+   "text": "time"
+  },
+  {
+   "t": 37.8,
+   "d": 0.5,
+   "text": "your phone"
+  },
+  {
+   "t": 38.3,
+   "d": 0.3,
+   "text": "slid"
+  },
+  {
+   "t": 38.7,
+   "d": 0.5,
+   "text": "a table."
+  },
+  {
+   "t": 39.2,
+   "d": 0.6,
+   "text": "You caught it"
+  },
+  {
+   "t": 39.8,
+   "d": 0.3,
+   "text": "before"
+  },
+  {
+   "t": 40.1,
+   "d": 0.4,
+   "text": "you even"
+  },
+  {
+   "t": 40.6,
+   "d": 0.4,
+   "text": "realized"
+  },
+  {
+   "t": 41.1,
+   "d": 0.5,
+   "text": "was falling"
+  },
+  {
+   "t": 41.6,
+   "d": 0.3,
+   "text": "because"
+  },
+  {
+   "t": 42.0,
+   "d": 0.3,
+   "text": "never"
+  },
+  {
+   "t": 42.3,
+   "d": 0.5,
+   "text": "decided"
+  },
+  {
+   "t": 43.0,
+   "d": 0.2,
+   "text": "catch"
+  },
+  {
+   "t": 43.4,
+   "d": 0.4,
+   "text": "Your body"
+  },
+  {
+   "t": 44.7,
+   "d": 0.2,
+   "text": "when you"
+  },
+  {
+   "t": 44.9,
+   "d": 0.2,
+   "text": "went"
+  },
+  {
+   "t": 45.2,
+   "d": 0.6,
+   "text": "your gun,"
+  },
+  {
+   "t": 46.0,
+   "d": 0.4,
+   "text": "you had to"
+  },
+  {
+   "t": 46.4,
+   "d": 0.4,
+   "text": "decide"
+  },
+  {
+   "t": 47.2,
+   "d": 0.3,
+   "text": "exact"
+  },
+  {
+   "t": 47.5,
+   "d": 0.3,
+   "text": "moment"
+  },
+  {
+   "t": 47.8,
+   "d": 0.5,
+   "text": "to draw."
+  },
+  {
+   "t": 49.2,
+   "d": 0.2,
+   "text": "decision 6"
+  },
+  {
+   "t": 50.5,
+   "d": 0.3,
+   "text": "Raw"
+  },
+  {
+   "t": 51.1,
+   "d": 0.3,
+   "text": "never"
+  },
+  {
+   "t": 51.4,
+   "d": 0.5,
+   "text": "decides"
+  },
+  {
+   "t": 51.9,
+   "d": 0.6,
+   "text": "anything."
+  },
+  {
+   "t": 52.5,
+   "d": 0.3,
+   "text": "He just"
+  },
+  {
+   "t": 52.8,
+   "d": 0.3,
+   "text": "waits"
+  },
+  {
+   "t": 53.1,
+   "d": 0.2,
+   "text": "for"
+  },
+  {
+   "t": 53.3,
+   "d": 0.3,
+   "text": "your hand"
+  },
+  {
+   "t": 53.7,
+   "d": 0.5,
+   "text": "twitch"
+  },
+  {
+   "t": 54.3,
+   "d": 0.2,
+   "text": "lets"
+  },
+  {
+   "t": 54.6,
+   "d": 0.4,
+   "text": "body"
+  },
+  {
+   "t": 55.0,
+   "d": 0.4,
+   "text": "react"
+  },
+  {
+   "t": 55.5,
+   "d": 0.2,
+   "text": "on its"
+  },
+  {
+   "t": 55.7,
+   "d": 0.3,
+   "text": "own."
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+# dependencies (setup.sh: npm ci / .venv)
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+
+# binaries come from the asset zip (rickclips_assets_T015.zip, verified by MANIFEST.txt) — never commit them
+/assets/
+/MANIFEST.txt
+engine_v4/mg/*
+!engine_v4/mg/.keep
+episodes/*/art/
+episodes/*/audio/
+episodes/*/voice/
+*.zip
+*.zip.sha256
+*.mp4
+*.mov
+*.wav
+*.mp3
+*.glb
+*.png
+*.jpg
+!engine_v4/**/*.html
+
+# work output (default RC_WORK=~/rc_work, outside the repo; these catch it if pointed inside)
+rc_work/
+frames/
+deliver/
+qa_out/
+
+# secrets: API keys live only in ~/.secrets/
+.secrets/
+*.key
+CLAUDE.local.md
+.env

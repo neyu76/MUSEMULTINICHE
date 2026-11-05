@@ -1,0 +1,10 @@
+{
+  "name": "rickclips",
+  "version": "1.0.0",
+  "description": "Make a RickClips 3D vertical short from a script (Notion link or text): ElevenLabs voice/music/images, three.js CPU render, captions, Kdenlive project, 21-point QA. Workflow knowledge only — the code lives in the rickclips repo and each machine sets up its own environment.",
+  "author": {
+    "name": "neyu76"
+  },
+  "repository": "https://github.com/neyu76/wynn-media",
+  "keywords": ["video", "shorts", "three.js", "elevenlabs", "notion", "kdenlive"]
+}

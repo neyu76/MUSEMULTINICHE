@@ -1,0 +1,219 @@
+{
+ "id": "V13",
+ "n_caption_events": 41,
+ "n_words_est": 56,
+ "speech_span_s": 34.8,
+ "wpm_est": 96.6,
+ "words_per_caption_mean": 1.37,
+ "share_1w": 0.68,
+ "share_2w": 0.27,
+ "share_3plus": 0.05,
+ "caption_dur_median": 0.3,
+ "events": [
+  {
+   "t": 4.9,
+   "d": 0.2,
+   "text": "from"
+  },
+  {
+   "t": 5.1,
+   "d": 0.3,
+   "text": "town"
+  },
+  {
+   "t": 5.7,
+   "d": 0.2,
+   "text": "to town"
+  },
+  {
+   "t": 5.9,
+   "d": 0.4,
+   "text": "selling"
+  },
+  {
+   "t": 6.3,
+   "d": 0.7,
+   "text": "forgiveness"
+  },
+  {
+   "t": 7.0,
+   "d": 0.6,
+   "text": "coins."
+  },
+  {
+   "t": 8.5,
+   "d": 0.2,
+   "text": "price,"
+  },
+  {
+   "t": 8.9,
+   "d": 0.4,
+   "text": "Stealing"
+  },
+  {
+   "t": 14.2,
+   "d": 0.2,
+   "text": "their money"
+  },
+  {
+   "t": 14.4,
+   "d": 0.2,
+   "text": "into"
+  },
+  {
+   "t": 15.9,
+   "d": 0.2,
+   "text": "chest:"
+  },
+  {
+   "t": 16.1,
+   "d": 0.2,
+   "text": "Som"
+  },
+  {
+   "t": 17.8,
+   "d": 0.2,
+   "text": "asked"
+  },
+  {
+   "t": 18.8,
+   "d": 0.3,
+   "text": "something"
+  },
+  {
+   "t": 19.3,
+   "d": 0.2,
+   "text": "ss Gaming"
+  },
+  {
+   "t": 20.0,
+   "d": 0.2,
+   "text": "ma"
+  },
+  {
+   "t": 21.3,
+   "d": 0.2,
+   "text": "Mbcsitated,"
+  },
+  {
+   "t": 24.4,
+   "d": 0.2,
+   "text": "days"
+  },
+  {
+   "t": 24.6,
+   "d": 0.4,
+   "text": "later,"
+  },
+  {
+   "t": 25.0,
+   "d": 0.5,
+   "text": "the priest"
+  },
+  {
+   "t": 25.7,
+   "d": 0.3,
+   "text": "town"
+  },
+  {
+   "t": 26.2,
+   "d": 0.5,
+   "text": "forest"
+  },
+  {
+   "t": 26.7,
+   "d": 0.6,
+   "text": "with the chest"
+  },
+  {
+   "t": 27.3,
+   "d": 0.7,
+   "text": "so full"
+  },
+  {
+   "t": 28.5,
+   "d": 0.5,
+   "text": "two men."
+  },
+  {
+   "t": 29.2,
+   "d": 0.2,
+   "text": "carry"
+  },
+  {
+   "t": 29.6,
+   "d": 0.5,
+   "text": "That's"
+  },
+  {
+   "t": 30.2,
+   "d": 0.2,
+   "text": "the knight"
+  },
+  {
+   "t": 31.3,
+   "d": 0.7,
+   "text": "He took every"
+  },
+  {
+   "t": 32.0,
+   "d": 0.3,
+   "text": "last"
+  },
+  {
+   "t": 32.3,
+   "d": 0.4,
+   "text": "coin,"
+  },
+  {
+   "t": 32.7,
+   "d": 0.2,
+   "text": "and"
+  },
+  {
+   "t": 33.2,
+   "d": 0.3,
+   "text": "priest"
+  },
+  {
+   "t": 33.6,
+   "d": 0.2,
+   "text": "screained"
+  },
+  {
+   "t": 35.7,
+   "d": 0.2,
+   "text": "heldup"
+  },
+  {
+   "t": 36.4,
+   "d": 0.2,
+   "text": "the paper."
+  },
+  {
+   "t": 36.7,
+   "d": 0.4,
+   "text": "The crime"
+  },
+  {
+   "t": 37.2,
+   "d": 0.3,
+   "text": "paid"
+  },
+  {
+   "t": 37.5,
+   "d": 0.2,
+   "text": "to be"
+  },
+  {
+   "t": 37.7,
+   "d": 0.3,
+   "text": "forgiven"
+  },
+  {
+   "t": 39.3,
+   "d": 0.4,
+   "text": "man who."
+  }
+ ]
+}

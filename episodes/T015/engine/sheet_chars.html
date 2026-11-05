@@ -1,0 +1,15 @@
+<!doctype html><html><head><meta charset="utf-8"></head><body style="margin:0;background:#888"><canvas id=o width=2200 height=1400></canvas>
+<script type="module">
+// T015 character sheet: every expression/fx the episode uses. Render: node shot.js sheet_chars.html out.png 2200 1400 (in the built engine dir)
+import { makeCanvas, drawChar, TYPES } from './chars2.js';
+TYPES.drinker = { coat: '#e07b39', shirt: '#f4ecdc', tie: 'none', hat: 'none', hair: 'curly', hairCol: '#2a1d14', mustache: 'thin', belly: 0.07, pants: '#4a3a2a' };
+TYPES.owner = { coat: '#2f5f95', shirt: '#f4ecdc', tie: 'tie', tieCol: '#c8323a', vest: '#f1e9d6', hat: 'none', hair: 'bald', hairCol: '#3a2a20', mustache: 'walrus', belly: 0.14, pants: '#2e2e36' };
+const o = document.getElementById('o').getContext('2d'); o.fillStyle = '#e8dcc4'; o.fillRect(0, 0, 2200, 1400);
+const L = [['drinker', { expr: 'neutral' }], ['drinker', { expr: 'greedy', fx: { sparkle: 1, drool: 1 } }], ['drinker', { expr: 'grin' }], ['drinker', { expr: 'squint' }],
+  ['drinker', { expr: 'shock', fx: { sweat: 2 }, arms: { l: [-0.45, 1.5] }, open: { l: true } }], ['drinker', { expr: 'worried', fx: { sweat: 2, qmarks: 1 } }],
+  ['drinker', { expr: 'stare', fx: { shame: 1, sweat: 1 } }], ['owner', { expr: 'neutral' }], ['owner', { expr: 'smug' }], ['owner', { expr: 'grin' }],
+  ['owner', { expr: 'laugh', arms: { l: [-0.13, 0.86], r: [0.13, 0.86] } }], ['owner', { expr: 'wink', open: { r: true }, arms: { r: [0.34, 1.4] }, fx: { sparkle: 1 } }]];
+L.forEach(([ty, p], i) => { const c = makeCanvas(); drawChar(c.getContext('2d'), ty, { ...p, t: 0.3 }); o.drawImage(c, (i % 6) * 360 - 180, Math.floor(i / 6) * 640 - 40, 720, 720 * c.height / c.width);
+  o.fillStyle = '#222'; o.font = 'bold 30px sans-serif'; o.fillText(`${ty} - ${p.expr}`, (i % 6) * 360 + 30, Math.floor(i / 6) * 640 + 630); });
+window.READY = true;
+</script></body></html>

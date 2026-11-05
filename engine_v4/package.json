@@ -1,0 +1,18 @@
+{
+  "name": "rickclips-engine-v4",
+  "version": "7.1.0",
+  "description": "RickClips 2.5D three.js engine, rendered headless by Playwright Chromium + SwiftShader (CPU). Frame size comes from WIDTH/HEIGHT in core.js (kit v4: 720x1280; episode overlays v5: 1080x1920); SS = internal supersampling (2 for delivery, 1 for previews).",
+  "scripts": {
+    "stills": "bash stills.sh",
+    "render": "node render.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "three": "0.170.0",
+    "postprocessing": "6.39.5",
+    "n8ao": "2.0.1",
+    "gsap": "3.15.0",
+    "playwright": "1.64.1"
+  },
+  "private": true
+}

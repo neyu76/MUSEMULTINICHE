@@ -1,0 +1,9 @@
+# Direct Python deps, pinned to the versions the T015 reference was produced with (Python 3.14, Ubuntu 26.04).
+# Full transitive pins: requirements.lock (setup.sh installs from it).
+numpy==2.5.4
+pillow==13.0.0
+opencv-python-headless==5.0.0.93
+scipy==1.18.1
+librosa==1.0.0
+soundfile==0.14.0
+pocketsphinx==5.1.1

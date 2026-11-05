@@ -1,0 +1,139 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 720
+PlayResY: 1280
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Word,Work Sans ExtraBold,75,&H00FFFFFF,&H00FFFFFF,&H00000000,&H78000000,0,0,0,0,99,100,0,0,1,5,2.5,2,30,30,344,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:00.30,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}A man
+Dialogue: 0,0:00:00.30,0:00:00.59,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}sold
+Dialogue: 0,0:00:00.59,0:00:00.92,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}the Eiffel
+Dialogue: 0,0:00:00.92,0:00:01.32,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}Tower,
+Dialogue: 0,0:00:01.32,0:00:01.47,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}and the
+Dialogue: 0,0:00:01.47,0:00:01.73,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}buyer
+Dialogue: 0,0:00:01.73,0:00:02.12,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}was so
+Dialogue: 0,0:00:02.12,0:00:02.69,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}embarrassed,
+Dialogue: 0,0:00:02.69,0:00:02.93,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}he let
+Dialogue: 0,0:00:02.93,0:00:03.02,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}him
+Dialogue: 0,0:00:03.02,0:00:03.15,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}do
+Dialogue: 0,0:00:03.15,0:00:03.77,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}it again.
+Dialogue: 0,0:00:03.77,0:00:05.21,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}In 1925,
+Dialogue: 0,0:00:05.21,0:00:05.52,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}Paris
+Dialogue: 0,0:00:05.52,0:00:05.98,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}newspapers
+Dialogue: 0,0:00:05.98,0:00:06.12,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}said
+Dialogue: 0,0:00:06.12,0:00:06.52,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}the tower
+Dialogue: 0,0:00:06.52,0:00:07.08,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}was rusting
+Dialogue: 0,0:00:07.08,0:00:07.54,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}and costing
+Dialogue: 0,0:00:07.54,0:00:08.25,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}a fortune.
+Dialogue: 0,0:00:08.25,0:00:08.73,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}So Victor
+Dialogue: 0,0:00:08.73,0:00:09.10,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}Lustig
+Dialogue: 0,0:00:09.10,0:00:09.39,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}printed
+Dialogue: 0,0:00:09.39,0:00:09.66,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}fake
+Dialogue: 0,0:00:09.66,0:00:09.97,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}government
+Dialogue: 0,0:00:09.97,0:00:10.59,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}letterhead,
+Dialogue: 0,0:00:10.59,0:00:10.76,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}booked
+Dialogue: 0,0:00:10.76,0:00:11.16,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}a fancy
+Dialogue: 0,0:00:11.16,0:00:11.47,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}hotel
+Dialogue: 0,0:00:11.47,0:00:11.93,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}suite,
+Dialogue: 0,0:00:11.93,0:00:12.39,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}and invited
+Dialogue: 0,0:00:12.39,0:00:12.71,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}5
+Dialogue: 0,0:00:12.71,0:00:13.11,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}scrap
+Dialogue: 0,0:00:13.11,0:00:13.48,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}dealers
+Dialogue: 0,0:00:13.48,0:00:13.63,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}to a
+Dialogue: 0,0:00:13.63,0:00:14.06,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}secret
+Dialogue: 0,0:00:14.06,0:00:14.57,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}meeting.
+Dialogue: 0,0:00:14.57,0:00:15.00,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}The tower
+Dialogue: 0,0:00:15.00,0:00:15.32,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}is coming
+Dialogue: 0,0:00:15.32,0:00:15.79,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}down,
+Dialogue: 0,0:00:15.79,0:00:15.88,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}he
+Dialogue: 0,0:00:15.88,0:00:16.43,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}whispered.
+Dialogue: 0,0:00:16.43,0:00:17.08,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}7,000
+Dialogue: 0,0:00:17.08,0:00:17.27,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}tons
+Dialogue: 0,0:00:17.27,0:00:17.80,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}of metal.
+Dialogue: 0,0:00:17.80,0:00:18.22,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}Highest
+Dialogue: 0,0:00:18.22,0:00:18.42,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}bidder
+Dialogue: 0,0:00:18.42,0:00:19.13,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}wins.
+Dialogue: 0,0:00:19.13,0:00:19.38,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}One
+Dialogue: 0,0:00:19.38,0:00:19.92,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}dealer,
+Dialogue: 0,0:00:19.92,0:00:20.27,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}André
+Dialogue: 0,0:00:20.27,0:00:21.08,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}Poisson,
+Dialogue: 0,0:00:21.08,0:00:21.36,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}wanted
+Dialogue: 0,0:00:21.36,0:00:22.05,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}it badly.
+Dialogue: 0,0:00:22.05,0:00:22.17,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}But
+Dialogue: 0,0:00:22.17,0:00:22.45,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}something
+Dialogue: 0,0:00:22.45,0:00:22.71,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}felt
+Dialogue: 0,0:00:22.71,0:00:23.23,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}off.
+Dialogue: 0,0:00:23.23,0:00:23.40,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}Then
+Dialogue: 0,0:00:23.40,0:00:23.73,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}Lustig
+Dialogue: 0,0:00:23.73,0:00:24.10,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}sighed
+Dialogue: 0,0:00:24.10,0:00:24.43,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}and said
+Dialogue: 0,0:00:24.43,0:00:24.87,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}a government
+Dialogue: 0,0:00:24.87,0:00:25.32,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}salary
+Dialogue: 0,0:00:25.32,0:00:26.15,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}is tiny,
+Dialogue: 0,0:00:26.15,0:00:26.31,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}and a
+Dialogue: 0,0:00:26.31,0:00:26.75,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}gentleman
+Dialogue: 0,0:00:26.75,0:00:26.99,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}has
+Dialogue: 0,0:00:26.99,0:00:27.86,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}expenses.
+Dialogue: 0,0:00:27.86,0:00:27.95,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}You
+Dialogue: 0,0:00:27.95,0:00:28.58,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}see,
+Dialogue: 0,0:00:28.58,0:00:28.87,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}that's
+Dialogue: 0,0:00:28.87,0:00:28.99,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}what
+Dialogue: 0,0:00:28.99,0:00:29.30,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}sold
+Dialogue: 0,0:00:29.30,0:00:29.61,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}it.
+Dialogue: 0,0:00:29.61,0:00:30.00,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}A con
+Dialogue: 0,0:00:30.00,0:00:30.21,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}man
+Dialogue: 0,0:00:30.21,0:00:30.36,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}would
+Dialogue: 0,0:00:30.36,0:00:30.76,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}never
+Dialogue: 0,0:00:30.76,0:00:31.01,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}ask
+Dialogue: 0,0:00:31.01,0:00:31.16,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}for a
+Dialogue: 0,0:00:31.16,0:00:31.73,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}bribe.
+Dialogue: 0,0:00:31.73,0:00:31.97,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}Only
+Dialogue: 0,0:00:31.97,0:00:32.25,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}a real
+Dialogue: 0,0:00:32.25,0:00:32.61,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}official
+Dialogue: 0,0:00:32.61,0:00:33.15,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}would.
+Dialogue: 0,0:00:33.15,0:00:33.58,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}Poisson
+Dialogue: 0,0:00:33.58,0:00:33.82,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}paid
+Dialogue: 0,0:00:33.82,0:00:34.00,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}for the
+Dialogue: 0,0:00:34.00,0:00:34.52,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}tower,
+Dialogue: 0,0:00:34.52,0:00:34.73,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}paid
+Dialogue: 0,0:00:34.73,0:00:35.44,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}the bribe,
+Dialogue: 0,0:00:35.44,0:00:36.20,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}and Lustig
+Dialogue: 0,0:00:36.20,0:00:36.44,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}left
+Dialogue: 0,0:00:36.44,0:00:36.93,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}for Austria
+Dialogue: 0,0:00:36.93,0:00:37.11,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}with the
+Dialogue: 0,0:00:37.11,0:00:37.77,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}cash.
+Dialogue: 0,0:00:37.77,0:00:37.98,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}Then
+Dialogue: 0,0:00:37.98,0:00:38.37,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}he waited
+Dialogue: 0,0:00:38.37,0:00:38.54,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}for the
+Dialogue: 0,0:00:38.54,0:00:39.19,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}police.
+Dialogue: 0,0:00:39.19,0:00:39.87,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}Nothing.
+Dialogue: 0,0:00:39.87,0:00:40.31,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}Poisson
+Dialogue: 0,0:00:40.31,0:00:40.60,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}was too
+Dialogue: 0,0:00:40.60,0:00:40.90,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}ashamed
+Dialogue: 0,0:00:40.90,0:00:41.15,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}to tell
+Dialogue: 0,0:00:41.15,0:00:41.48,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}anyone
+Dialogue: 0,0:00:41.48,0:00:41.61,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}he'd
+Dialogue: 0,0:00:41.61,0:00:41.78,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}bought
+Dialogue: 0,0:00:41.78,0:00:42.11,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}the Eiffel
+Dialogue: 0,0:00:42.11,0:00:42.74,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}Tower.
+Dialogue: 0,0:00:42.74,0:00:43.23,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}So 6
+Dialogue: 0,0:00:43.23,0:00:43.45,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}months
+Dialogue: 0,0:00:43.45,0:00:44.04,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}later,
+Dialogue: 0,0:00:44.04,0:00:44.29,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}Lustig
+Dialogue: 0,0:00:44.29,0:00:44.43,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}came
+Dialogue: 0,0:00:44.43,0:00:44.61,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}back
+Dialogue: 0,0:00:44.61,0:00:44.89,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}and sold
+Dialogue: 0,0:00:44.89,0:00:45.42,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}it again.
+Dialogue: 0,0:00:45.42,0:00:45.82,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}The Eiffel
+Dialogue: 0,0:00:45.82,0:00:46.14,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}Tower
+Dialogue: 0,0:00:46.14,0:00:46.67,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}was never
+Dialogue: 0,0:00:46.67,0:00:47.36,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}for sale.
+Dialogue: 0,0:00:47.36,0:00:47.62,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}It just
+Dialogue: 0,0:00:47.62,0:00:47.78,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}got
+Dialogue: 0,0:00:47.78,0:00:48.04,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}sold
+Dialogue: 0,0:00:48.04,0:00:49.75,Word,,0,0,0,,{\fscx88\fscy88\t(0,70,\fscx100\fscy100)}twice.

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "rickclips",
+  "description": "RickClips: 3D vertical story shorts from a Notion script — workflow knowledge (skills) for Claude Code",
+  "owner": {
+    "name": "neyu76"
+  },
+  "plugins": [
+    {
+      "name": "rickclips",
+      "description": "Make a RickClips 3D vertical short from a script (Notion link or text): ElevenLabs voice/music/images, three.js CPU render, captions, Kdenlive project, 21-point QA. Brain only — each machine sets up its own environment.",
+      "version": "1.0.0",
+      "author": {
+        "name": "neyu76"
+      },
+      "category": "productivity",
+      "source": "./plugins/rickclips"
+    }
+  ]
+}

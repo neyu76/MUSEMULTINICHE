@@ -1,0 +1,614 @@
+{
+ "id": "V11",
+ "n_caption_events": 120,
+ "n_words_est": 160,
+ "speech_span_s": 63.7,
+ "wpm_est": 150.7,
+ "words_per_caption_mean": 1.33,
+ "share_1w": 0.68,
+ "share_2w": 0.32,
+ "share_3plus": 0.01,
+ "caption_dur_median": 0.3,
+ "events": [
+  {
+   "t": 0.0,
+   "d": 0.3,
+   "text": "He bet"
+  },
+  {
+   "t": 0.3,
+   "d": 0.2,
+   "text": "his"
+  },
+  {
+   "t": 0.5,
+   "d": 0.3,
+   "text": "life"
+  },
+  {
+   "t": 0.8,
+   "d": 0.6,
+   "text": "savings"
+  },
+  {
+   "t": 1.7,
+   "d": 0.5,
+   "text": "slowest"
+  },
+  {
+   "t": 2.2,
+   "d": 0.3,
+   "text": "horse"
+  },
+  {
+   "t": 2.5,
+   "d": 0.2,
+   "text": "in the"
+  },
+  {
+   "t": 3.2,
+   "d": 0.3,
+   "text": "The whole"
+  },
+  {
+   "t": 3.5,
+   "d": 0.4,
+   "text": "betting"
+  },
+  {
+   "t": 3.9,
+   "d": 0.3,
+   "text": "room is"
+  },
+  {
+   "t": 4.2,
+   "d": 0.8,
+   "text": "laughing at him"
+  },
+  {
+   "t": 5.0,
+   "d": 0.3,
+   "text": "because"
+  },
+  {
+   "t": 5.3,
+   "d": 0.4,
+   "text": "all day"
+  },
+  {
+   "t": 5.7,
+   "d": 0.6,
+   "text": "long he"
+  },
+  {
+   "t": 6.3,
+   "d": 0.2,
+   "text": "hasn't"
+  },
+  {
+   "t": 6.5,
+   "d": 0.3,
+   "text": "bet"
+  },
+  {
+   "t": 6.8,
+   "d": 0.6,
+   "text": "a single"
+  },
+  {
+   "t": 7.4,
+   "d": 0.4,
+   "text": "dollar."
+  },
+  {
+   "t": 7.8,
+   "d": 0.3,
+   "text": "He just"
+  },
+  {
+   "t": 9.1,
+   "d": 0.2,
+   "text": "Smiling ae"
+  },
+  {
+   "t": 9.4,
+   "d": 0.2,
+   "text": "Smiling"
+  },
+  {
+   "t": 10.0,
+   "d": 0.2,
+   "text": "he has"
+  },
+  {
+   "t": 12.6,
+   "d": 0.4,
+   "text": "Well,"
+  },
+  {
+   "t": 13.0,
+   "d": 0.7,
+   "text": "the racetrack"
+  },
+  {
+   "t": 14.1,
+   "d": 0.2,
+   "text": "over"
+  },
+  {
+   "t": 14.7,
+   "d": 0.4,
+   "text": "town,"
+  },
+  {
+   "t": 15.1,
+   "d": 0.2,
+   "text": "and"
+  },
+  {
+   "t": 15.3,
+   "d": 0.4,
+   "text": "his buddy"
+  },
+  {
+   "t": 15.7,
+   "d": 0.3,
+   "text": "is up"
+  },
+  {
+   "t": 16.1,
+   "d": 0.2,
+   "text": "that"
+  },
+  {
+   "t": 16.3,
+   "d": 0.2,
+   "text": "hill"
+  },
+  {
+   "t": 16.7,
+   "d": 0.5,
+   "text": "biggest"
+  },
+  {
+   "t": 17.2,
+   "d": 0.3,
+   "text": "mirror"
+  },
+  {
+   "t": 18.1,
+   "d": 0.2,
+   "text": "find."
+  },
+  {
+   "t": 18.3,
+   "d": 0.4,
+   "text": "Race"
+  },
+  {
+   "t": 18.7,
+   "d": 0.2,
+   "text": "after"
+  },
+  {
+   "t": 18.9,
+   "d": 0.5,
+   "text": "race,"
+  },
+  {
+   "t": 19.5,
+   "d": 0.4,
+   "text": "favorite"
+  },
+  {
+   "t": 19.9,
+   "d": 0.5,
+   "text": "wins"
+  },
+  {
+   "t": 20.4,
+   "d": 0.2,
+   "text": "and the"
+  },
+  {
+   "t": 20.9,
+   "d": 0.4,
+   "text": "stays"
+  },
+  {
+   "t": 21.3,
+   "d": 0.4,
+   "text": "dark."
+  },
+  {
+   "t": 22.7,
+   "d": 0.4,
+   "text": "regulars"
+  },
+  {
+   "t": 23.2,
+   "d": 0.3,
+   "text": "betting"
+  },
+  {
+   "t": 23.6,
+   "d": 0.3,
+   "text": "whether"
+  },
+  {
+   "t": 24.1,
+   "d": 0.4,
+   "text": "ever"
+  },
+  {
+   "t": 24.5,
+   "d": 0.3,
+   "text": "bet."
+  },
+  {
+   "t": 25.6,
+   "d": 0.2,
+   "text": "mirror man:"
+  },
+  {
+   "t": 26.5,
+   "d": 0.4,
+   "text": "wiping it."
+  },
+  {
+   "t": 27.5,
+   "d": 0.3,
+   "text": "race,"
+  },
+  {
+   "t": 27.9,
+   "d": 0.5,
+   "text": "favorites"
+  },
+  {
+   "t": 28.4,
+   "d": 0.6,
+   "text": "so far"
+  },
+  {
+   "t": 29.0,
+   "d": 0.3,
+   "text": "ahead"
+  },
+  {
+   "t": 29.3,
+   "d": 0.2,
+   "text": "it's"
+  },
+  {
+   "t": 29.5,
+   "d": 0.5,
+   "text": "Jockey"
+  },
+  {
+   "t": 31.3,
+   "d": 0.2,
+   "text": "and horse"
+  },
+  {
+   "t": 31.5,
+   "d": 0.3,
+   "text": "nine"
+  },
+  {
+   "t": 31.8,
+   "d": 0.5,
+   "text": "is so"
+  },
+  {
+   "t": 32.3,
+   "d": 0.2,
+   "text": "far"
+  },
+  {
+   "t": 32.5,
+   "d": 0.5,
+   "text": "behind,"
+  },
+  {
+   "t": 33.1,
+   "d": 0.6,
+   "text": "practically"
+  },
+  {
+   "t": 35.8,
+   "d": 0.3,
+   "text": "flashes"
+  },
+  {
+   "t": 36.1,
+   "d": 0.2,
+   "text": "and"
+  },
+  {
+   "t": 36.3,
+   "d": 0.3,
+   "text": "he puts"
+  },
+  {
+   "t": 36.6,
+   "d": 0.5,
+   "text": "every"
+  },
+  {
+   "t": 38.2,
+   "d": 0.3,
+   "text": "7 nine."
+  },
+  {
+   "t": 38.9,
+   "d": 0.3,
+   "text": "behind"
+  },
+  {
+   "t": 39.2,
+   "d": 0.4,
+   "text": "counter"
+  },
+  {
+   "t": 39.6,
+   "d": 0.4,
+   "text": "almost"
+  },
+  {
+   "t": 40.0,
+   "d": 0.2,
+   "text": "feels"
+  },
+  {
+   "t": 40.2,
+   "d": 0.4,
+   "text": "bad"
+  },
+  {
+   "t": 41.0,
+   "d": 0.2,
+   "text": "7 it,"
+  },
+  {
+   "t": 42.2,
+   "d": 0.3,
+   "text": "lost"
+  },
+  {
+   "t": 42.6,
+   "d": 0.2,
+   "text": "a race"
+  },
+  {
+   "t": 42.8,
+   "d": 0.2,
+   "text": "to the"
+  },
+  {
+   "t": 43.0,
+   "d": 0.4,
+   "text": "milk"
+  },
+  {
+   "t": 43.4,
+   "d": 0.3,
+   "text": "cart"
+  },
+  {
+   "t": 43.8,
+   "d": 0.3,
+   "text": "it was"
+  },
+  {
+   "t": 44.1,
+   "d": 0.5,
+   "text": "pulling"
+  },
+  {
+   "t": 44.7,
+   "d": 0.2,
+   "text": "milk"
+  },
+  {
+   "t": 44.9,
+   "d": 0.3,
+   "text": "cart."
+  },
+  {
+   "t": 45.3,
+   "d": 0.4,
+   "text": "see,"
+  },
+  {
+   "t": 45.7,
+   "d": 0.3,
+   "text": "back"
+  },
+  {
+   "t": 46.0,
+   "d": 0.4,
+   "text": "then,"
+  },
+  {
+   "t": 46.5,
+   "d": 0.2,
+   "text": "betting"
+  },
+  {
+   "t": 47.2,
+   "d": 0.2,
+   "text": "find out"
+  },
+  {
+   "t": 48.3,
+   "d": 0.2,
+   "text": "until"
+  },
+  {
+   "t": 48.6,
+   "d": 0.3,
+   "text": "winner"
+  },
+  {
+   "t": 48.9,
+   "d": 0.2,
+   "text": "came"
+  },
+  {
+   "t": 49.5,
+   "d": 0.4,
+   "text": "in over"
+  },
+  {
+   "t": 49.9,
+   "d": 0.5,
+   "text": "a wire."
+  },
+  {
+   "t": 50.5,
+   "d": 0.4,
+   "text": "until it"
+  },
+  {
+   "t": 50.9,
+   "d": 0.3,
+   "text": "did,"
+  },
+  {
+   "t": 52.2,
+   "d": 0.2,
+   "text": "RACE open."
+  },
+  {
+   "t": 52.7,
+   "d": 0.2,
+   "text": "on that"
+  },
+  {
+   "t": 52.9,
+   "d": 0.3,
+   "text": "hill."
+  },
+  {
+   "t": 53.2,
+   "d": 0.2,
+   "text": "His"
+  },
+  {
+   "t": 53.4,
+   "d": 0.3,
+   "text": "buddy"
+  },
+  {
+   "t": 53.7,
+   "d": 0.3,
+   "text": "just"
+  },
+  {
+   "t": 54.0,
+   "d": 0.3,
+   "text": "watched"
+  },
+  {
+   "t": 54.3,
+   "d": 0.3,
+   "text": "Horse"
+  },
+  {
+   "t": 54.9,
+   "d": 0.2,
+   "text": "come"
+  },
+  {
+   "t": 55.1,
+   "d": 0.2,
+   "text": "out of"
+  },
+  {
+   "t": 55.3,
+   "d": 0.3,
+   "text": "nowhere"
+  },
+  {
+   "t": 55.6,
+   "d": 0.4,
+   "text": "a nowhere"
+  },
+  {
+   "t": 56.1,
+   "d": 0.6,
+   "text": "steal it"
+  },
+  {
+   "t": 57.9,
+   "d": 0.2,
+   "text": "while"
+  },
+  {
+   "t": 58.1,
+   "d": 0.3,
+   "text": "the room"
+  },
+  {
+   "t": 58.5,
+   "d": 0.3,
+   "text": "still"
+  },
+  {
+   "t": 58.8,
+   "d": 0.5,
+   "text": "laughing,"
+  },
+  {
+   "t": 59.3,
+   "d": 0.6,
+   "text": "the wire"
+  },
+  {
+   "t": 59.9,
+   "d": 0.3,
+   "text": "starts"
+  },
+  {
+   "t": 60.2,
+   "d": 0.4,
+   "text": "clicking,"
+  },
+  {
+   "t": 60.6,
+   "d": 0.3,
+   "text": "and by"
+  },
+  {
+   "t": 60.9,
+   "d": 0.3,
+   "text": "the time"
+  },
+  {
+   "t": 61.3,
+   "d": 0.4,
+   "text": "spells"
+  },
+  {
+   "t": 61.8,
+   "d": 0.6,
+   "text": "nine,"
+  },
+  {
+   "t": 62.4,
+   "d": 0.6,
+   "text": "nobody's"
+  },
+  {
+   "t": 63.0,
+   "d": 0.4,
+   "text": "laughing"
+  },
+  {
+   "t": 63.4,
+   "d": 0.3,
+   "text": "anymore."
+  }
+ ]
+}

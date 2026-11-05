@@ -1,0 +1,119 @@
+{
+ "id": "V16",
+ "n_caption_events": 21,
+ "n_words_est": 29,
+ "speech_span_s": 28.6,
+ "wpm_est": 60.8,
+ "words_per_caption_mean": 1.38,
+ "share_1w": 0.67,
+ "share_2w": 0.29,
+ "share_3plus": 0.05,
+ "caption_dur_median": 0.4,
+ "events": [
+  {
+   "t": 7.6,
+   "d": 0.2,
+   "text": "a speeds."
+  },
+  {
+   "t": 14.7,
+   "d": 0.4,
+   "text": "before"
+  },
+  {
+   "t": 15.2,
+   "d": 0.2,
+   "text": "fell,"
+  },
+  {
+   "t": 15.4,
+   "d": 0.2,
+   "text": "tell,"
+  },
+  {
+   "t": 16.3,
+   "d": 0.2,
+   "text": "little"
+  },
+  {
+   "t": 17.6,
+   "d": 0.4,
+   "text": "a wrists."
+  },
+  {
+   "t": 18.3,
+   "d": 0.3,
+   "text": "flashed 7"
+  },
+  {
+   "t": 18.6,
+   "d": 0.3,
+   "text": "numbers"
+  },
+  {
+   "t": 19.5,
+   "d": 0.4,
+   "text": "fast to"
+  },
+  {
+   "t": 19.9,
+   "d": 0.3,
+   "text": "read."
+  },
+  {
+   "t": 20.4,
+   "d": 0.4,
+   "text": "iftime:"
+  },
+  {
+   "t": 21.9,
+   "d": 0.5,
+   "text": "They'd be able"
+  },
+  {
+   "t": 23.8,
+   "d": 0.2,
+   "text": "when"
+  },
+  {
+   "t": 24.1,
+   "d": 0.5,
+   "text": "landed."
+  },
+  {
+   "t": 24.6,
+   "d": 0.5,
+   "text": "Every?"
+  },
+  {
+   "t": 27.1,
+   "d": 0.4,
+   "text": "longer"
+  },
+  {
+   "t": 28.8,
+   "d": 0.4,
+   "text": "asked them"
+  },
+  {
+   "t": 29.2,
+   "d": 0.2,
+   "text": "what"
+  },
+  {
+   "t": 29.4,
+   "d": 0.2,
+   "text": "number"
+  },
+  {
+   "t": 29.7,
+   "d": 0.6,
+   "text": "they saw,"
+  },
+  {
+   "t": 32.2,
+   "d": 4.0,
+   "text": "when"
+  }
+ ]
+}

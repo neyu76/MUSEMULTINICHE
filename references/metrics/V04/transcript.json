@@ -1,0 +1,414 @@
+{
+ "id": "V4",
+ "n_caption_events": 80,
+ "n_words_est": 105,
+ "speech_span_s": 43.7,
+ "wpm_est": 144.2,
+ "words_per_caption_mean": 1.31,
+ "share_1w": 0.72,
+ "share_2w": 0.24,
+ "share_3plus": 0.04,
+ "caption_dur_median": 0.3,
+ "events": [
+  {
+   "t": 1.5,
+   "d": 0.2,
+   "text": "could"
+  },
+  {
+   "t": 3.1,
+   "d": 0.2,
+   "text": "king"
+  },
+  {
+   "t": 4.7,
+   "d": 0.3,
+   "text": "pierce"
+  },
+  {
+   "t": 5.7,
+   "d": 0.4,
+   "text": "enemy."
+  },
+  {
+   "t": 6.5,
+   "d": 0.4,
+   "text": "The two! kingdoms-"
+  },
+  {
+   "t": 9.3,
+   "d": 0.3,
+   "text": "each"
+  },
+  {
+   "t": 9.6,
+   "d": 0.3,
+   "text": "king"
+  },
+  {
+   "t": 10.0,
+   "d": 0.4,
+   "text": "finally"
+  },
+  {
+   "t": 10.4,
+   "d": 0.3,
+   "text": "hadthe"
+  },
+  {
+   "t": 10.7,
+   "d": 0.3,
+   "text": "weapon"
+  },
+  {
+   "t": 11.0,
+   "d": 0.4,
+   "text": "to end"
+  },
+  {
+   "t": 11.4,
+   "d": 0.3,
+   "text": "it"
+  },
+  {
+   "t": 11.7,
+   "d": 0.2,
+   "text": "$0 both"
+  },
+  {
+   "t": 11.9,
+   "d": 0.3,
+   "text": "So both"
+  },
+  {
+   "t": 12.2,
+   "d": 0.4,
+   "text": "armies"
+  },
+  {
+   "t": 12.6,
+   "d": 0.3,
+   "text": "marched"
+  },
+  {
+   "t": 12.9,
+   "d": 0.2,
+   "text": "to the"
+  },
+  {
+   "t": 13.1,
+   "d": 0.4,
+   "text": "same"
+  },
+  {
+   "t": 13.5,
+   "d": 0.4,
+   "text": "field."
+  },
+  {
+   "t": 13.9,
+   "d": 0.2,
+   "text": "The"
+  },
+  {
+   "t": 14.1,
+   "d": 0.3,
+   "text": "spear"
+  },
+  {
+   "t": 14.4,
+   "d": 0.2,
+   "text": "atthe"
+  },
+  {
+   "t": 14.6,
+   "d": 0.2,
+   "text": "front"
+  },
+  {
+   "t": 14.8,
+   "d": 0.5,
+   "text": "of one"
+  },
+  {
+   "t": 15.4,
+   "d": 0.5,
+   "text": "the shield"
+  },
+  {
+   "t": 15.9,
+   "d": 0.2,
+   "text": "at the"
+  },
+  {
+   "t": 16.1,
+   "d": 0.3,
+   "text": "front"
+  },
+  {
+   "t": 16.5,
+   "d": 0.4,
+   "text": "the other."
+  },
+  {
+   "t": 16.9,
+   "d": 0.5,
+   "text": "Then"
+  },
+  {
+   "t": 17.4,
+   "d": 0.6,
+   "text": "nobody"
+  },
+  {
+   "t": 18.0,
+   "d": 0.6,
+   "text": "moved."
+  },
+  {
+   "t": 18.6,
+   "d": 0.2,
+   "text": "A"
+  },
+  {
+   "t": 18.8,
+   "d": 0.7,
+   "text": "whole week"
+  },
+  {
+   "t": 19.5,
+   "d": 0.5,
+   "text": "went by"
+  },
+  {
+   "t": 20.0,
+   "d": 0.3,
+   "text": "with"
+  },
+  {
+   "t": 20.3,
+   "d": 0.8,
+   "text": "10,000"
+  },
+  {
+   "t": 21.3,
+   "d": 0.3,
+   "text": "soldiers"
+  },
+  {
+   "t": 21.6,
+   "d": 0.2,
+   "text": "just"
+  },
+  {
+   "t": 21.8,
+   "d": 0.6,
+   "text": "staring"
+  },
+  {
+   "t": 22.4,
+   "d": 0.3,
+   "text": "at two"
+  },
+  {
+   "t": 22.7,
+   "d": 0.4,
+   "text": "pieces"
+  },
+  {
+   "t": 23.2,
+   "d": 0.4,
+   "text": "metal."
+  },
+  {
+   "t": 23.6,
+   "d": 0.3,
+   "text": "One"
+  },
+  {
+   "t": 24.2,
+   "d": 0.3,
+   "text": "each,"
+  },
+  {
+   "t": 24.5,
+   "d": 0.3,
+   "text": "King"
+  },
+  {
+   "t": 24.8,
+   "d": 0.3,
+   "text": "secretly."
+  },
+  {
+   "t": 25.3,
+   "d": 0.3,
+   "text": "senta"
+  },
+  {
+   "t": 25.6,
+   "d": 0.5,
+   "text": "messenger"
+  },
+  {
+   "t": 26.2,
+   "d": 0.6,
+   "text": "blacksmith"
+  },
+  {
+   "t": 27.0,
+   "d": 0.4,
+   "text": "same"
+  },
+  {
+   "t": 27.4,
+   "d": 0.5,
+   "text": "question."
+  },
+  {
+   "t": 27.9,
+   "d": 0.3,
+   "text": "Which"
+  },
+  {
+   "t": 28.2,
+   "d": 0.3,
+   "text": "one is"
+  },
+  {
+   "t": 28.5,
+   "d": 0.5,
+   "text": "real?"
+  },
+  {
+   "t": 29.0,
+   "d": 0.3,
+   "text": "And to"
+  },
+  {
+   "t": 29.3,
+   "d": 0.7,
+   "text": "both of them,"
+  },
+  {
+   "t": 30.0,
+   "d": 0.3,
+   "text": "he gave"
+  },
+  {
+   "t": 30.3,
+   "d": 0.5,
+   "text": "the same"
+  },
+  {
+   "t": 30.8,
+   "d": 0.4,
+   "text": "answer."
+  },
+  {
+   "t": 31.2,
+   "d": 0.6,
+   "text": "Attack"
+  },
+  {
+   "t": 31.8,
+   "d": 0.2,
+   "text": "and"
+  },
+  {
+   "t": 32.0,
+   "d": 0.4,
+   "text": "find"
+  },
+  {
+   "t": 32.6,
+   "d": 0.2,
+   "text": "out."
+  },
+  {
+   "t": 32.8,
+   "d": 0.5,
+   "text": "You see"
+  },
+  {
+   "t": 33.3,
+   "d": 0.6,
+   "text": "a spear"
+  },
+  {
+   "t": 34.0,
+   "d": 0.5,
+   "text": "pierces"
+  },
+  {
+   "t": 34.5,
+   "d": 0.6,
+   "text": "anything"
+  },
+  {
+   "t": 35.3,
+   "d": 0.3,
+   "text": "shield."
+  },
+  {
+   "t": 37.6,
+   "d": 0.2,
+   "text": "exist."
+  },
+  {
+   "t": 37.8,
+   "d": 0.2,
+   "text": "So"
+  },
+  {
+   "t": 38.0,
+   "d": 0.6,
+   "text": "the blacksmith"
+  },
+  {
+   "t": 38.8,
+   "d": 0.2,
+   "text": "both"
+  },
+  {
+   "t": 39.5,
+   "d": 0.4,
+   "text": "plain"
+  },
+  {
+   "t": 39.9,
+   "d": 0.2,
+   "text": "old"
+  },
+  {
+   "t": 40.1,
+   "d": 0.3,
+   "text": "iron,"
+  },
+  {
+   "t": 40.5,
+   "d": 0.3,
+   "text": "knowing"
+  },
+  {
+   "t": 42.2,
+   "d": 0.3,
+   "text": "first"
+  },
+  {
+   "t": 42.6,
+   "d": 0.6,
+   "text": "find out."
+  },
+  {
+   "t": 43.3,
+   "d": 0.4,
+   "text": "that's"
+  },
+  {
+   "t": 44.9,
+   "d": 0.3,
+   "text": "EE lC iC"
+  }
+ ]
+}

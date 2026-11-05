@@ -1,0 +1,179 @@
+{
+ "id": "V15",
+ "n_caption_events": 33,
+ "n_words_est": 47,
+ "speech_span_s": 47.1,
+ "wpm_est": 59.9,
+ "words_per_caption_mean": 1.42,
+ "share_1w": 0.64,
+ "share_2w": 0.3,
+ "share_3plus": 0.06,
+ "caption_dur_median": 0.3,
+ "events": [
+  {
+   "t": 0.0,
+   "d": 0.3,
+   "text": "If you"
+  },
+  {
+   "t": 1.2,
+   "d": 0.2,
+   "text": "number,"
+  },
+  {
+   "t": 7.5,
+   "d": 0.5,
+   "text": "totally"
+  },
+  {
+   "t": 10.0,
+   "d": 0.5,
+   "text": "how?"
+  },
+  {
+   "t": 10.5,
+   "d": 0.4,
+   "text": "Well,"
+  },
+  {
+   "t": 10.9,
+   "d": 0.4,
+   "text": "picture"
+  },
+  {
+   "t": 13.7,
+   "d": 0.4,
+   "text": "into the elevator"
+  },
+  {
+   "t": 19.5,
+   "d": 0.3,
+   "text": "wat andten"
+  },
+  {
+   "t": 24.7,
+   "d": 0.3,
+   "text": "numbers"
+  },
+  {
+   "t": 25.0,
+   "d": 0.3,
+   "text": "work"
+  },
+  {
+   "t": 26.9,
+   "d": 0.2,
+   "text": "showup"
+  },
+  {
+   "t": 29.0,
+   "d": 0.4,
+   "text": "top of"
+  },
+  {
+   "t": 31.7,
+   "d": 0.2,
+   "text": "Flip"
+  },
+  {
+   "t": 32.4,
+   "d": 0.4,
+   "text": "a hundred"
+  },
+  {
+   "t": 32.8,
+   "d": 0.5,
+   "text": "times"
+  },
+  {
+   "t": 33.4,
+   "d": 0.2,
+   "text": "you'll"
+  },
+  {
+   "t": 33.6,
+   "d": 0.4,
+   "text": "usually"
+  },
+  {
+   "t": 34.0,
+   "d": 0.5,
+   "text": "get six"
+  },
+  {
+   "t": 35.9,
+   "d": 0.2,
+   "text": "Mostly"
+  },
+  {
+   "t": 38.5,
+   "d": 0.3,
+   "text": "he avoided"
+  },
+  {
+   "t": 38.8,
+   "d": 0.5,
+   "text": "a doubles"
+  },
+  {
+   "t": 41.1,
+   "d": 0.3,
+   "text": "random"
+  },
+  {
+   "t": 41.4,
+   "d": 0.3,
+   "text": "numbers"
+  },
+  {
+   "t": 41.9,
+   "d": 0.9,
+   "text": "the opposite."
+  },
+  {
+   "t": 42.8,
+   "d": 0.3,
+   "text": "So"
+  },
+  {
+   "t": 43.6,
+   "d": 0.2,
+   "text": "how"
+  },
+  {
+   "t": 44.1,
+   "d": 0.3,
+   "text": "you try"
+  },
+  {
+   "t": 44.5,
+   "d": 0.2,
+   "text": "7 to make"
+  },
+  {
+   "t": 44.7,
+   "d": 0.5,
+   "text": "yours,"
+  },
+  {
+   "t": 45.5,
+   "d": 0.4,
+   "text": "almost"
+  },
+  {
+   "t": 45.9,
+   "d": 0.6,
+   "text": "always"
+  },
+  {
+   "t": 46.5,
+   "d": 0.2,
+   "text": "a way"
+  },
+  {
+   "t": 46.8,
+   "d": 0.3,
+   "text": "tell."
+  }
+ ]
+}
