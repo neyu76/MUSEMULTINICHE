@@ -13,6 +13,7 @@
   studio frames EP t0 t1 step out.jpg    frame grid of the render
   studio deliver EP                      <ID>_<slug>_FINAL.mp4 + _preview.mp4 in the episode folder
   studio audit EP [step=0.5]             critic sheets of the whole render (words, safe area, caption band)
+  studio img plan|save EP               Nano Banana (Gemini API) pictures from art_plan.json via a connector
   studio el plan voice|music|sfx EP     ElevenLabs request files for a connector (no key here)   studio el verify EP
 EP = folder path, folder name or id (ATE01-004)."""
 import argparse, os, sys
@@ -32,12 +33,16 @@ def main():
     b = sub.add_parser('build'); b.add_argument('ep'); b.add_argument('--qa', action='store_true'); b.add_argument('--no-assemble', action='store_true')
     f = sub.add_parser('frames'); f.add_argument('ep'); f.add_argument('t0'); f.add_argument('t1'); f.add_argument('step'); f.add_argument('out')
     au = sub.add_parser('audit'); au.add_argument('ep'); au.add_argument('step', nargs='?', default='0.5')
+    im = sub.add_parser('img'); im.add_argument('action', choices=['plan', 'save']); im.add_argument('ep')
     e = sub.add_parser('el'); e.add_argument('action', choices=['plan', 'verify']); e.add_argument('a1'); e.add_argument('a2', nargs='?')
     x = ap.parse_args()
 
     if x.cmd == 'new':
         from . import episode
         return episode.new(x.id, x.slug, x.title, os.path.abspath(x.src) if x.src else None)
+    if x.cmd == 'img':
+        from . import img
+        os.chdir(cfg.episode_dir(x.ep)); return img.plan() if x.action == 'plan' else img.save()
     if x.cmd == 'el':
         from . import el
         ep = x.a2 if x.action == 'plan' else x.a1

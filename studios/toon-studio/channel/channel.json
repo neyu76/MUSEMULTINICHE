@@ -22,15 +22,17 @@
   ]
  },
  "images": {
-  "tool": "muse",
+  "tool": "gemini_api",
   "tools": {
-   "muse": "Muse media.generate_image; chain poses with resume_from_snapshot_id (or the base picture attached)",
-   "flow": "Google Flow web UI (Nano Banana 2.1) in a browser the owner signed in to — only when the owner says to switch"
+   "gemini_api": "Nano Banana via the Gemini API through the agent's connector (host generativelanguage.googleapis.com, header x-goog-api-key): art_plan.json → studio img plan/save. Same model family as the Flow reference build. Owner's Google AI Studio key + billing.",
+   "flow": "Google Flow web UI (Nano Banana 2.1) in a browser the owner signed in to (skill flow-art)",
+   "muse": "Muse media.generate_image — fallback only (pilot ATE01-901: props came out as symbolic clip-art)"
   },
-  "model_flow": "Nano Banana 2.1",
+  "api_model": "gemini-nano-banana-2.1",
   "aspect": "9:16",
-  "never": "never draw with ElevenLabs",
-  "download": "largest size offered; studio cut upscales to 1080 wide"
+  "size": "2K",
+  "never": "never draw physical objects in PIL or as clip-art/vector icons; never draw with ElevenLabs",
+  "download": "studio cut upscales to 1080 wide"
  },
  "music": {
   "provider": "ElevenLabs REST via connector: studio el plan music EP",

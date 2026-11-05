@@ -29,3 +29,10 @@ text/watermarks from the image model; people = real photo body + flat cartoon he
 - Safe area (blue 5 % lines): no text above y 0.05 (pilot 29 s "MORE NEURONS" at the top edge) = MAJOR.
 - Counts inside diagrams match the narration: an "8 ropes" / 8-arm diagram must draw exactly 8 (pilot 20–22 s drew ~10) = MAJOR.
 - Crossed-out cards: the ✗ must leave the word readable (draw it beside or semi-transparent), else the joke is lost = MINOR.
+
+**Realism (owner, after comparing ATE01-901 with the Nano Banana reference ATE01-004)**
+- Any physical object drawn as clip-art / vector / flat icon (desk, phone, control panel, papers…) = MAJOR — must be a photo cut-out.
+- Any scene on a flat-colour or plain-texture background instead of a photographed place = MAJOR (diagram cards may sit over a
+  photographed underwater plate, never over an empty colour).
+- No real person (photo body + cartoon head) in the episode, or fewer than 3 appearances / 3 expressions = MAJOR.
+- Lighting mismatch: a cut-out whose light/colour obviously differs from its plate = MINOR.

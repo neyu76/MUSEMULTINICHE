@@ -1,4 +1,4 @@
-# Google Flow prompt templates (Nano Banana 2.1, 9:16)
+# Nano Banana prompt templates (Gemini API `studio img` / Google Flow, 9:16)
 
 Fill the {slots}; keep the shared tail so every picture of an episode matches. Every pose after the base goes with the
 base picture as a reference chip.
@@ -29,3 +29,17 @@ base picture as a reference chip.
 ## Props
 - `{prop description}, {material}, cartoon-friendly but realistic. GREEN`  (green/leafy prop → WHITE)
 - One prop per picture; several parts of one action = several pictures (knob and rope separately).
+
+## Non-negotiable (from the ATE01-004 reference vs the ATE01-901 Muse pilot)
+- **Every physical object is a PHOTOGRAPH** from the image model on green (desk, phone, control box, shell, valve dial, rope,
+  ticket dispenser, headset, food, tools…): realistic material, real wear, natural light — "a real vintage wooden office desk",
+  "a real red rotary telephone", never "icon", "cartoon", "flat", "illustration". PIL draws ONLY diagrams, charts, text cards,
+  marks (✓ ✗ ? !) and highlight circles.
+- **Every scene plate is a PHOTOGRAPH**: the habitat (sunlit shallow sand with caustics, open water with god rays, reef) and,
+  for every analogy, a real miniature set built IN the habitat ("a small sunken office on the sandy sea floor: an old metal filing
+  cabinet, two swivel chairs, seaweed, sun rays from above, empty centre"). No flat colour or plain-texture backgrounds.
+- **Every episode has a real person** (recipe §4b): a real photo body in a real place that fits the topic (marine lab with a big
+  aquarium for sea animals, vet clinic, field ranger, zoo keeper), head replaced by the flat cartoon meme head, then ≥ 3 expression
+  edits (deadpan, smug, worried with sweat drops). On screen ≥ 3 times: the "real question" / "researchers found" beat (B4), the
+  limits beat (B5, worried/counting), the "just an analogy" moment.
+- Same light and colour family across the episode (warm sun on sand, teal water) so cut-outs sit in their plates.
