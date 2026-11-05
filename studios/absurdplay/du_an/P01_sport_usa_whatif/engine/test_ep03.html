@@ -1,0 +1,29 @@
+<!doctype html><html><head><meta charset="utf-8"></head><body style="margin:0;background:#000"><canvas id="c"></canvas>
+<style>@font-face{font-family:Anton;src:url(fonts/anton-latin-400-normal.woff2)}@font-face{font-family:Inter;font-weight:900;src:url(fonts/inter-latin-900-normal.woff2)}</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import {buildNightStadium,nightLights,FL} from './lib/ngoaitroi.js';
+import {loadLibrary} from './lib/nhanvat2.js';
+import {CAST3,makeMannequin,mannequinPose,qbHold,qbThrow,kick,yawn,thumbsUp,standBase} from './lib/bongbau.js';
+import {football} from './lib/dovat.js';
+await Promise.all(['100px Anton','900 60px Inter'].map(f=>document.fonts.load(f)));
+const W=innerWidth,H=innerHeight;
+const r=new THREE.WebGLRenderer({canvas:c,antialias:true,preserveDrawingBuffer:true});r.setSize(W,H,false);r.shadowMap.enabled=true;r.shadowMap.type=THREE.PCFShadowMap;r.outputColorSpace=THREE.SRGBColorSpace;r.toneMapping=THREE.NeutralToneMapping;r.toneMappingExposure=1.08;
+const s=new THREE.Scene();const ST=buildNightStadium(s);const LT=nightLights(s);
+const lib=await loadLibrary();
+const HB=CAST3.herbert(lib),DK=CAST3.dicker(lib);s.add(HB.root,DK.root);
+const MQ=[];for(let i=0;i<11;i++){const m=makeMannequin(lib,{tag:i===4?'SALE':null,heightM:1.8+((i*7)%5)*0.03});s.add(m.root);s.add(m.stand);MQ.push(m);}
+[HB,DK,...MQ].forEach(ch=>ch.root.traverse(o=>{if(o.isMesh)o.castShadow=true}));
+const ball=football(0.28);s.add(ball);
+const cam=new THREE.PerspectiveCamera(50,W/H,.05,900);
+const V=location.hash.match(/v=(\w+)/)?.[1]||'wide';
+window.renderFrame=t=>{
+  HB.root.rotation.y=Math.PI/2;const bp=qbHold(HB,-3,0,t);ball.position.copy(bp);
+  DK.root.rotation.y=Math.PI/2;kick(DK,-8,4,0.55);
+  MQ.forEach((m,i)=>{m.root.rotation.y=-Math.PI/2;mannequinPose(m,i%6,1.5+(i%3)*2.2,(i-5)*1.6);});
+  LT.follow(0,0);
+  const VS={wide:[[-11,2.4,7],[2,1.2,0]],mq:[[-0.5,1.6,3.2],[2.5,1.1,0]],hb:[[-0.4,1.85,1.2],[-3,1.7,0]],stad:[[-30,9,30],[10,6,-20]],dk:[[-5.5,1.2,6.5],[-8,1,4]],sb:[[-30,4,0],[-FL/2-12,10,0]]};
+  const [p,l]=VS[V];cam.position.set(...p);cam.lookAt(...l);r.render(s,cam);};
+window.ready=true;
+</script></body></html>

@@ -1,0 +1,14 @@
+<!doctype html><html><body style="margin:0"><canvas id="c" width="1080" height="1920"></canvas>
+<style>@font-face{font-family:Anton;src:url(fonts/anton-latin-400-normal.woff2)}</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';import {loadLibrary,makeCharacter,makeBaby} from './lib/nhanvat2.js';
+await document.fonts.load('100px Anton');
+const r=new THREE.WebGLRenderer({canvas:c,antialias:true,preserveDrawingBuffer:true});r.setSize(1080,1920,false);r.outputColorSpace=THREE.SRGBColorSpace;r.toneMapping=THREE.NeutralToneMapping;
+const s=new THREE.Scene();s.background=new THREE.Color('#9fb6cf');s.add(new THREE.HemisphereLight('#f4f6ff','#4a6a3a',2.3));const sun=new THREE.DirectionalLight('#fff3e0',1.4);sun.position.set(2,4,6);s.add(sun);
+const lib=await loadLibrary();
+const A=makeCharacter(lib,{skin:'#8a5634',skinMix:1,brows:false,jersey:'#f4f4f4',number:4,smooth:{jersey:12,pants:10,socks:6,shoes:0,skin:4,head:8},eyeScale:2.3});A.root.position.set(-0.28,0,0);s.add(A.root);A.play('Idle_FoldArms_Loop');
+const B=makeCharacter(lib,{skin:'#e6b896',skinMix:1,brows:false,hair:'Hair_SimpleParted',hairColor:'#7a3b1c',beard:true,browPaint:'#7a3b1c',jersey:'#2e7d32',smooth:{jersey:12,pants:10,socks:6,shoes:0,skin:4,head:8},eyeScale:2.3});B.root.position.set(0.3,0,0);s.add(B.root);B.play('Idle_FoldArms_Loop',{at:0.5});
+const cam=new THREE.PerspectiveCamera(30,1080/1920,.1,100);cam.position.set(0,1.55,1.6);cam.lookAt(0,1.5,0);
+window.renderFrame=t=>{A.mixer.setTime(t);B.mixer.setTime(t+0.5);r.render(s,cam)};window.ready=true;
+</script></body></html>

@@ -1,0 +1,24 @@
+<!doctype html><html><body style="margin:0"><canvas id="c" width="1080" height="1920"></canvas>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';import {makeAthlete} from './lib/nhanvat.js';
+await document.fonts.load('900 100px Anton').catch(()=>{});
+const r=new THREE.WebGLRenderer({canvas:c,antialias:true,preserveDrawingBuffer:true});r.setSize(1080,1920,false);r.shadowMap.enabled=true;r.shadowMap.type=THREE.PCFSoftShadowMap;r.outputColorSpace=THREE.SRGBColorSpace;r.toneMapping=THREE.ACESFilmicToneMapping;r.toneMappingExposure=1.05;
+const s=new THREE.Scene();s.background=new THREE.Color('#202638');
+s.add(new THREE.HemisphereLight('#dfe8ff','#3a5a2a',1.4));const sun=new THREE.DirectionalLight('#fff4e0',2.6);sun.position.set(4,9,6);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);sun.shadow.radius=4;s.add(sun);
+// sân cỏ có vạch
+const fc=document.createElement('canvas');fc.width=512;fc.height=512;const g=fc.getContext('2d');for(let i=0;i<10;i++){g.fillStyle=i%2?'#3f8f3a':'#46993f';g.fillRect(0,i*51.2,512,51.2);}g.fillStyle='#fff';for(let i=0;i<10;i++)g.fillRect(0,i*51.2,512,3);
+const ft=new THREE.CanvasTexture(fc);ft.colorSpace=THREE.SRGBColorSpace;ft.wrapS=ft.wrapT=THREE.RepeatWrapping;ft.repeat.set(4,4);
+const ground=new THREE.Mesh(new THREE.PlaneGeometry(80,80),new THREE.MeshStandardMaterial({map:ft}));ground.rotation.x=-Math.PI/2;ground.receiveShadow=true;s.add(ground);
+// khán đài: texture chấm màu
+const cc=document.createElement('canvas');cc.width=1024;cc.height=256;const h=cc.getContext('2d');h.fillStyle='#2a3150';h.fillRect(0,0,1024,256);for(let y=0;y<256;y+=8)for(let x=0;x<1024;x+=6){h.fillStyle=`hsl(${Math.random()*360},55%,${45+Math.random()*30}%)`;h.fillRect(x+1,y+1,4,6);}
+const ct=new THREE.CanvasTexture(cc);ct.colorSpace=THREE.SRGBColorSpace;ct.wrapS=THREE.RepeatWrapping;ct.repeat.set(3,1);
+const stand=new THREE.Mesh(new THREE.PlaneGeometry(90,18),new THREE.MeshBasicMaterial({map:ct}));stand.position.set(0,10,-25);stand.rotation.x=-0.5;s.add(stand);
+const gl=await new GLTFLoader().loadAsync('./ual/AnimationLibrary_Godot_Standard.gltf');
+const A=makeAthlete(gl,{jersey:'#f4f4f4',pants:'#aeb4bf',socks:'#0b2a5b',shoes:'#ffffff',number:4,helmet:'#c9ced6',mask:'#0b2a5b',skin:'#7a4a30'});
+A.root.position.set(-0.55,0,0);A.root.rotation.y=0.15;s.add(A.root);A.play('Idle_Talking_Loop');
+const B=makeAthlete(gl,{jersey:'#ff6fae',pants:'#ffffff',socks:'#ff6fae',shoes:'#ffffff',number:1,numberColor:'#ffffff',numberOutline:'#c2185b',helmet:'#ffffff',mask:'#ff6fae',skin:'#c58c62',scale:0.5,headScale:1.5});
+B.root.position.set(0.7,0,0.4);B.root.rotation.y=-0.5;s.add(B.root);B.play('Sitting_Idle_Loop');
+const cam=new THREE.PerspectiveCamera(35,1080/1920,.1,300);
+window.renderFrame=(t)=>{A.mixer.setTime(t);B.mixer.setTime(t);cam.position.set(0.3+t*0.25,1.5,5.2-t*0.3);cam.lookAt(0,0.95,0);r.render(s,cam);};window.ready=true;
+</script></body></html>

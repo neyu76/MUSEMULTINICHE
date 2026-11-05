@@ -1,0 +1,17 @@
+<!doctype html><html><body style="margin:0"><canvas id="c" width="1080" height="1920"></canvas>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';import * as SU from 'three/addons/utils/SkeletonUtils.js';
+const r=new THREE.WebGLRenderer({canvas:c,antialias:true,preserveDrawingBuffer:true});r.setSize(1080,1920,false);r.shadowMap.enabled=true;r.outputColorSpace=THREE.SRGBColorSpace;r.toneMapping=THREE.ACESFilmicToneMapping;
+const s=new THREE.Scene();s.background=new THREE.Color('#9fb6cf');s.add(new THREE.HemisphereLight('#ffffff','#556644',1.6));const sun=new THREE.DirectionalLight('#fff',2.5);sun.position.set(3,6,5);sun.castShadow=true;s.add(sun);
+const L=new GLTFLoader();const ch=await L.loadAsync('./assets/ubc/Superhero_Male_FullBody.gltf');const an=await L.loadAsync('./assets/ual2/UAL2_Standard.glb');
+const hair=await L.loadAsync('./assets/ubc/Hair_Buzzed.gltf');const beard=await L.loadAsync('./assets/ubc/Hair_Beard.gltf');const brow=await L.loadAsync('./assets/ubc/Eyebrows_Regular.gltf');
+const mk=(x,clip)=>{const m=SU.clone(ch.scene);m.position.x=x;m.traverse(o=>{if(o.isMesh){o.castShadow=true;}});s.add(m);
+ const head=[];m.traverse(o=>{if(o.isBone&&o.name==='Head')head.push(o)});
+ for(const acc of [hair,beard,brow]){const a=acc.scene.clone(true);head[0]&&head[0].add(a);}
+ const mx=new THREE.AnimationMixer(m);const cl=an.animations.find(a=>a.name===clip);mx.clipAction(cl).play();return mx;};
+const m1=mk(-0.6,'Idle_FoldArms_Loop'),m2=mk(0.6,'OverhandThrow');
+const cam=new THREE.PerspectiveCamera(35,1080/1920,.1,100);cam.position.set(0,1.5,4.6);cam.lookAt(0,1.1,0);
+const g=new THREE.Mesh(new THREE.PlaneGeometry(20,20),new THREE.MeshStandardMaterial({color:'#4a9a40'}));g.rotation.x=-Math.PI/2;g.receiveShadow=true;s.add(g);
+window.renderFrame=t=>{m1.setTime(t);m2.setTime(t);r.render(s,cam)};window.ready=true;
+</script></body></html>

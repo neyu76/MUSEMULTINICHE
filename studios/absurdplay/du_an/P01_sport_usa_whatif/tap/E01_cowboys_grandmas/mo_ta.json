@@ -1,0 +1,8 @@
+{"width":1080,"height":1920,"fps":30,
+ "tracks":[
+  {"type":"audio","name":"Nhạc","clips":[{"file":"../am_thanh/nhac.wav","start":0,"in":0,"out":42.75}]},
+  {"type":"audio","name":"SFX","clips":[{"file":"../am_thanh/sfx.wav","start":0,"in":0,"out":42.75}]},
+  {"type":"audio","name":"Giọng","clips":[{"file":"../am_thanh/giong.wav","start":0,"in":0,"out":42.75}]},
+  {"type":"video","name":"Hình","clips":[{"file":"../hinh/hinh.mp4","start":0,"in":0,"out":42.75}]},
+  {"type":"video","name":"Đồ họa","clips":[{"file":"../do_hoa/do_hoa.mov","start":0,"in":0,"out":42.75}]}],
+ "subtitles":"../chu/phu_de.ass"}

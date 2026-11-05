@@ -1,0 +1,16 @@
+<!doctype html><html><body><canvas></canvas>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+const L=new GLTFLoader();const ch=await L.loadAsync('./assets/ubc/Superhero_Male_FullBody.gltf');const an=await L.loadAsync('./assets/ual2/UAL2_Standard.glb');
+const names=new Set();ch.scene.traverse(o=>names.add(o.name));
+const cl=an.animations.find(a=>a.name==='Idle_FoldArms_Loop');
+const miss=cl.tracks.map(t=>t.name.split('.')[0]).filter(n=>!names.has(n));
+console.log('tracks',cl.tracks.length,'missing',JSON.stringify([...new Set(miss)].slice(0,20)));
+const an2=[];an.scene.traverse(o=>{if(o.isBone)an2.push(o.name)});console.log('anim bones',JSON.stringify(an2.slice(0,12)));
+const cb=[];ch.scene.traverse(o=>{if(o.isBone)cb.push(o.name)});console.log('char bones',JSON.stringify(cb.slice(0,12)));
+// compare rest quaternion of upperarm_l
+const q=(sc,n)=>{let r;sc.traverse(o=>{if(o.name===n)r=o.quaternion.toArray().map(x=>x.toFixed(2))});return r};
+for(const n of ['upperarm_l','lowerarm_l','spine_01','pelvis','clavicle_l'])console.log(n,q(ch.scene,n),q(an.scene,n));
+window.renderFrame=()=>{};window.ready=true;
+</script></body></html>

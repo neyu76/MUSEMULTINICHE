@@ -1,0 +1,17 @@
+<!doctype html><html><body style="margin:0"><canvas id="c" width="1080" height="1920"></canvas>
+<style>@font-face{font-family:Anton;src:url(fonts/anton-latin-400-normal.woff2)}</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';import {loadLibrary,makeCharacter,makeBaby} from './lib/nhanvat2.js';import {POSES,groundIt} from './lib/tuthe.js';
+await document.fonts.load('100px Anton');
+const r=new THREE.WebGLRenderer({canvas:c,antialias:true,preserveDrawingBuffer:true});r.setSize(1080,1920,false);r.shadowMap.enabled=true;r.outputColorSpace=THREE.SRGBColorSpace;r.toneMapping=THREE.ACESFilmicToneMapping;
+const s=new THREE.Scene();s.background=new THREE.Color('#9fb6cf');s.add(new THREE.HemisphereLight('#f4f6ff','#4a6a3a',2.2));const sun=new THREE.DirectionalLight('#fff3e0',1.6);sun.position.set(3,8,6);sun.castShadow=true;s.add(sun);
+const g=new THREE.Mesh(new THREE.PlaneGeometry(30,30),new THREE.MeshStandardMaterial({color:'#4a9a40'}));g.rotation.x=-Math.PI/2;g.receiveShadow=true;s.add(g);
+const lib=await loadLibrary();
+const P=location.hash.slice(1)||'none';
+const opts=(n)=>({skin:'#c58c62',jersey:'#ff6fae',pants:'#ffffff',socks:'#ff6fae',number:n,numberColor:'#ffffff',numberOutline:'#c2185b',helmet:P.includes('helm')?'#ffffff':null,mask:'#ff6fae'});
+const b=makeBaby(lib,opts(1));s.add(b.root);b.root.position.x=-0.35;
+const a=makeCharacter(lib,{skin:'#c58c62',jersey:'#ff6fae',pants:'#fff',socks:'#ff6fae',number:7});a.root.position.x=0.5;a.root.scale.setScalar(0.5);s.add(a.root);
+const cam=new THREE.PerspectiveCamera(35,1080/1920,.1,100);cam.position.set(0,0.5,2.6);cam.lookAt(0,0.4,0);
+window.renderFrame=t=>{b.root.updateMatrixWorld(true);if(P.startsWith('sit'))POSES.sit(b,t);if(P.startsWith("crawl"))POSES.crawl(b,t);groundIt(b,0,0.04);r.render(s,cam)};window.ready=true;
+</script></body></html>

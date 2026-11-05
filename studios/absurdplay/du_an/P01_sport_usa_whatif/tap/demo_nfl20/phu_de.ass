@@ -1,0 +1,29 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,Inter,46,&H004BE9F5,&H004BE9F5,&H00101010,&H80000000,-1,0,0,0,100,100,0,0,1,3.2,1.5,5,40,40,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:01.08,Cap,,0,0,0,,{\an5\pos(540,1293)}could the dallas cowboys
+Dialogue: 0,0:00:01.08,0:00:02.56,Cap,,0,0,0,,{\an5\pos(540,1293)}beat 50 babies in
+Dialogue: 0,0:00:02.56,0:00:03.63,Cap,,0,0,0,,{\an5\pos(540,1293)}a playoff game?
+Dialogue: 0,0:00:03.78,0:00:04.62,Cap,,0,0,0,,{\an5\pos(540,1293)}the cowboys have a
+Dialogue: 0,0:00:04.62,0:00:05.60,Cap,,0,0,0,,{\an5\pos(540,1293)}roster full of
+Dialogue: 0,0:00:05.60,0:00:06.75,Cap,,0,0,0,,{\an5\pos(540,1293)}professional athletes.
+Dialogue: 0,0:00:07.00,0:00:08.30,Cap,,0,0,0,,{\an5\pos(540,1293)}the babies have zero
+Dialogue: 0,0:00:08.30,0:00:09.53,Cap,,0,0,0,,{\an5\pos(540,1293)}football experience.
+Dialogue: 0,0:00:09.66,0:00:10.54,Cap,,0,0,0,,{\an5\pos(540,1293)}their starting quarterback
+Dialogue: 0,0:00:10.54,0:00:11.65,Cap,,0,0,0,,{\an5\pos(540,1293)}can't even walk.
+Dialogue: 0,0:00:11.82,0:00:12.36,Cap,,0,0,0,,{\an5\pos(540,1293)}this should be the
+Dialogue: 0,0:00:12.36,0:00:13.36,Cap,,0,0,0,,{\an5\pos(540,1293)}easiest win in
+Dialogue: 0,0:00:13.36,0:00:14.67,Cap,,0,0,0,,{\an5\pos(540,1293)}nfl history,
+Dialogue: 0,0:00:14.70,0:00:16.49,Cap,,0,0,0,,{\an5\pos(540,1293)}except it's the playoffs.
+Dialogue: 0,0:00:16.82,0:00:17.78,Cap,,0,0,0,,{\an5\pos(540,1293)}dallas hasn't reached an
+Dialogue: 0,0:00:17.78,0:00:19.08,Cap,,0,0,0,,{\an5\pos(540,1293)}nfc championship game
+Dialogue: 0,0:00:19.08,0:00:20.90,Cap,,0,0,0,,{\an5\pos(540,1293)}since the 1995 season.

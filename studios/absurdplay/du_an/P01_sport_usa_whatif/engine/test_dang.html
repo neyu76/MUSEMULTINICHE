@@ -1,0 +1,26 @@
+<!doctype html><html><head><meta charset="utf-8"></head><body style="margin:0;background:#000"><canvas id="c"></canvas>
+<style>@font-face{font-family:Anton;src:url(fonts/anton-latin-400-normal.woff2)}@font-face{font-family:Inter;font-weight:900;src:url(fonts/inter-latin-900-normal.woff2)}</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import {loadLibrary,makeCharacter} from './lib/nhanvat2.js';
+import {BUCKS,HEAT} from './lib/cast2.js';
+await Promise.all(['100px Anton','900 60px Inter'].map(f=>document.fonts.load(f)));
+const W=innerWidth,H=innerHeight;const r=new THREE.WebGLRenderer({canvas:c,antialias:true,preserveDrawingBuffer:true});r.setSize(W,H,false);r.outputColorSpace=THREE.SRGBColorSpace;r.toneMapping=THREE.NeutralToneMapping;
+const s=new THREE.Scene();s.background=new THREE.Color('#d9dde4');s.add(new THREE.HemisphereLight('#fff','#887',2.4));const dl=new THREE.DirectionalLight('#fff',2);dl.position.set(2,4,5);s.add(dl);
+const lib=await loadLibrary();
+const CF=[
+ ['slim',{...BUCKS,build:'slim',number:1,heightM:1.9,hairStyle:'proc:fade'}],
+ ['fit',{...BUCKS,build:'fit',number:2,heightM:1.9,hairStyle:'proc:curlytop'}],
+ ['big',{...BUCKS,build:'big',number:3,heightM:2.08,hairStyle:'proc:buzz'}],
+ ['belly',{tank:false,shorts:false,jersey:'#2b3a55',pants:'#3b3b3b',socks:'#222',shoes:'#222',build:'belly',number:null,heightM:1.8,hairStyle:'proc:buzz',hairColor:'#9a9a9a',beardStyle:'full',beardColor:'#9a9a9a',glasses:'#222',skinMix:1,brows:false,eyeScale:2.3,edgeSoft:1}],
+ ['wide',{...HEAT,shoulders:'wide',number:7,heightM:2.11,hairStyle:'proc:curlytop',beardStyle:'stubble',headband:'#111111'}],
+ ['narrow',{...HEAT,shoulders:'narrow',build:'slim',number:14,heightM:1.96,hairStyle:'proc:dreads',hairColor:'#2a1a10'}],
+ ['phu kien',{...BUCKS,number:0,heightM:1.93,hairStyle:'proc:twists',headband:'#EEE1C6',wristband:{side:'both',color:'#ffffff'},armSleeve:'r',armSleeveColor:'#111111',beardStyle:'goatee'}],
+ ['xam',{...HEAT,number:22,heightM:2.0,hairStyle:'proc:braids',tattoo:'both',beardStyle:'full'}]];
+const N=CF.length;CF.forEach(([n,o],i)=>{const sk=['#5b3a29','#8a5634','#c68c5f','#e8b98f'][i%4];const ch=makeCharacter(lib,{skin:sk,hairColor:'#141010',...o});ch.root.position.set((i-(N-1)/2)*0.85,0,0);ch.root.rotation.y=location.hash==='#side'?1.35:0.25;s.add(ch.root);ch.play('Idle_No_Loop');ch.mixer.setTime(0.3);});
+const cam=new THREE.OrthographicCamera(-3.5,3.5,1.25,-1.15,0.1,50);cam.position.set(0,1.1,8);cam.lookAt(0,1.1,0);
+if(location.hash==='#arm'){cam.left=2.2;cam.right=3.4;cam.top=0.6;cam.bottom=-0.1;cam.position.y=1.0;cam.updateProjectionMatrix();}
+if(location.hash==='#head'){cam.top=0.4;cam.bottom=-0.4;cam.left=-3.5;cam.right=3.5;cam.position.y=1.95;cam.lookAt(0,1.95,0);cam.updateProjectionMatrix();}
+{let ch=null;s.traverse(o=>{if(o.isSkinnedMesh&&o.geometry.attributes.outfit)ch=o;});const a=ch.geometry.attributes.outfit;let mn=9,cnt=0;for(let i=0;i<a.count;i++){const l=a.getX(i)+a.getY(i)+a.getZ(i);if(a.getW(i)>0.5&&l<mn)mn=l;if(l<0.3&&a.getW(i)>0.5)cnt++;}console.log('INK',window.__ink,'darkest',mn.toFixed(3),'nDark',cnt,'n',a.count);}window.renderFrame=t=>{r.render(s,cam)};window.ready=true;
+</script></body></html>

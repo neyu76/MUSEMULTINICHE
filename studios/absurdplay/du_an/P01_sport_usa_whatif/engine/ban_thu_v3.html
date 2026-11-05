@@ -1,0 +1,22 @@
+<!doctype html><html><body style="margin:0"><canvas id="c" width="1080" height="1920"></canvas>
+<style>@font-face{font-family:Anton;src:url(fonts/anton-latin-400-normal.woff2)}@font-face{font-family:Inter;font-weight:900;src:url(fonts/inter-latin-900-normal.woff2)}@font-face{font-family:Oswald;font-weight:700;src:url(fonts/oswald-latin-700-normal.woff2)}</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';import {buildStadium,stadiumLights} from './lib/svd.js';import {loadLibrary,makeCharacter,makeBaby} from './lib/nhanvat2.js';import {POSES,groundIt} from './lib/tuthe.js';import {CameraRig,PRESET} from './lib/camera.js';
+await Promise.all(['100px Anton','900 60px Inter','700 60px Oswald'].map(f=>document.fonts.load(f)));
+const r=new THREE.WebGLRenderer({canvas:c,antialias:true,preserveDrawingBuffer:true});r.setSize(1080,1920,false);r.shadowMap.enabled=true;r.shadowMap.type=THREE.PCFSoftShadowMap;r.outputColorSpace=THREE.SRGBColorSpace;r.toneMapping=THREE.NeutralToneMapping;r.toneMappingExposure=1.05;
+const s=new THREE.Scene();const st=buildStadium(s);stadiumLights(s);
+const lib=await loadLibrary();
+const A=makeCharacter(lib,{skin:'#7b4b2e',jersey:'#f4f4f4',pants:'#aeb4bf',socks:'#0b2a5b',number:4,helmet:'#c3c8d0',mask:'#0b2a5b'});A.root.position.set(-0.6,0,6);A.root.rotation.y=0.25;s.add(A.root);A.play('Idle_FoldArms_Loop');
+const B=makeCharacter(lib,{skin:'#e0b48e',jersey:'#f4f4f4',pants:'#aeb4bf',socks:'#0b2a5b',number:88,helmet:'#c3c8d0',mask:'#0b2a5b'});B.root.position.set(0.7,0,5.6);B.root.rotation.y=-0.35;s.add(B.root);B.play('Idle_FoldArms_Loop',{at:0.7});
+const skins=['#c58c62','#8a5a3c','#e8c1a0','#a8714c'];const bs=[];
+const spots=[[0,0,0,'sit',3.1],[1.6,0,-1.2,'crawl',2.6],[-1.8,0,-0.8,'sit',0.4],[2.6,0,1.0,'lie',0],[-2.9,0,1.4,'crawl',1.2],[0.9,0,-3.2,'sit',3.6],[-1.0,0,-3.6,'crawl',2.2],[3.4,0,-2.6,'sit',4.0]];
+spots.forEach(([x,y,z,p,ry],i)=>{const b=makeBaby(lib,{skin:skins[i%4],jersey:'#ff7fb5',pants:'#ffffff',socks:skins[i%4],shoes:skins[i%4],number:[23,12,1,7,5,9,3,17][i],numberColor:'#ffffff',numberOutline:'#c2185b',helmet:'#f2f2f2',mask:'#ff6fae',toonHead:false,eyeScale:2.0,headRatio:1.9,puff:{jersey:0.06,pants:0.06,socks:0.035,shoes:0.03,skin:0.035,head:0}});b.root.position.set(x,0,z);b.root.rotation.y=ry;s.add(b.root);bs.push([b,p]);});
+const cam=new THREE.PerspectiveCamera(40,1080/1920,.1,600);
+const rig=new CameraRig(cam,r.domElement);
+rig.add(Object.assign({t0:0,t1:1.6,ease:'inOutCubic',shake:0.02},{from:{pos:[14,16,26],look:[0,1,0]},to:{pos:[6,3.2,10],look:[0,0.6,0]}}));
+rig.add({t0:1.6,t1:3.2,ease:'out',shake:0.012,from:{pos:[0.4,1.55,11.2],look:[0.05,1.25,5.8]},to:{pos:[0.2,1.6,9.0],look:[0.05,1.35,5.8]}});
+rig.add({t0:3.2,t1:4.6,ease:'inOut',shake:0.006,from:{pos:[0.5,0.75,-1.6],look:[0,0.4,0]},to:{pos:[0.5,0.75,-1.6],look:[0,0.4,0]},orbit:0.8});
+rig.add(Object.assign({t0:4.6,t1:6.0,ease:'out',shake:0.0},PRESET.topDown([0,0,-1],5,11)));
+window.renderFrame=t=>{A.mixer.setTime(t);B.mixer.setTime(t+0.7);for(const[b,p] of bs){POSES[p](b,t);groundIt(b,0,0.03);}st.ledTex.offset.x=-t*0.05;rig.apply(t);r.render(s,cam)};window.ready=true;
+</script></body></html>

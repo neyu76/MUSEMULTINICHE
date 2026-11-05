@@ -1,0 +1,17 @@
+<!doctype html><html><body style="margin:0"><canvas id="c" width="1080" height="1920"></canvas>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';import * as SU from 'three/addons/utils/SkeletonUtils.js';
+const L=new GLTFLoader();const ch=await L.loadAsync('./assets/ubc/Superhero_Male_FullBody.gltf');const u1=await L.loadAsync('./assets/ual1.glb');
+const r=new THREE.WebGLRenderer({canvas:c,antialias:true,preserveDrawingBuffer:true});r.setSize(1080,1920,false);r.outputColorSpace=THREE.SRGBColorSpace;
+const s=new THREE.Scene();s.background=new THREE.Color('#9fb6cf');s.add(new THREE.HemisphereLight('#fff','#556',2.5));
+const map={pelvis:'DEF-hips',spine_01:'DEF-spine.001',spine_02:'DEF-spine.002',spine_03:'DEF-spine.003',neck_01:'DEF-neck',Head:'DEF-head',clavicle_l:'DEF-shoulder.L',upperarm_l:'DEF-upper_arm.L',lowerarm_l:'DEF-forearm.L',hand_l:'DEF-hand.L',clavicle_r:'DEF-shoulder.R',upperarm_r:'DEF-upper_arm.R',lowerarm_r:'DEF-forearm.R',hand_r:'DEF-hand.R',thigh_l:'DEF-thigh.L',calf_l:'DEF-shin.L',foot_l:'DEF-foot.L',ball_l:'DEF-toe.L',thigh_r:'DEF-thigh.R',calf_r:'DEF-shin.R',foot_r:'DEF-foot.R',ball_r:'DEF-toe.R'};
+let tsk,ssk;ch.scene.traverse(o=>{if(o.isSkinnedMesh&&!tsk)tsk=o});u1.scene.traverse(o=>{if(o.isSkinnedMesh&&!ssk)ssk=o});
+const names=(location.hash.slice(1)||'Sitting_Idle_Loop,Crouch_Fwd_Loop,Sprint_Loop').split(',');
+const objs=[];
+names.forEach((n,i)=>{const m=SU.clone(ch.scene);m.position.x=(i-1)*1.1;s.add(m);let sk;m.traverse(o=>{if(o.isSkinnedMesh&&!sk)sk=o});
+ const clip=SU.retargetClip(sk,ssk,u1.animations.find(a=>a.name===n),{names:map,hip:'pelvis',useFirstFramePosition:false,preserveBoneMatrix:true,preserveBonePositions:true});
+ const mx=new THREE.AnimationMixer(sk);mx.clipAction(clip).play();objs.push(mx);});
+const cam=new THREE.PerspectiveCamera(35,1080/1920,.1,100);cam.position.set(0,1.0,6);cam.lookAt(0,0.8,0);
+window.renderFrame=t=>{objs.forEach(m=>m.setTime(t));r.render(s,cam)};window.ready=true;
+</script></body></html>

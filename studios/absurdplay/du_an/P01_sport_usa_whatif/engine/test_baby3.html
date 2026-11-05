@@ -1,0 +1,17 @@
+<!doctype html><html><body style="margin:0"><canvas id="c" width="1080" height="1920"></canvas>
+<style>@font-face{font-family:Anton;src:url(fonts/anton-latin-400-normal.woff2)}</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';import {loadLibrary,makeBaby} from './lib/nhanvat2.js';import {POSES,groundIt} from './lib/tuthe.js';
+await document.fonts.load('100px Anton');
+const r=new THREE.WebGLRenderer({canvas:c,antialias:true,preserveDrawingBuffer:true});r.setSize(1080,1920,false);r.shadowMap.enabled=true;r.shadowMap.type=THREE.PCFSoftShadowMap;r.outputColorSpace=THREE.SRGBColorSpace;r.toneMapping=THREE.NeutralToneMapping;
+const s=new THREE.Scene();s.background=new THREE.Color('#9fb6cf');s.add(new THREE.HemisphereLight('#f4f6ff','#4a6a3a',2.4));const sun=new THREE.DirectionalLight('#fff3e0',1.5);sun.position.set(3,8,6);sun.castShadow=true;s.add(sun);
+const g=new THREE.Mesh(new THREE.PlaneGeometry(30,30),new THREE.MeshStandardMaterial({color:'#4a9a40'}));g.rotation.x=-Math.PI/2;g.receiveShadow=true;s.add(g);
+const lib=await loadLibrary();
+const o=(n,x)=>Object.assign({skin:'#c58c62',jersey:'#ff7fb5',pants:'#ffffff',socks:'#c58c62',shoes:'#c58c62',number:n,numberColor:'#ffffff',numberOutline:'#c2185b',helmet:'#f2f2f2',mask:'#ff6fae',toonHead:false,eyeScale:2.0,headRatio:1.9,
+  puff:{jersey:0.06,pants:0.06,socks:0.035,shoes:0.03,skin:0.035,head:0.0}},x||{});
+const b1=makeBaby(lib,o(17));s.add(b1.root);b1.root.position.set(-0.32,0,0);b1.root.rotation.y=0.2;
+const b2=makeBaby(lib,o(12,{helmet:null}));s.add(b2.root);b2.root.position.set(0.35,0,-0.2);b2.root.rotation.y=-0.4;
+const cam=new THREE.PerspectiveCamera(35,1080/1920,.1,100);cam.position.set(0,0.55,2.4);cam.lookAt(0,0.35,0);
+window.renderFrame=t=>{POSES.sit(b1,t);groundIt(b1,0,0.03);POSES.crawl(b2,t);groundIt(b2,0,0.03);r.render(s,cam)};window.ready=true;
+</script></body></html>

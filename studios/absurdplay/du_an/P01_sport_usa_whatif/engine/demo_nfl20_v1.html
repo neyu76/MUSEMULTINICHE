@@ -1,0 +1,128 @@
+<!doctype html><html><body style="margin:0;background:#000"><canvas id="c"></canvas>
+<style>@font-face{font-family:Anton;src:url(fonts/anton-latin-400-normal.woff2)}@font-face{font-family:Inter;font-weight:900;src:url(fonts/inter-latin-900-normal.woff2)}</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/","postprocessing":"./node_modules/postprocessing/build/index.js","realism-effects":"./node_modules/realism-effects/dist/index.js"}}</script>
+<script type="module">
+// DEMO 20s — dựng lại 11 shot đầu video mẫu "Cowboys vs 50 Babies" (mốc cắt cảnh lấy từ mẫu) để so sánh nội bộ
+import * as THREE from 'three';
+import {buildStadium,stadiumLights} from './lib/svd.js';
+import {loadLibrary,makeCharacter,makeBaby} from './lib/nhanvat2.js';
+import {POSES,groundIt,pushup,benchSit,sitHold} from './lib/tuthe.js';
+import {CameraRig} from './lib/camera.js';
+import {EffectComposer,RenderPass,EffectPass,ToneMappingEffect,ToneMappingMode} from 'postprocessing';
+import {VelocityDepthNormalPass,MotionBlurEffect} from 'realism-effects';
+await Promise.all(['100px Anton','900 60px Inter'].map(f=>document.fonts.load(f)));
+const W=innerWidth,H=innerHeight;
+const MB=!location.hash.includes('nomb');
+const r=new THREE.WebGLRenderer({canvas:c,antialias:!MB,preserveDrawingBuffer:true});r.setSize(W,H,false);
+r.shadowMap.enabled=true;r.shadowMap.type=THREE.PCFSoftShadowMap;r.outputColorSpace=THREE.SRGBColorSpace;
+r.toneMapping=MB?THREE.NoToneMapping:THREE.NeutralToneMapping;r.toneMappingExposure=1.05;
+const s=new THREE.Scene();
+const st=buildStadium(s,{midText:'PLAYOFFS'});const L=stadiumLights(s);L.sun.shadow.mapSize.set(1024,1024);
+const lib=await loadLibrary();
+const N='#0b2a5b';
+// ---------- vật dụng ----------
+const canvasTex=(w,h,draw)=>{const cv=document.createElement('canvas');cv.width=w;cv.height=h;draw(cv.getContext('2d'),w,h);const t=new THREE.CanvasTexture(cv);t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=4;return t};
+const textPanel=(txt,w,h,{bg=N,fg='#ffffff',font='900 220px Inter',px=2048,py=512}={})=>new THREE.MeshStandardMaterial({roughness:0.8,map:canvasTex(px,py,(g,X,Y)=>{g.fillStyle=bg;g.fillRect(0,0,X,Y);g.fillStyle=fg;g.font=font;g.textAlign='center';g.textBaseline='middle';g.fillText(txt,X/2,Y/2+10)})});
+const std=(c,o={})=>new THREE.MeshStandardMaterial(Object.assign({color:c,roughness:0.7},o));
+// khu băng ghế bên đường biên (z ~ 26-29), nhìn ra sân (-z)
+const SIDE=new THREE.Group();SIDE.position.set(-4,0,26.2);s.add(SIDE);
+const wall=new THREE.Mesh(new THREE.BoxGeometry(18,3.4,0.3),[std(N),std(N),std(N),std(N),new THREE.MeshStandardMaterial({roughness:0.8,map:canvasTex(4096,768,(g,X,Y)=>{g.fillStyle=N;g.fillRect(0,0,X,Y);g.fillStyle='#ffffff';g.font='900 150px Inter';g.textBaseline='middle';let x=60;while(x<X){g.fillText('PLAYOFFS',x,Y*0.3);x+=g.measureText('PLAYOFFS').width+220;}g.fillStyle='#f2c230';g.fillRect(0,Y*0.52,X,10);})}),std(N)]);
+wall.position.set(0,1.7,3.0);wall.rotation.y=Math.PI;SIDE.add(wall);
+const benchBack=new THREE.Mesh(new THREE.BoxGeometry(7,0.7,0.12),[std(N),std(N),std(N),std(N),textPanel('DALLAS',7,0.7,{font:'900 230px Inter',fg:'#d9dee8'}),std(N)]);
+benchBack.position.set(0,0.95,0.55);benchBack.rotation.y=Math.PI;SIDE.add(benchBack);
+const seat=new THREE.Mesh(new THREE.BoxGeometry(7,0.1,0.55),std('#16336a'));seat.position.set(0,0.48,0.2);SIDE.add(seat);
+for(const x of [-3.2,-1,1,3.2]){const l=new THREE.Mesh(new THREE.BoxGeometry(0.08,0.46,0.08),std('#20242e',{metalness:0.6}));l.position.set(x,0.23,0.2);SIDE.add(l);}
+SIDE.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});
+// tủ cúp (gần băng ghế, phía +x)
+const CASE=new THREE.Group();CASE.position.set(9,0,27.0);CASE.rotation.y=Math.PI;s.add(CASE);
+const cab=std('#e9ecf1');
+const box=(w,h,d,m,x,y,z)=>{const b=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m);b.position.set(x,y,z);b.castShadow=b.receiveShadow=true;CASE.add(b);return b};
+box(2.2,0.08,0.6,cab,0,0.6,0);box(2.2,0.08,0.6,cab,0,1.25,0);box(2.2,0.08,0.6,cab,0,1.9,0);box(0.08,1.9,0.6,cab,-1.1,0.95,0);box(0.08,1.9,0.6,cab,1.1,0.95,0);box(2.2,1.9,0.05,std('#cfd5de'),0,0.95,-0.3);box(2.2,0.6,0.6,std('#c6ccd6'),0,0.3,0);
+const cup=(c,x,y)=>{const m=new THREE.Mesh(new THREE.CylinderGeometry(0.09,0.065,0.26,24,1,true),std(c,{roughness:0.35,side:THREE.DoubleSide}));m.position.set(x,y+0.13,0.05);m.castShadow=true;CASE.add(m);};
+cup('#2f6fe0',-0.55,0.64);cup('#55c94a',-0.15,0.64);cup('#2f6fe0',0.3,0.64);cup('#55c94a',0.65,0.64);cup('#2f6fe0',-0.4,1.29);cup('#55c94a',0.45,1.29);
+const plaque=new THREE.Mesh(new THREE.PlaneGeometry(1.6,0.3),textPanel('NFC CHAMPIONS',1.6,0.3,{bg:'#1a2238',fg:'#f2c230',font:'900 150px Inter',px:1024,py:192}));plaque.position.set(0,2.15,0.0);CASE.add(plaque);
+// ---------- nhân vật ----------
+const COW={jersey:'#f4f4f4',numberColor:N,numberOutline:'#c0c8d0',pants:'#b9c0c8',socks:'#eef0f2',shoes:'#f4f4f4',helmet:'#c3ccd6',helmetStripe:[N,'#ffffff',N],mask:N,maskThick:0.085,maskY:-0.1,skinMix:1,brows:false,eyeScale:2.3,
+  smooth:{jersey:12,pants:10,socks:6,shoes:10,skin:4,head:8},puff:{jersey:0.022,pants:0.012,socks:0.006,shoes:0.02,skin:0}};
+const actors=[];// {ch, update(t), r:bán kính, pos()}
+const add=(ch,update,rad=1.2)=>{s.add(ch.root);actors.push({ch,update,rad});return ch};
+const anim=(name,at=0)=>{let a=null;return (ch,t)=>{if(!a){a=ch.play(name,{at});}ch.mixer.setTime(t+at)}};
+// nhóm Cowboys giữa sân (x≈-9..-6), nhìn về phía babies (+x)
+const cowSpots=[[ -7.0,0,-0.8,'#7b4b2e',9,'Idle_FoldArms_Loop',0],[-7.4,0,1.6,'#e0b48e',77,'Idle_No_Loop',0.4],[-8.6,0,-2.6,'#5c3a24',65,'Idle_FoldArms_Loop',1.1],[-8.2,0,3.4,'#c9905f',21,'Idle_Rail_Loop',0.3],[-10.3,0,2.3,'#8a5634',9,'Idle_FoldArms_Loop',0.8],[-9.6,0,-0.4,'#d9a77d',54,'Idle_No_Loop',1.6]];
+const cows=cowSpots.map(([x,y,z,skin,num,cl,at],i)=>{const ch=makeCharacter(lib,{...COW,skin,number:num,beard:i%3===1});ch.root.position.set(x,0,z);ch.root.rotation.y=Math.PI/2+(i%2?0.25:-0.2);return add(ch,anim(cl,at))});
+// cầu thủ chống đẩy + người đứng sau (shot 4)
+const PU=add(makeCharacter(lib,{...COW,skin:'#6b4026',number:94}),(ch,t)=>pushup(ch,t,-Math.PI/2+0.2));PU.root.position.set(-14,0,-7);
+const ST=add(makeCharacter(lib,{...COW,skin:'#4e3020',number:72}),anim('Idle_FoldArms_Loop',0.5));ST.root.position.set(-16.4,0,-6.2);ST.root.rotation.y=Math.PI/2-0.3;
+// HLV (shot 7): áo len navy, quần kaki, cầm bảng
+const COACH=add(makeCharacter(lib,{skin:'#e3b48f',skinMix:1,jersey:'#2c3f73',pants:'#cbbd98',socks:'#cbbd98',shoes:'#2a2420',hair:'Hair_SimpleParted',hairColor:'#4a2f1c',browPaint:'#4a2f1c',eyeScale:2.2,smooth:{jersey:14,pants:10,socks:6,shoes:6,skin:4,head:8},puff:{jersey:0.03,pants:0.016,socks:0.004,shoes:0.008,skin:0}}),anim('Idle_TalkingPhone_Loop',0.2));
+COACH.root.position.set(-7.6,0,23.3);COACH.root.rotation.y=0.35;
+{const cb=new THREE.Mesh(new THREE.BoxGeometry(0.24,0.33,0.015),std('#b07a3e'));const paper=new THREE.Mesh(new THREE.PlaneGeometry(0.2,0.26),std('#f6f6f2'));paper.position.z=0.009;cb.add(paper);
+ COACH.bones.hand_l.add(cb);cb.position.set(0.0,0.12,0.06);cb.rotation.set(0.3,0,1.4);cb.scale.setScalar(1/COACH.root.scale.x);}
+// 2 cầu thủ khoanh tay cạnh băng ghế (shot 8) và số 88 ngồi buồn (shot 10)
+const B8a=add(makeCharacter(lib,{...COW,skin:'#5a3824',number:88}),anim('Idle_FoldArms_Loop',0));B8a.root.position.set(-1.65,0,25.0);B8a.root.rotation.y=Math.PI+0.15;
+const B8b=add(makeCharacter(lib,{...COW,skin:'#d6a37a',number:11,beard:true}),anim('Idle_FoldArms_Loop',0.9));B8b.root.position.set(-0.15,0,24.9);B8b.root.rotation.y=Math.PI-0.2;
+const SAD=add(makeCharacter(lib,{...COW,skin:'#4a2c1c',number:88}),(ch,t)=>benchSit(ch,t,0.53,1));SAD.root.position.set(-5.6,0,26.35);SAD.root.rotation.y=Math.PI;
+// cận mặt số 4 (shot 9)
+const C4=add(makeCharacter(lib,{...COW,skin:'#8a5634',number:4,eyeScale:2.5,beard:true}),anim('Idle_FoldArms_Loop',0.2));C4.root.position.set(-30,0,-12);C4.root.rotation.y=Math.PI/2;
+// em bé
+const BABY=(o)=>({skin:'#f0c4a2',skinMix:1,jersey:'#f8a9c9',pants:'#ffffff',number:1,numberColor:'#ffffff',numberOutline:'#d23a4a',helmet:'#ffffff',helmetMetal:0.05,mask:'#ff7fb0',maskThick:0.14,maskBars:1,maskY:-0.12,toonHead:false,eyeScale:2.6,headRatio:1.9,
+  smooth:{jersey:14,pants:10,socks:6,shoes:8,skin:6,head:10},puff:{jersey:0.06,pants:0.06,socks:0.035,shoes:0.03,skin:0.035,head:0,hand:0},...o});
+const skins=['#f0c4a2','#9a6744','#ffe2cf','#c48a62','#7a4a2c','#e8b48e'];
+let seed=11;const rnd=()=>((seed=(seed*1664525+1013904223)>>>0)/4294967296);
+const babies=[];const poses=['sit','crawl','sit','lie','crawl','sit'];
+for(let i=0;i<40;i++){const x=3+rnd()*22,z=-13+rnd()*26;if(Math.hypot(x-8,z+3)<2.2||Math.hypot(x-1.5,z-1)<2)continue;const sk=skins[i%skins.length];
+  const b=makeBaby(lib,BABY({skin:sk,socks:sk,shoes:sk,number:[2,3,5,7,9,12,14,17,22,31,44][i%11],smooth:{jersey:8,pants:6,socks:4,shoes:4,skin:3,head:6}}));
+  b.root.position.set(x,0,z);b.root.rotation.y=rnd()*6.28;const p=poses[i%poses.length],ph=rnd()*5;add(b,(ch,t)=>{POSES[p](ch,t+ph);groundIt(ch,0,0.03)},0.8);babies.push(b);}
+// em bé số 23 ôm bóng (shot 5) và số 1 "starting QB" ngồi trên logo (shot 6)
+const ball=new THREE.Mesh(new THREE.SphereGeometry(0.1,32,16),std('#7a3b1c',{roughness:0.55}));ball.scale.set(1,1,1.55);s.add(ball);
+{const lace=new THREE.Mesh(new THREE.BoxGeometry(0.012,0.006,0.12),std('#ffffff'));lace.position.y=0.098;ball.add(lace);for(let k=-2;k<=2;k++){const st=new THREE.Mesh(new THREE.BoxGeometry(0.05,0.006,0.008),std('#ffffff'));st.position.set(0,0.099,k*0.022);ball.add(st);}}
+const B23=add(makeBaby(lib,BABY({skin:'#f0c4a2',socks:'#f0c4a2',shoes:'#f0c4a2',number:23})),(ch,t)=>{const p=sitHold(ch,t);ball.position.copy(p).add(new THREE.Vector3(0,0.02,0).applyQuaternion(ch.root.quaternion));ball.rotation.set(0.2,ch.root.rotation.y+0.6,0.1)},0.8);
+B23.root.position.set(8,0,-3);B23.root.rotation.y=-Math.PI/2-0.5;
+const ball2=ball.clone();s.add(ball2);
+const B1=add(makeBaby(lib,BABY({skin:'#c48a62',socks:'#c48a62',shoes:'#c48a62',number:1})),(ch,t)=>{const p=sitHold(ch,t*0.7+1);ball2.position.copy(p);ball2.rotation.set(0.1,ch.root.rotation.y-0.4,0)},0.8);
+B1.root.position.set(1.5,0,1.0);B1.root.rotation.y=-Math.PI/2+0.4;
+actors.forEach(a=>a.ch.root.traverse(o=>{if(o.isMesh)o.castShadow=true}));
+// ---------- máy quay: 11 shot theo đúng mốc cắt của mẫu; chuyển động chậm như mẫu (trôi 2–8%/s, zoom 1–4%/s) ----------
+const cam=new THREE.PerspectiveCamera(50,W/H,.05,600);
+const rig=new CameraRig(cam,r.domElement,{seed:5});
+const S=(t0,t1,from,to,o={})=>rig.add(Object.assign({t0,t1,ease:'linear',shake:0.004,shakeHz:0.5,from,to},o));
+// 1 (0–1.30) sau lưng nhóm Cowboys, ngang mắt, đẩy rất chậm; babies ở xa
+S(0,1.30,{pos:[-13.9,1.6,3.9],look:[4,0.9,-1.2]},{pos:[-13.6,1.6,3.82],look:[4,0.9,-1.2]},{fov:[52,51]});
+// 2 (1.30–3.77) góc cao nhìn xuống sân đầy babies, trôi ngang chậm
+S(1.30,3.77,{pos:[-3.5,7.4,13.5],look:[10,0,-1.5]},{pos:[-2.9,7.2,12.6],look:[10.5,0,-1.5]},{fov:[50,50]});
+// 3 (3.77–5.20) trung cảnh 2 cầu thủ, ngang ngực, lia nhẹ
+S(3.77,5.20,{pos:[-4.6,1.45,-3.3],look:[-7.2,1.25,0.4]},{pos:[-4.75,1.45,-3.05],look:[-7.2,1.25,0.5]},{fov:[46,45]});
+// 4 (5.20–6.87) chống đẩy, góc thấp, người đứng phía sau
+S(5.20,6.87,{pos:[-12.1,0.62,-4.6],look:[-14.6,0.55,-7.0]},{pos:[-12.2,0.6,-4.75],look:[-14.6,0.55,-7.0]},{fov:[48,47]});
+// 5 (6.87–9.43) baby 23 ôm bóng, máy thấp
+S(6.87,9.43,{pos:[6.0,0.62,-2.0],look:[8.0,0.32,-3.05]},{pos:[6.1,0.6,-2.08],look:[8.0,0.32,-3.05]},{fov:[48,46]});
+// 6 (9.43–11.47) baby số 1 trên logo giữa sân, có cầu thủ phía sau
+S(9.43,11.47,{pos:[3.1,0.62,2.3],look:[1.2,0.35,0.85]},{pos:[3.04,0.61,2.25],look:[1.2,0.35,0.85]},{fov:[50,49]});
+// 7 (11.47–12.57) HLV trung cảnh
+S(11.47,12.57,{pos:[-7.0,1.35,25.7],look:[-7.6,1.2,23.3]},{pos:[-7.05,1.35,25.6],look:[-7.6,1.2,23.3]},{fov:[46,45]});
+// 8 (12.57–14.33) 2 cầu thủ khoanh tay cạnh băng ghế
+S(12.57,14.33,{pos:[-0.85,1.25,20.5],look:[-0.9,1.15,25.0]},{pos:[-0.9,1.25,20.65],look:[-0.9,1.15,25.0]},{fov:[48,47]});
+// 9 (14.33–16.37) cận mặt số 4, máy hơi thấp
+S(14.33,16.37,{pos:[-29.15,1.62,-12.05],look:[-30,1.72,-12]},{pos:[-29.2,1.62,-12.04],look:[-30,1.72,-12]},{fov:[46,45]});
+// 10 (16.37–18.77) số 88 ngồi buồn, băng rôn PLAYOFFS phía sau
+S(16.37,18.77,{pos:[-5.2,1.3,22.9],look:[-5.6,1.45,26.5]},{pos:[-5.25,1.3,23.02],look:[-5.6,1.45,26.5]},{fov:[50,49]});
+// 11 (18.77–20.90) tủ cúp trống, nghiêng máy
+S(18.77,20.90,{pos:[8.3,1.55,25.0],look:[9.0,1.05,27.1]},{pos:[8.35,1.55,25.08],look:[9.0,1.05,27.1]},{fov:[50,49]});
+const DUTCH=[[14.33,16.37,-0.04],[18.77,20.9,0.09],[3.77,5.2,0.03]];
+// ---------- hậu kỳ: motion blur theo vận tốc ----------
+let comp;if(MB){comp=new EffectComposer(r,{frameBufferType:THREE.HalfFloatType,multisampling:2});comp.addPass(new RenderPass(s,cam));
+ const vp=new VelocityDepthNormalPass(s,cam);comp.addPass(vp);comp.addPass(new EffectPass(cam,new MotionBlurEffect(vp,{intensity:0.5,jitter:0,samples:8}),new ToneMappingEffect({mode:ToneMappingMode.NEUTRAL})));}
+const _v=new THREE.Vector3(),fr=new THREE.Frustum(),pm=new THREE.Matrix4();
+const pose=t=>{
+  rig.apply(t);if(t>=14.33&&t<16.37){C4.mixer.setTime(t+0.2);C4.root.updateMatrixWorld(true);const h=C4.bones.Head.getWorldPosition(new THREE.Vector3());const k=(t-14.33)/2.04;cam.position.set(h.x+1.1-0.06*k,h.y-0.2,h.z+0.15+0.03*k);cam.lookAt(h.x,h.y-0.08,h.z);}
+  for(const[a,b,z] of DUTCH)if(t>=a&&t<b)cam.rotateZ(z);
+  cam.updateMatrixWorld();pm.multiplyMatrices(cam.projectionMatrix,cam.matrixWorldInverse);fr.setFromProjectionMatrix(pm);
+  for(const a of actors){a.ch.root.getWorldPosition(_v);_v.y+=0.8;const vis=fr.containsPoint(_v)||fr.intersectsSphere(new THREE.Sphere(_v,a.rad*1.6));a.ch.root.visible=vis&&_v.distanceTo(cam.position)<70;if(a.ch.root.visible)a.update(a.ch,t);}
+  ball.visible=B23.root.visible;ball2.visible=B1.root.visible;
+  st.ledTex.offset.x=-t*0.05;
+};
+window.renderFrame=t=>{if(!MB){pose(t);r.render(s,cam);return;}
+  const dt=1/30,sh=rig.shotAt(t),tp=Math.max(sh.t0,t-dt);pose(tp);comp.render(dt);pose(t);comp.render(dt);};
+window.__dbg=()=>({cam:cam.position.toArray().map(x=>+x.toFixed(2)),a:B8a.root.visible,ap:B8a.root.position.toArray(),head:B8a.bones.Head.getWorldPosition(new THREE.Vector3()).toArray().map(x=>+x.toFixed(2)),c4:C4.bones.Head.getWorldPosition(new THREE.Vector3()).toArray().map(x=>+x.toFixed(2)),sc:B8a.root.scale.x});
+window.ready=true;
+</script></body></html>

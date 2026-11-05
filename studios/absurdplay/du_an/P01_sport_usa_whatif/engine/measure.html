@@ -1,0 +1,9 @@
+<!doctype html><html><body><canvas id="c"></canvas>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+const gl=await new GLTFLoader().loadAsync('./ual/AnimationLibrary_Godot_Standard.gltf');
+gl.scene.updateMatrixWorld(true);const b=new THREE.Box3().setFromObject(gl.scene);console.log('bbox',JSON.stringify(b.min),JSON.stringify(b.max));
+gl.scene.traverse(n=>{if(n.isBone&&/head|spine.003|hips/.test(n.name)){const p=new THREE.Vector3(),s=new THREE.Vector3();n.getWorldPosition(p);n.getWorldScale(s);console.log(n.name,p.toArray().map(x=>x.toFixed(3)),s.toArray().map(x=>x.toFixed(3)));}});
+window.renderFrame=()=>{};window.ready=true;
+</script></body></html>

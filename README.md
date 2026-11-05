@@ -10,6 +10,7 @@ docs/MUSE_START.md                         how to set up a new worker account + 
 docs/KIT_SKILL_v7.md                       style rules (script, camera, captions, audio)
 niches/<name>/                             one niche = channel.env (voice, music, size) + STYLE.md + CRITIC.md (+ examples/)
 studios/toon-studio/                       second engine: real-photo cut-outs with toon eyes (niche animal-toon-eyes)
+studios/absurdplay/                        third engine: three.js sports what-if (niche sport-usa-whatif) + a generic video-production process kit
 muse/custom-skills/rickclips/SKILL.md      agent entry point for the RickClips niche (copy to ~/workspace/custom-skills/)
 muse/custom-skills/toon-studio/SKILL.md    agent entry point for animal-toon-eyes
 ```
@@ -27,3 +28,4 @@ API keys never go in this repo (agents keep them in their own vault/connector).
 |---|---|---|
 | `rickclips` (history / curiosity, 3D round-head toons, ~45 s) | root (`engine_v4/`, `tools/ep/`) | `muse/custom-skills/rickclips` |
 | `animal-toon-eyes` (animal facts, photo cut-outs + toon eyes, ~70 s, TikTok) | `studios/toon-studio/` | `muse/custom-skills/toon-studio` |
+| `sport-usa-whatif` (AbsurdPlay: NFL/NBA what-if comedy, three.js 3D, 60–72 s, TikTok) | `studios/absurdplay/` | `muse/custom-skills/absurdplay` |

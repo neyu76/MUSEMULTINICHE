@@ -1,0 +1,77 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Anton;src:url(fonts/anton-latin-400-normal.woff2)}
+@font-face{font-family:Inter;font-weight:900;src:url(fonts/inter-latin-900-normal.woff2)}
+/* Tập 3: kiểu đồ hoạ truyền hình "đêm thứ Sáu" — khối xiên (skew), chữ Anton cao hẹp, bảng màu xanh bột + vàng nắng + than chì.
+   Khác E01 (thẻ thẳng) và E02 (thẻ vàng/than + chữ pixel Silkscreen). */
+html,body{margin:0;width:1080px;height:1920px;background:transparent;overflow:hidden;font-family:Anton}
+.el{position:absolute;left:50%;transform:translateX(-50%);opacity:0;transform-origin:50% 50%}
+.bug{top:300px;display:flex;height:88px;filter:drop-shadow(0 6px 10px rgba(0,0,0,.4))}
+.bug>div{display:flex;align-items:center;justify-content:center;font-size:46px;letter-spacing:1px;transform:skewX(-12deg);padding:0 26px}
+.bug>div>span{transform:skewX(12deg);display:inline-block}
+.bA{background:#62aee8;color:#0b2340;min-width:230px}.bB{background:#efece6;color:#2d3138;min-width:230px}.bS{background:#0b2340;color:#ffc20e;min-width:86px}.bC{background:#1b1e24;color:#fff;min-width:200px;font-size:40px!important}
+.slab{filter:drop-shadow(0 10px 16px rgba(0,0,0,.45));text-align:center}
+.slab .k{display:inline-block;background:#ffc20e;color:#0b2340;font-size:40px;letter-spacing:3px;padding:6px 30px;transform:skewX(-12deg)}
+.slab .v{background:#0b2340;color:#fff;font-size:150px;line-height:1;padding:14px 40px 18px;transform:skewX(-12deg);border-left:16px solid #62aee8;white-space:nowrap}
+.slab .v span,.slab .k span{display:inline-block;transform:skewX(12deg)}
+.slab .v.red{background:#c8102e;border-left-color:#ffc20e}
+.chrome{width:1080px;text-align:center;font-size:190px;line-height:1;color:#fff;letter-spacing:4px;
+  background:linear-gradient(180deg,#ffffff 0%,#dfe9f5 45%,#7fa9cf 52%,#ffffff 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 4px 0 #0b2340) drop-shadow(0 9px 0 #ffc20e) drop-shadow(0 16px 14px rgba(0,0,0,.55))}
+.pill{background:#0b2340;color:#fff;font-size:52px;padding:10px 34px;border:4px solid #ffc20e;transform:translateX(-50%) skewX(-12deg);white-space:nowrap;letter-spacing:2px}
+.pill.red{background:#c8102e;border-color:#fff}
+.boxes{display:flex;gap:14px}.boxes div{width:92px;height:92px;background:#1b1e24;border:4px solid #fff;display:flex;align-items:center;justify-content:center;font-size:52px;color:#fff;transform:skewX(-12deg)}
+.boxes div.on{background:#c8102e}
+#flash{position:absolute;inset:0;background:#fff;opacity:0}
+.wm{position:absolute;left:0;width:1080px;top:205px;text-align:center;font-family:Inter;font-weight:900;font-size:38px;letter-spacing:3px;color:rgba(255,255,255,.92);-webkit-text-stroke:5px rgba(0,0,0,.75);paint-order:stroke fill;text-shadow:0 2px 6px rgba(0,0,0,.35)}
+</style></head><body>
+<div class="el bug" id="bug"><div class="bA"><span>LAC</span></div><div class="bS"><span id="sA">0</span></div><div class="bB"><span>MNQ</span></div><div class="bS"><span id="sB">0</span></div><div class="bC"><span id="clk">1ST 15:00</span></div></div>
+<div class="el slab" id="title" style="top:1420px"><div class="k"><span>WHAT IF</span></div><div class="v" style="font-size:96px"><span>CHARGERS vs 11 MANNEQUINS</span></div></div>
+<div class="el pill" id="pro" style="top:420px">PRO ATHLETES</div>
+<div class="el pill red" id="knees" style="top:420px">KNEES: 0</div>
+<div class="el slab" id="prob" style="top:300px"><div class="k"><span>WIN PROBABILITY</span></div><div class="v"><span>99%</span></div></div>
+<div class="el chrome" id="r07" style="top:290px">0–7</div>
+<div class="el slab" id="worst" style="top:300px"><div class="k"><span>WORST START SINCE</span></div><div class="v"><span>2000</span></div></div>
+<div class="el slab" id="noTD" style="top:300px"><div class="k"><span>QUARTERS WITHOUT A TD</span></div><div class="v red"><span>9</span></div></div>
+<div class="el pill" id="rush" style="top:420px">PASS RUSH: 0</div>
+<div class="el slab" id="pocket" style="top:1400px"><div class="k"><span>POCKET TIME</span></div><div class="v"><span id="pt">8.0s</span></div></div>
+<div class="el pill red" id="int" style="top:420px;font-size:64px">INTERCEPTED</div>
+<div class="el slab" id="games" style="top:300px"><div class="k"><span>GAMES WITH AN INT</span></div></div>
+<div class="el boxes" id="bx" style="top:390px"></div>
+<div class="el pill" id="fg" style="top:420px;font-size:64px">FIELD GOAL +3</div>
+<div class="el pill" id="q4" style="top:420px">4TH QUARTER</div>
+<div class="el chrome" id="td" style="top:1400px;font-size:150px">TOUCHDOWN</div>
+<div class="el pill red" id="again" style="top:420px">REPLAY? NO. AGAIN.</div>
+<div class="el chrome" id="fin" style="top:1380px;font-size:150px">FINAL</div>
+<div class="el slab" id="fin2" style="top:1560px"><div class="v" style="font-size:78px"><span>MANNEQUINS 14 · CHARGERS 9</span></div></div>
+<div class="el slab" id="kick" style="top:1400px"><div class="k"><span>CHARGERS POINTS</span></div><div class="v" style="font-size:96px"><span>TD 0 · FG 3</span></div></div>
+<div class="el slab" id="next" style="top:300px"><div class="k"><span>NEXT WEEK</span></div><div class="v" style="font-size:110px"><span>vs HOUSTON</span></div></div>
+<div class="el pill red" id="fav" style="top:420px;font-size:60px">MANNEQUINS −3</div>
+<div class="wm" id="wm">AbsurdPlay</div>
+<div id="flash"></div>
+<script type="module">
+import {SH,SUB} from './ep03_shots.js';
+const at=(k,a=0,b=null)=>[SH[k][0]+a,b==null?SH[k][1]:(b<0?SH[k][1]+b:SH[k][0]+b)];
+const KB=[SH.s12[0],...SUB.s12,SH.s12[1]];
+const INTT=SH.s10[0]+0.43+0.95; // lúc bóng vào tay ma-nơ-canh
+const TL=[['bug',0,SH.s2[0]],['title',SH.s2[0]+0.45,SH.s2[1]],['pro',...at('s3',0.3)],['knees',...at('s4',0.75)],['prob',...at('s5',0.35)],['r07',SH.s6[0]+0.35,SUB.s6],['worst',SUB.s6+0.1,SH.s6[1]],
+ ['noTD',...at('s7',0.5)],['rush',SUB.s8,SH.s8[1]],['pocket',...at('s9',0.1)],['int',INTT,SH.s10[1]],['games',...at('s11',0.2)],['bx',...at('s11',0.2)],
+ ['bug',SH.s12[0],SH.s16[0]],['fg',KB[0]+0.85,KB[1]],['fg',KB[1]+0.85,KB[2]],['fg',KB[2]+0.9,KB[3]],['q4',...at('s13',0.05,1.2)],['td',SUB.s14,SH.s14[1]],['again',...at('s15',0.3)],
+ ['fin',...at('s16',0.1)],['fin2',...at('s16',0.35)],['kick',...at('s17',0.4)],['next',...at('s18',0.15)],['fav',...at('s19',0.4)]];
+const bx=document.getElementById('bx');for(let i=0;i<8;i++){const d=document.createElement('div');d.textContent=i+1;bx.appendChild(d);}
+const ease=x=>1-Math.pow(1-x,3);
+document.fonts.ready.then(()=>{window.ready=true});
+window.renderFrame=t=>{
+  const vis={};for(const [id,a,b] of TL){if(t>=a&&t<b)vis[id]=Math.max(vis[id]??-1,a);}
+  for(const e of document.querySelectorAll('.el')){const a=vis[e.id];const on=a!=null;const k=on?ease(Math.min(1,(t-a)/0.18)):0;
+    e.style.opacity=on?(a===0?1:Math.min(1,(t-a)/0.07)):0;const pill=e.classList.contains('pill');const sc=e.id==='bug'?1:0.8+0.2*k;const dx=e.classList.contains('slab')?(1-k)*-120:0;
+    e.style.transform=`translateX(calc(-50% + ${dx}px)) scale(${sc})${pill?' skewX(-12deg)':''}`;}
+  // điểm số: 3–6–9 theo từng cú sút (lúc bóng qua cột), ma-nơ-canh 7 rồi 14
+  let a=0;for(let q=0;q<3;q++)if(t>=KB[q]+0.85)a=3*(q+1);if(t>=SH.s12[1])a=9;
+  const b=t>=SH.s15[0]+1.0?14:t>=SUB.s14?7:0;document.getElementById('sA').textContent=a;document.getElementById('sB').textContent=b;
+  document.getElementById('clk').textContent=t<SH.s12[0]?'1ST 15:00':t<SH.s13[0]?'2ND 7:12':'4TH 2:05';
+  // ô cướp bóng: 7 ô đỏ sáng dần trong nửa đầu s11, ô thứ 8 ở "Now it's eight"
+  const k=(t-SH.s11[0]-0.3)/(SUB.s11-SH.s11[0]-0.5);[...bx.children].forEach((d,i)=>d.classList.toggle('on',i<7?k>i/7:t>=SUB.s11+0.1));
+  document.getElementById('pt').textContent=(8+Math.max(0,t-SH.s9[0])*1.8).toFixed(1)+'s';
+  const f=(t-SH.s6[0])*30;document.getElementById('flash').style.opacity=f>=0&&f<5?[0.95,0.8,0.5,0.25,0.08][Math.floor(f)]:0;
+};
+</script></body></html>

@@ -1,0 +1,17 @@
+<!doctype html><html><body style="margin:0"><canvas id="c" width="1080" height="1920"></canvas>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/","postprocessing":"./node_modules/postprocessing/build/index.js","realism-effects":"./node_modules/realism-effects/dist/index.js"}}</script>
+<script type="module">
+import * as THREE from 'three';import {EffectComposer,RenderPass,EffectPass,ToneMappingEffect,ToneMappingMode} from 'postprocessing';import {loadLibrary,makeCharacter} from './lib/nhanvat2.js';import {VelocityDepthNormalPass,MotionBlurEffect} from 'realism-effects';
+import {buildStadium,stadiumLights} from './lib/svd.js';
+const r=new THREE.WebGLRenderer({canvas:c,antialias:false,preserveDrawingBuffer:true});r.setSize(1080,1920,false);r.outputColorSpace=THREE.SRGBColorSpace;r.toneMapping=THREE.NeutralToneMapping;
+const s=new THREE.Scene();const st=buildStadium(s);stadiumLights(s);
+const box=new THREE.Mesh(new THREE.BoxGeometry(1,2,1),new THREE.MeshStandardMaterial({color:'#e33'}));box.position.set(0,1,0);s.add(box);
+const lib=await loadLibrary();const P=makeCharacter(lib,{skin:'#8a5634',skinMix:1,jersey:'#f4f4f4',number:4,sleeveStripes:['#0b2a5b','#fff','#0b2a5b'],pants:'#b9c3cc',pantsStripes:['#0b2a5b','#fff','#0b2a5b'],socks:'#0b2a5b',helmet:'#c3ccd6',helmetStripe:['#0b2a5b','#fff','#0b2a5b'],mask:'#0b2a5b'});P.root.position.set(1.5,0,0);s.add(P.root);P.play('Sword_Dash_RM');
+const useMB=!location.hash.includes('nomb');if(useMB)r.toneMapping=THREE.NoToneMapping;
+const cam=new THREE.PerspectiveCamera(40,1080/1920,.1,600);
+const comp=new EffectComposer(r,{frameBufferType:THREE.HalfFloatType});comp.addPass(new RenderPass(s,cam));
+const vp=new VelocityDepthNormalPass(s,cam);comp.addPass(vp);
+const mb=new MotionBlurEffect(vp,{intensity:1,jitter:0,samples:16});comp.addPass(new EffectPass(cam,mb,new ToneMappingEffect({mode:ToneMappingMode.NEUTRAL})));
+const pose=t=>{P.mixer.setTime(t);cam.position.set(Math.sin(t*2.5)*8,2,Math.cos(t*2.5)*8);cam.lookAt(0,1,0);box.rotation.y=t*6;};
+window.renderFrame=t=>{pose(t-1/30);if(useMB)comp.render(1/30);pose(t);if(useMB)comp.render(1/30);else r.render(s,cam);};window.ready=true;
+</script></body></html>

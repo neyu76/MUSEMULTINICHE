@@ -1,0 +1,29 @@
+<!doctype html><html><body style="margin:0"><canvas id="c" width="1080" height="1920"></canvas>
+<style>@font-face{font-family:Anton;src:url(fonts/anton-latin-400-normal.woff2)}@font-face{font-family:Inter;font-weight:900;src:url(fonts/inter-latin-900-normal.woff2)}@font-face{font-family:Oswald;font-weight:700;src:url(fonts/oswald-latin-700-normal.woff2)}</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/","postprocessing":"./node_modules/postprocessing/build/index.js","realism-effects":"./node_modules/realism-effects/dist/index.js"}}</script>
+<script type="module">
+import * as THREE from 'three';import {buildStadium,stadiumLights} from './lib/svd.js';import {loadLibrary,makeCharacter,makeBaby} from './lib/nhanvat2.js';import {POSES,groundIt} from './lib/tuthe.js';import {CameraRig,PRESET} from './lib/camera.js';import {EffectComposer,RenderPass,EffectPass,ToneMappingEffect,ToneMappingMode} from 'postprocessing';import {VelocityDepthNormalPass,MotionBlurEffect} from 'realism-effects';
+await Promise.all(['100px Anton','900 60px Inter','700 60px Oswald'].map(f=>document.fonts.load(f)));
+const r=new THREE.WebGLRenderer({canvas:c,antialias:true,preserveDrawingBuffer:true});r.setSize(1080,1920,false);r.shadowMap.enabled=true;r.shadowMap.type=THREE.PCFSoftShadowMap;r.outputColorSpace=THREE.SRGBColorSpace;const MB=!location.hash.includes('nomb');r.toneMapping=MB?THREE.NoToneMapping:THREE.NeutralToneMapping;r.toneMappingExposure=1.05;
+const s=new THREE.Scene();const st=buildStadium(s);stadiumLights(s);
+const lib=await loadLibrary();
+const N='#0b2a5b';const COW={jersey:'#f4f4f4',numberColor:N,numberOutline:'#c0c8d0',sleeveStripes:[N,'#ffffff',N],collar:N,pants:'#b9c3cc',pantsStripes:[N,'#ffffff',N],socks:N,shoes:'#f4f4f4',helmet:'#c3ccd6',helmetStripe:[N,'#ffffff',N],mask:N,maskThick:0.085,skinMix:1,brows:false,eyeScale:2.3,smooth:{jersey:12,pants:10,socks:6,shoes:10,skin:4,head:8},puff:{jersey:0.022,pants:0.012,socks:0.006,shoes:0.02,skin:0}};
+const A=makeCharacter(lib,{...COW,skin:'#7b4b2e',number:4});A.root.position.set(-0.6,0,6);A.root.rotation.y=0.25;s.add(A.root);A.play('Idle_FoldArms_Loop');
+const B=makeCharacter(lib,{...COW,skin:'#e0b48e',number:88,beard:true});B.root.position.set(0.7,0,5.6);B.root.rotation.y=-0.35;s.add(B.root);B.play('Idle_FoldArms_Loop',{at:0.7});
+const skins=['#f0c4a2','#9a6744','#ffe2cf','#c48a62'];const bs=[];
+const spots=[[0,0,0,'sit',3.1],[1.6,0,-1.2,'crawl',2.6],[-1.8,0,-0.8,'sit',0.4],[2.6,0,1.0,'lie',0],[-2.9,0,1.4,'crawl',1.2],[0.9,0,-3.2,'sit',3.6],[-1.0,0,-3.6,'crawl',2.2],[3.4,0,-2.6,'sit',4.0]];
+spots.forEach(([x,y,z,p,ry],i)=>{const b=makeBaby(lib,{skin:skins[i%4],skinMix:1,jersey:'#f8a9c9',pants:'#ffffff',socks:skins[i%4],shoes:skins[i%4],number:[23,12,1,7,5,9,3,17][i],numberColor:'#ffffff',numberOutline:'#d23a4a',helmet:'#ffffff',helmetMetal:0.05,mask:'#ff7fb0',maskThick:0.12,maskY:-0.22,toonHead:false,eyeScale:2.6,headRatio:1.9,smooth:{jersey:30,pants:14,socks:6,shoes:10,skin:6,head:10},puff:{jersey:0.06,pants:0.06,socks:0.035,shoes:0.03,skin:0.035,head:0,hand:0}});b.root.position.set(x,0,z);b.root.rotation.y=ry;s.add(b.root);bs.push([b,p]);});
+const cam=new THREE.PerspectiveCamera(40,1080/1920,.1,600);
+const rig=new CameraRig(cam,r.domElement);
+// cảnh 1 (0-3.4s): drone liền một đường cong từ trên cao lượn xuống, vòng sang trước mặt 2 cầu thủ
+rig.add({t0:0,t1:3.4,shake:0.01,path:[[16,18,30],[9,9,21],[3.5,3.4,14.5],[0.4,1.7,11.6]],lookPath:[[0,0.5,0],[0,0.8,2],[0,1.1,4.5],[0.05,1.25,5.8]],fov:[46,40]});
+// cảnh 2 (3.4-6s): máy thấp lướt giữa các em bé rồi vươn lên cao nhìn toàn đội
+rig.add({t0:3.4,t1:6.0,shake:0.006,path:[[3.2,0.9,3.4],[1.6,1.0,2.6],[-0.6,1.6,2.8],[-1.2,4.5,4.2],[-0.4,8.5,5.2]],lookPath:[[0,0.35,0],[0,0.35,-0.6],[0,0.3,-1.0],[0,0,-1.2],[0,0,-1.4]],fov:[42,40]});
+const comp=new EffectComposer(r,{frameBufferType:THREE.HalfFloatType,multisampling:4});comp.addPass(new RenderPass(s,cam));
+const vp=new VelocityDepthNormalPass(s,cam);comp.addPass(vp);
+comp.addPass(new EffectPass(cam,new MotionBlurEffect(vp,{intensity:0.45,jitter:0,samples:16}),new ToneMappingEffect({mode:ToneMappingMode.NEUTRAL})));
+const pose=t=>{A.mixer.setTime(t);B.mixer.setTime(t+0.7);for(const[b,p] of bs){POSES[p](b,t);groundIt(b,0,0.03);}st.ledTex.offset.x=-t*0.05;rig.apply(t);};
+window.renderFrame=t=>{if(!MB){pose(t);r.render(s,cam);return;}
+// đổ khung trước để bộ đệm vận tốc có pose cũ (cùng cảnh), rồi render khung thật
+const dt=1/30, sh=rig.shotAt(t), tp=Math.max(sh.t0,t-dt); pose(tp); comp.render(dt); pose(t); comp.render(dt);};window.ready=true;
+</script></body></html>

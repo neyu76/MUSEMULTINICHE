@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mlt LC_NUMERIC="C" producer="main_bin" version="7.22.0">
+ <profile frame_rate_num="30" frame_rate_den="1" width="1080" height="1920" progressive="1" sample_aspect_num="1" sample_aspect_den="1" display_aspect_num="1080" display_aspect_den="1920" colorspace="709" description="1080x1920 30fps"/>
+ <producer id="producer0" in="0" out="1327">
+  <property name="length">1328</property>
+  <property name="eof">pause</property>
+  <property name="resource">../am_thanh/nhac.wav</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">2</property>
+ </producer>
+ <producer id="producer1" in="0" out="1327">
+  <property name="length">1328</property>
+  <property name="eof">pause</property>
+  <property name="resource">../am_thanh/sfx.wav</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">3</property>
+ </producer>
+ <producer id="producer2" in="0" out="1326">
+  <property name="length">1327</property>
+  <property name="eof">pause</property>
+  <property name="resource">../am_thanh/giong.wav</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">4</property>
+ </producer>
+ <producer id="producer3" in="0" out="1327">
+  <property name="length">1328</property>
+  <property name="eof">pause</property>
+  <property name="resource">../hinh/hinh.mp4</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="kdenlive:clip_type">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">5</property>
+ </producer>
+ <producer id="producer4" in="0" out="1327">
+  <property name="length">1328</property>
+  <property name="eof">pause</property>
+  <property name="resource">../do_hoa/do_hoa.mov</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="kdenlive:clip_type">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">6</property>
+ </producer>
+ <playlist id="main_bin">
+  <property name="kdenlive:docproperties.version">1.04</property>
+  <property name="kdenlive:docproperties.kdenliveversion">23.08.5</property>
+  <property name="kdenlive:docproperties.documentid">1730000000000</property>
+  <property name="kdenlive:docproperties.audioChannels">2</property>
+  <property name="kdenlive:docproperties.enableproxy">0</property>
+  <property name="kdenlive:docproperties.zoom">8</property>
+  <property name="kdenlive:docproperties.position">0</property>
+  <property name="kdenlive:docproperties.activeTrack">0</property>
+  <property name="xml_retain">1</property>
+  <entry producer="producer0" in="0" out="1327"/>
+  <entry producer="producer1" in="0" out="1327"/>
+  <entry producer="producer2" in="0" out="1326"/>
+  <entry producer="producer3" in="0" out="1327"/>
+  <entry producer="producer4" in="0" out="1327"/>
+ </playlist>
+ <producer id="black_track" in="0" out="1327"><property name="length">2147483647</property><property name="eof">continue</property><property name="resource">black</property><property name="mlt_service">color</property><property name="mlt_image_format">rgba</property><property name="set.test_audio">0</property></producer>
+ <producer id="producer5" in="0" out="1327">
+  <property name="length">1328</property>
+  <property name="eof">pause</property>
+  <property name="resource">../am_thanh/nhac.wav</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">2</property>
+  <property name="set.test_audio">0</property>
+  <property name="set.test_image">1</property>
+ </producer>
+ <playlist id="playlist0">
+  <property name="kdenlive:audio_track">1</property>
+  <entry producer="producer5" in="0" out="1327"><property name="kdenlive:id">2</property></entry>
+ </playlist>
+ <playlist id="playlist1">
+  <property name="kdenlive:audio_track">1</property>
+ </playlist>
+ <tractor id="tractor0" in="0" out="1327">
+  <property name="kdenlive:audio_track">1</property>
+  <property name="kdenlive:track_name">Nhạc</property>
+  <property name="kdenlive:trackheight">67</property>
+  <property name="kdenlive:timeline_active">1</property>
+  <track hide="video" producer="playlist0"/>
+  <track hide="video" producer="playlist1"/>
+ </tractor>
+ <producer id="producer6" in="0" out="1327">
+  <property name="length">1328</property>
+  <property name="eof">pause</property>
+  <property name="resource">../am_thanh/sfx.wav</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">3</property>
+  <property name="set.test_audio">0</property>
+  <property name="set.test_image">1</property>
+ </producer>
+ <playlist id="playlist2">
+  <property name="kdenlive:audio_track">1</property>
+  <entry producer="producer6" in="0" out="1327"><property name="kdenlive:id">3</property></entry>
+ </playlist>
+ <playlist id="playlist3">
+  <property name="kdenlive:audio_track">1</property>
+ </playlist>
+ <tractor id="tractor1" in="0" out="1327">
+  <property name="kdenlive:audio_track">1</property>
+  <property name="kdenlive:track_name">SFX</property>
+  <property name="kdenlive:trackheight">67</property>
+  <property name="kdenlive:timeline_active">1</property>
+  <track hide="video" producer="playlist2"/>
+  <track hide="video" producer="playlist3"/>
+ </tractor>
+ <producer id="producer7" in="0" out="1326">
+  <property name="length">1327</property>
+  <property name="eof">pause</property>
+  <property name="resource">../am_thanh/giong.wav</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">4</property>
+  <property name="set.test_audio">0</property>
+  <property name="set.test_image">1</property>
+ </producer>
+ <playlist id="playlist4">
+  <property name="kdenlive:audio_track">1</property>
+  <entry producer="producer7" in="0" out="1326"><property name="kdenlive:id">4</property></entry>
+ </playlist>
+ <playlist id="playlist5">
+  <property name="kdenlive:audio_track">1</property>
+ </playlist>
+ <tractor id="tractor2" in="0" out="1327">
+  <property name="kdenlive:audio_track">1</property>
+  <property name="kdenlive:track_name">Giọng</property>
+  <property name="kdenlive:trackheight">67</property>
+  <property name="kdenlive:timeline_active">1</property>
+  <track hide="video" producer="playlist4"/>
+  <track hide="video" producer="playlist5"/>
+ </tractor>
+ <producer id="producer8" in="0" out="1327">
+  <property name="length">1328</property>
+  <property name="eof">pause</property>
+  <property name="resource">../hinh/hinh.mp4</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="kdenlive:clip_type">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">5</property>
+  <property name="set.test_audio">1</property>
+  <property name="set.test_image">0</property>
+ </producer>
+ <playlist id="playlist6">
+  <entry producer="producer8" in="0" out="1327"><property name="kdenlive:id">5</property></entry>
+ </playlist>
+ <playlist id="playlist7">
+ </playlist>
+ <tractor id="tractor3" in="0" out="1327">
+  <property name="kdenlive:track_name">Hình</property>
+  <property name="kdenlive:trackheight">67</property>
+  <property name="kdenlive:timeline_active">1</property>
+  <track hide="audio" producer="playlist6"/>
+  <track hide="audio" producer="playlist7"/>
+ </tractor>
+ <producer id="producer9" in="0" out="1327">
+  <property name="length">1328</property>
+  <property name="eof">pause</property>
+  <property name="resource">../do_hoa/do_hoa.mov</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="kdenlive:clip_type">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">6</property>
+  <property name="set.test_audio">1</property>
+  <property name="set.test_image">0</property>
+ </producer>
+ <playlist id="playlist8">
+  <entry producer="producer9" in="0" out="1327"><property name="kdenlive:id">6</property></entry>
+ </playlist>
+ <playlist id="playlist9">
+ </playlist>
+ <tractor id="tractor4" in="0" out="1327">
+  <property name="kdenlive:track_name">Đồ họa</property>
+  <property name="kdenlive:trackheight">67</property>
+  <property name="kdenlive:timeline_active">1</property>
+  <track hide="audio" producer="playlist8"/>
+  <track hide="audio" producer="playlist9"/>
+ </tractor>
+ <tractor id="tractor5" in="0" out="1327">
+  <track producer="black_track"/>
+  <track producer="tractor0"/>
+  <track producer="tractor1"/>
+  <track producer="tractor2"/>
+  <track producer="tractor3"/>
+  <track producer="tractor4"/>
+  <transition><property name="a_track">0</property><property name="b_track">1</property><property name="mlt_service">mix</property><property name="kdenlive_id">mix</property><property name="internal_added">237</property><property name="always_active">1</property><property name="accepts_blanks">1</property><property name="sum">1</property></transition>
+  <transition><property name="a_track">0</property><property name="b_track">2</property><property name="mlt_service">mix</property><property name="kdenlive_id">mix</property><property name="internal_added">237</property><property name="always_active">1</property><property name="accepts_blanks">1</property><property name="sum">1</property></transition>
+  <transition><property name="a_track">0</property><property name="b_track">3</property><property name="mlt_service">mix</property><property name="kdenlive_id">mix</property><property name="internal_added">237</property><property name="always_active">1</property><property name="accepts_blanks">1</property><property name="sum">1</property></transition>
+  <transition><property name="a_track">0</property><property name="b_track">4</property><property name="version">0.1</property><property name="mlt_service">frei0r.cairoblend</property><property name="kdenlive_id">frei0r.cairoblend</property><property name="internal_added">237</property><property name="always_active">1</property></transition>
+  <transition><property name="a_track">0</property><property name="b_track">5</property><property name="version">0.1</property><property name="mlt_service">frei0r.cairoblend</property><property name="kdenlive_id">frei0r.cairoblend</property><property name="internal_added">237</property><property name="always_active">1</property></transition>
+  <filter><property name="mlt_service">avfilter.subtitles</property><property name="internal_added">237</property><property name="av.filename">../chu/phu_de.ass</property></filter>
+ </tractor>
+</mlt>

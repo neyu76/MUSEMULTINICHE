@@ -1,0 +1,22 @@
+<!doctype html><html><body style="margin:0"><canvas id="c" width="1080" height="1920"></canvas>
+<style>@font-face{font-family:Anton;src:url(fonts/anton-latin-400-normal.woff2)}</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';import {loadLibrary,makeCharacter} from './lib/nhanvat2.js';
+await document.fonts.load('100px Anton');
+const r=new THREE.WebGLRenderer({canvas:c,antialias:true,preserveDrawingBuffer:true});r.setSize(1080,1920,false);r.shadowMap.enabled=true;r.shadowMap.type=THREE.PCFSoftShadowMap;r.outputColorSpace=THREE.SRGBColorSpace;r.toneMapping=THREE.ACESFilmicToneMapping;r.toneMappingExposure=1.1;
+const s=new THREE.Scene();s.background=new THREE.Color('#26304a');s.add(new THREE.HemisphereLight('#e8eeff','#3a5a2a',1.5));const sun=new THREE.DirectionalLight('#fff3e0',2.6);sun.position.set(3,8,6);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);s.add(sun);
+const fc=document.createElement('canvas');fc.width=512;fc.height=512;const g=fc.getContext('2d');for(let i=0;i<10;i++){g.fillStyle=i%2?'#3f8f3a':'#46993f';g.fillRect(0,i*51.2,512,51.2);}g.fillStyle='#fff';for(let i=0;i<10;i++)g.fillRect(0,i*51.2,512,3);
+const ft=new THREE.CanvasTexture(fc);ft.colorSpace=THREE.SRGBColorSpace;ft.wrapS=ft.wrapT=THREE.RepeatWrapping;ft.repeat.set(4,4);
+const gr=new THREE.Mesh(new THREE.PlaneGeometry(80,80),new THREE.MeshStandardMaterial({map:ft}));gr.rotation.x=-Math.PI/2;gr.receiveShadow=true;s.add(gr);
+const cc=document.createElement('canvas');cc.width=1024;cc.height=256;const h=cc.getContext('2d');h.fillStyle='#2a3150';h.fillRect(0,0,1024,256);for(let y=0;y<256;y+=8)for(let x=0;x<1024;x+=6){h.fillStyle=`hsl(${Math.random()*360},45%,${40+Math.random()*30}%)`;h.fillRect(x+1,y+1,4,6);}
+const ct=new THREE.CanvasTexture(cc);ct.colorSpace=THREE.SRGBColorSpace;ct.wrapS=THREE.RepeatWrapping;ct.repeat.set(3,1);const st=new THREE.Mesh(new THREE.PlaneGeometry(90,18),new THREE.MeshBasicMaterial({map:ct}));st.position.set(0,10,-25);st.rotation.x=-0.5;s.add(st);
+const lib=await loadLibrary();
+const A=makeCharacter(lib,{skin:'#7b4b2e',jersey:'#f4f4f4',pants:'#aeb4bf',socks:'#0b2a5b',number:4,helmet:'#c3c8d0',mask:'#0b2a5b'});A.root.position.set(-0.45,0,0);A.root.rotation.y=0.25;s.add(A.root);A.play('Idle_FoldArms_Loop');
+const B=makeCharacter(lib,{skin:'#e0b48e',jersey:'#f4f4f4',pants:'#aeb4bf',socks:'#0b2a5b',number:88,hair:'Hair_SimpleParted',hairColor:'#3a2414',beard:true});B.root.position.set(0.6,0,-0.6);B.root.rotation.y=-0.3;s.add(B.root);B.play('Idle_No_Loop'===0?'':'Idle_TalkingPhone_Loop');
+const C=makeCharacter(lib,{skin:'#c58c62',jersey:'#ff6fae',pants:'#ffffff',socks:'#ff6fae',number:1,numberColor:'#ffffff',numberOutline:'#c2185b',helmet:'#ffffff',mask:'#ff6fae',scale:0.42,headScale:1.55});C.root.position.set(0.55,0,0.7);C.root.rotation.y=-0.6;s.add(C.root);C.play('Yes');
+const cam=new THREE.PerspectiveCamera(35,1080/1920,.1,300);
+window.renderFrame=(t)=>{for(const k of [A,B,C])k.mixer.setTime(t);
+ if(location.hash==='#close'){cam.position.set(-0.3,1.62,1.25);cam.lookAt(-0.4,1.5,0);}else{cam.position.set(0.1,1.4,4.6);cam.lookAt(0,1.0,0);}
+ r.render(s,cam);};window.ready=true;
+</script></body></html>

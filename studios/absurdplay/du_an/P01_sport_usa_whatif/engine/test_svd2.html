@@ -1,0 +1,11 @@
+<!doctype html><html><body style="margin:0"><canvas id="c" width="1080" height="1920"></canvas>
+<style>@font-face{font-family:Anton;src:url(fonts/anton-latin-400-normal.woff2)}@font-face{font-family:Inter;font-weight:900;src:url(fonts/inter-latin-900-normal.woff2)}@font-face{font-family:Oswald;font-weight:700;src:url(fonts/oswald-latin-700-normal.woff2)}</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';import {buildStadium,stadiumLights} from './lib/svd.js';
+await Promise.all(['100px Anton','900 60px Inter','700 60px Oswald'].map(f=>document.fonts.load(f)));
+const r=new THREE.WebGLRenderer({canvas:c,antialias:true,preserveDrawingBuffer:true});r.setSize(1080,1920,false);r.shadowMap.enabled=true;r.outputColorSpace=THREE.SRGBColorSpace;r.toneMapping=THREE.NeutralToneMapping;
+const s=new THREE.Scene();const st=buildStadium(s);stadiumLights(s);
+const cam=new THREE.PerspectiveCamera(42,1080/1920,.1,600);
+window.renderFrame=t=>{if(location.hash==='#b'){cam.position.set(20,2,4);cam.lookAt(-10,8,-40);}else{cam.position.set(-6,1.6,14);cam.lookAt(10,10,-30);}r.render(s,cam)};window.ready=true;
+</script></body></html>

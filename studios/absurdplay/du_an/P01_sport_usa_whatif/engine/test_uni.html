@@ -1,0 +1,23 @@
+<!doctype html><html><body style="margin:0"><canvas id="c" width="1080" height="1920"></canvas>
+<style>@font-face{font-family:Anton;src:url(fonts/anton-latin-400-normal.woff2)}</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';import {loadLibrary,makeCharacter,makeBaby} from './lib/nhanvat2.js';
+await document.fonts.load('100px Anton');
+const r=new THREE.WebGLRenderer({canvas:c,antialias:true,preserveDrawingBuffer:true});r.setSize(1080,1920,false);r.outputColorSpace=THREE.SRGBColorSpace;r.toneMapping=THREE.NeutralToneMapping;
+const s=new THREE.Scene();s.background=new THREE.Color('#9fb6cf');s.add(new THREE.HemisphereLight('#f4f6ff','#4a6a3a',2.3));const sun=new THREE.DirectionalLight('#fff3e0',1.4);sun.position.set(2,4,6);s.add(sun);
+const lib=await loadLibrary();
+const N='#0b2a5b';
+const cow={skin:'#8a5634',skinMix:1,brows:false,jersey:'#f4f4f4',number:4,numberColor:N,numberOutline:'#c0c8d0',
+ sleeveStripes:[N,'#ffffff',N],collar:N,pants:'#b9c3cc',pantsStripes:[N,'#ffffff',N],socks:N,shoes:'#f4f4f4',
+ helmet:'#c3ccd6',helmetStripe:[N,'#ffffff',N],mask:N,maskThick:0.085,eyeScale:2.3,smooth:{jersey:12,pants:10,socks:6,shoes:10,skin:4,head:8},puff:{jersey:0.022,pants:0.012,socks:0.006,shoes:0.02,skin:0}};
+const babyO={skin:'#ffe2cf',skinMix:1,jersey:'#f8a9c9',number:1,numberColor:'#ffffff',numberOutline:'#d23a4a',pants:'#ffffff',socks:'#ffe2cf',shoes:'#ffe2cf',smooth:{jersey:30,pants:14,socks:6,shoes:10,skin:6,head:10},
+ helmet:'#ffffff',helmetMetal:0.05,mask:'#ff7fb0',maskThick:0.12,maskY:-0.22,toonHead:false,eyeScale:2.6,headRatio:1.9};
+const chars=[];
+const add=(c,x,ry,cl='Idle_FoldArms_Loop')=>{c.root.position.set(x,0,0);c.root.rotation.y=ry;s.add(c.root);c.play(cl);chars.push(c)};
+add(makeCharacter(lib,cow),-0.45,0.25);add(makeCharacter(lib,cow),0.45,Math.PI-0.3);
+add(makeBaby(lib,babyO),-0.3,0.2,'Yes');add(makeBaby(lib,babyO),0.3,Math.PI-0.2,'Yes');
+chars[2].root.position.z=1.1;chars[3].root.position.z=1.1;
+const cam=new THREE.PerspectiveCamera(34,1080/1920,.1,100);cam.position.set(0,1.1,4.3);cam.lookAt(0,0.85,0.4);
+window.renderFrame=t=>{chars.forEach((c,i)=>c.mixer.setTime(t+i*0.3));r.render(s,cam)};window.ready=true;
+</script></body></html>

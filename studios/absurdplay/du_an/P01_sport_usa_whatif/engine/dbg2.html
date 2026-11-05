@@ -1,0 +1,8 @@
+<!doctype html><html><body><canvas></canvas><style>@font-face{font-family:Anton;src:url(fonts/anton-latin-400-normal.woff2)}</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';import {loadLibrary,makeBaby} from './lib/nhanvat2.js';
+const lib=await loadLibrary();const b=makeBaby(lib,{skin:'#c58c62',helmet:'#fff'});b.root.updateMatrixWorld(true);
+const v=new THREE.Vector3();b.bones.Head.children.forEach(c=>{if(c.isMesh){c.getWorldPosition(v);const sc=new THREE.Vector3();c.getWorldScale(sc);console.log(c.geometry.type,v.toArray().map(x=>x.toFixed(3)).join(','),'ws',sc.x.toFixed(2),c.visible)}});
+window.renderFrame=()=>{};window.ready=true;
+</script></body></html>

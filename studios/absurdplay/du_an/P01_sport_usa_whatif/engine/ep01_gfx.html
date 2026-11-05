@@ -1,0 +1,60 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Inter;font-weight:900;src:url(fonts/inter-latin-900-normal.woff2)}
+@font-face{font-family:Silk;font-weight:700;src:url(fonts/silkscreen-latin-700-normal.woff2)}
+html,body{margin:0;width:1080px;height:1920px;background:transparent;overflow:hidden;font-family:Inter}
+.el{position:absolute;left:50%;transform:translateX(-50%);opacity:0;transform-origin:50% 50%}
+.bug{top:300px;width:940px;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.bug .row{display:flex;height:84px;font-weight:900;color:#fff;font-size:34px}
+.bug .row div{display:flex;align-items:center;padding:0 24px}
+.t1{background:#0b2a5b;flex:0 0 250px;justify-content:space-between}.t2{flex:0 0 330px;justify-content:space-between}.clk{background:#141a2b;flex:1;justify-content:space-around}
+.bug .sub{background:#f2c230;color:#141a2b;font-size:17px;font-weight:900;text-align:center;padding:5px 0;letter-spacing:1px}
+.sc{color:#f2c230}
+.card{width:900px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.card .h{background:#f2c230;color:#141a2b;font-size:30px;font-weight:900;padding:9px 0;letter-spacing:2px}
+.card .h.lav{background:#c9b6f2}.card .h.red{background:#e0435a;color:#fff}
+.card .b{background:#141a2b;color:#fff;font-size:112px;font-weight:900;padding:18px 0 14px;line-height:1}
+.card .s{background:#141a2b;color:#f2c230;font-size:30px;font-weight:900;padding:0 0 22px;letter-spacing:1px}
+.w3d{width:1080px;text-align:center;font-family:Silk;font-weight:700;font-size:92px;color:#f7d43a;-webkit-text-stroke:5px #111;paint-order:stroke fill;letter-spacing:6px;text-shadow:0 5px 0 #8a6a10,0 9px 0 #111,0 14px 16px rgba(0,0,0,.45)}
+.tag{background:#141a2b;color:#fff;font-weight:900;font-size:34px;padding:8px 22px;border-radius:8px;border:3px solid #fff;letter-spacing:1px;white-space:nowrap}
+.tag.red{background:#d3263f}
+#flash{position:absolute;inset:0;background:#fff;opacity:0}
+</style></head><body>
+<div class="el bug" id="bug1"><div class="row"><div class="t1"><span>DAL</span><span class="sc">30</span></div><div class="t2" style="background:#7a5cc4"><span>GRANDMAS</span><span class="sc">24</span></div><div class="clk"><span>4TH</span><span>1:14</span></div></div><div class="sub">WHAT IF • WEEK 9 • ARLINGTON, TX</div></div>
+<div class="el card" id="title" style="top:880px"><div class="h" style="display:inline-block;padding:8px 40px">WHAT IF</div><div style="background:#141a2b;box-shadow:0 10px 30px rgba(0,0,0,.45)"><div class="b" style="font-size:62px;padding:20px 0 22px;border-bottom:6px solid #f2c230">COWBOYS vs 50 GRANDMAS</div></div></div>
+<div class="el card" id="age" style="top:500px"><div class="h lav">AVERAGE AGE</div><div class="b">81</div><div class="s">YEARS YOUNG</div></div>
+<div class="el tag" id="fast" style="top:620px">FASTEST PLAYER</div>
+<div class="el w3d" id="pro" style="top:470px">PRO ATHLETES</div>
+<div class="el card" id="lead" style="top:500px"><div class="h">TIME LEFT</div><div class="b">1:14</div><div class="s">DALLAS UP 6</div></div>
+<div class="el w3d" id="dal" style="top:500px">IT'S DALLAS</div>
+<div class="el card" id="last" style="top:1450px;width:820px"><div class="h">LAST SUNDAY</div><div class="b" style="font-size:80px">DAL 24 · ARI 10</div><div class="s">4TH QUARTER · 14:20 LEFT</div></div>
+<div class="el bug" id="bug2"><div class="row"><div class="t1"><span>DAL</span><span class="sc" id="b2d">30</span></div><div class="t2" style="background:#b0172f"><span>ARIZONA</span><span class="sc" id="b2a">24</span></div><div class="clk"><span>4TH</span><span id="b2c">1:14</span></div></div><div class="sub">LAST SUNDAY • WEEK 9</div></div>
+<div class="el tag red" id="nogood1" style="top:640px">NO GOOD</div>
+<div class="el w3d" id="saved" style="top:500px">SAVED!</div>
+<div class="el card" id="fin1" style="top:500px"><div class="h red">FINAL · OVERTIME</div><div class="b" style="font-size:96px">ARI 33 · DAL 30</div></div>
+<div class="el card" id="gball" style="top:520px"><div class="h lav">GRANDMAS BALL</div><div class="b">1:14</div><div class="s">TO GO · DOWN 6</div></div>
+<div class="el bug" id="bug3"><div class="row"><div class="t1"><span>DAL</span><span class="sc">30</span></div><div class="t2" style="background:#7a5cc4"><span>GRANDMAS</span><span class="sc" id="b3g">24</span></div><div class="clk"><span id="b3q">4TH</span><span id="b3c">1:14</span></div></div><div class="sub">WHAT IF • WEEK 9 • ARLINGTON, TX</div></div>
+<div class="el card" id="miss" style="top:560px;width:620px"><div class="h">MISSED TACKLES</div><div class="b" id="missn">0</div></div>
+<div class="el w3d" id="td" style="top:500px">TOUCHDOWN</div>
+<div class="el tag red" id="nogood2" style="top:640px">NO GOOD</div>
+<div class="el tag" id="replay" style="top:300px;left:860px;font-size:28px;background:#d3263f">▶ REPLAY</div>
+<div class="el w3d" id="ot" style="top:500px">OVERTIME</div>
+<div class="el w3d" id="good" style="top:640px;font-size:80px">IT'S GOOD!</div>
+<div class="el card" id="rec" style="top:500px"><div class="h">DALLAS COWBOYS</div><div class="b">3–5</div><div class="s">SEASON RECORD</div></div>
+<div id="flash"></div>
+<script>
+// [id, vào, ra] — theo mốc từ của giọng (giong/words.json)
+const TL=[['bug1',0,2.16],['title',3.46,5.0],['age',5.78,7.38],['fast',7.55,9.54],['pro',10.0,11.82],['lead',11.9,13.66],['dal',14.05,15.36],
+ ['bug2',19.5,24.64],['nogood1',25.35,26.18],['saved',26.25,27.14],['fin1',27.6,28.7],['gball',28.8,30.52],['bug3',30.52,34.22],['miss',32.75,34.22],['td',34.3,34.98],['nogood2',36.0,37.34],['replay',36.2,37.34],['ot',37.4,38.16],['good',38.25,38.98],['rec',41.15,42.75]];
+const ease=x=>1-Math.pow(1-x,3);
+document.fonts.ready.then(()=>{window.ready=true});
+window.renderFrame=t=>{
+  for(const [id,a,b] of TL){const e=document.getElementById(id);const on=t>=a&&t<b;const k=on?ease(Math.min(1,(t-a)/0.18)):0;
+    e.style.opacity=on?(a===0?1:Math.min(1,(t-a)/0.08)):0;const sc=id.startsWith('bug')?1:0.82+0.18*k;e.style.transform=(id==='replay'?'':'translateX(-50%) ')+`scale(${sc})`;}
+  // bug 2: đồng hồ chạy 1:14 -> 0:10 khi Arizona ghi điểm, tỉ số 30-30
+  const td=t>=23.25;document.getElementById('b2a').textContent=td?'30':'24';document.getElementById('b2c').textContent=td?'0:10':'1:'+String(Math.max(10,14-Math.floor((t-19.5)))).padStart(2,'0');
+  // bug 3: đồng hồ chạy khi các cụ tấn công
+  const sec=Math.max(10,74-Math.floor((t-30.52)*20));document.getElementById('b3c').textContent=Math.floor(sec/60)+':'+String(sec%60).padStart(2,'0');
+  document.getElementById('missn').textContent=String(Math.max(0,Math.min(6,Math.floor((t-32.75)/0.24)+1)));
+  const f=(t-13.66)*30;document.getElementById('flash').style.opacity=f>=0&&f<4?[1,0.85,0.45,0.15][Math.floor(f)]:0;
+};
+</script></body></html>

@@ -1,0 +1,48 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Inter;font-weight:900;src:url(fonts/inter-latin-900-normal.woff2)}
+@font-face{font-family:Mont;font-weight:800;src:url(fonts/montserrat-latin-800-normal.woff2)}
+@font-face{font-family:Silk;font-weight:700;src:url(fonts/silkscreen-latin-700-normal.woff2)}
+html,body{margin:0;width:1080px;height:1920px;background:transparent;overflow:hidden;font-family:Inter}
+.el{position:absolute;left:50%;transform:translateX(-50%);opacity:0;transform-origin:50% 50%}
+/* bug tỉ số */
+.bug{top:300px;width:940px;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.bug .row{display:flex;height:84px;font-weight:900;color:#fff;font-size:34px}
+.bug .row div{display:flex;align-items:center;padding:0 24px}
+.t1{background:#0b2a5b;flex:0 0 250px;justify-content:space-between}.t2{background:#e0457b;flex:0 0 300px;justify-content:space-between}.clk{background:#141a2b;flex:1;justify-content:space-around}
+.bug .sub{background:#f2c230;color:#141a2b;font-size:17px;font-weight:900;text-align:center;padding:5px 0;letter-spacing:1px}
+.sc{color:#f2c230}
+/* thẻ số liệu */
+.card{width:900px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.card .h{background:#f2c230;color:#141a2b;font-size:30px;font-weight:900;padding:9px 0;letter-spacing:2px}
+.card .b{background:#141a2b;color:#fff;font-size:112px;font-weight:900;padding:18px 0 14px;line-height:1}
+.card .s{background:#141a2b;color:#f2c230;font-size:30px;font-weight:900;padding:0 0 22px;letter-spacing:1px}
+.card.title .b{font-size:66px;padding:20px 0 22px;border-bottom:6px solid #f2c230}
+.card.title .h{display:inline-block;padding:8px 40px;font-size:28px}
+.card.title{background:transparent;box-shadow:none}
+.card.title .wrap{background:#141a2b;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+/* chữ 3D vàng kiểu pixel */
+.w3d{width:1080px;text-align:center;font-family:Silk;font-weight:700;font-size:92px;color:#f7d43a;-webkit-text-stroke:5px #111;paint-order:stroke fill;letter-spacing:6px;
+ text-shadow:0 5px 0 #8a6a10,0 9px 0 #111,0 14px 16px rgba(0,0,0,.45)}
+.tag{background:#141a2b;color:#fff;font-weight:900;font-size:34px;padding:8px 22px;border-radius:8px;border:3px solid #fff;letter-spacing:1px}
+#flash{position:absolute;inset:0;background:#fff;opacity:0}
+</style></head><body>
+<div class="el bug" id="bug"><div class="row"><div class="t1"><span>DAL</span><span class="sc">0</span></div><div class="t2"><span>BABIES</span><span class="sc">0</span></div><div class="clk"><span>1ST</span><span>15:00</span></div></div><div class="sub">NFC WILD CARD · ARLINGTON, TX</div></div>
+<div class="el card title" id="title" style="top:880px"><div class="h">NFC WILD CARD</div><div class="wrap"><div class="b">COWBOYS vs 50 BABIES</div></div></div>
+<div class="el w3d" id="pro" style="top:470px">PRO ATHLETES</div>
+<div class="el card" id="exp" style="top:500px"><div class="h">FOOTBALL EXPERIENCE</div><div class="b">0 YEARS</div></div>
+<div class="el tag" id="qb" style="top:640px">STARTING QB</div>
+<div class="el card" id="win" style="top:520px"><div class="h">WIN PROBABILITY</div><div class="b">DAL 99.9%</div><div class="s">EASIEST WIN IN NFL HISTORY?</div></div>
+<div class="el w3d" id="po" style="top:500px">THE PLAYOFFS</div>
+<div class="el card" id="last" style="top:250px;width:820px"><div class="h">LAST NFC CHAMPIONSHIP APPEARANCE</div><div class="b" style="font-size:96px">1995 SEASON</div></div>
+<div id="flash"></div>
+<script>
+// [id, vào, ra] — theo mốc shot của mẫu
+const TL=[['bug',0,1.30],['title',1.45,3.77],['pro',5.30,6.87],['exp',7.0,9.43],['qb',9.6,11.47],['win',12.7,14.33],['po',14.45,16.37],['last',18.9,20.9]];
+const ease=x=>1-Math.pow(1-x,3);
+document.fonts.ready.then(()=>{window.ready=true});
+window.renderFrame=t=>{
+  for(const [id,a,b] of TL){const e=document.getElementById(id);const inT=t>=a&&t<b;const k=inT?ease(Math.min(1,(t-a)/0.18)):0;
+    e.style.opacity=inT?(a===0?1:Math.min(1,(t-a)/0.08)):0;const sc=id==='bug'?1:0.82+0.18*k;e.style.transform=`translateX(-50%) scale(${sc})`;}
+  const f=(t-14.33)*30;document.getElementById('flash').style.opacity=f>=0&&f<4?[1,0.85,0.45,0.15][Math.floor(f)]:0;
+};
+</script></body></html>

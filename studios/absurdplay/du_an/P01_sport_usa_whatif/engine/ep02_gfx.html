@@ -1,0 +1,58 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Inter;font-weight:900;src:url(fonts/inter-latin-900-normal.woff2)}
+@font-face{font-family:Silk;font-weight:700;src:url(fonts/silkscreen-latin-700-normal.woff2)}
+html,body{margin:0;width:1080px;height:1920px;background:transparent;overflow:hidden;font-family:Inter}
+.el{position:absolute;left:50%;transform:translateX(-50%);opacity:0;transform-origin:50% 50%}
+.bug{top:300px;width:940px;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.bug .row{display:flex;height:84px;font-weight:900;color:#fff;font-size:34px}
+.bug .row div{display:flex;align-items:center;padding:0 24px}
+.t1{background:#98002E;flex:0 0 290px;justify-content:space-between}.t2{background:#00471B;flex:0 0 290px;justify-content:space-between;color:#EEE1C6}.clk{background:#141a2b;flex:1;justify-content:space-around}
+.bug .sub{background:#2fbf63;color:#0b1a10;font-size:17px;font-weight:900;text-align:center;padding:5px 0;letter-spacing:1px}
+.sc{color:#ffd23a}
+.card{width:900px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.card .h{background:#ffd23a;color:#141a2b;font-size:30px;font-weight:900;padding:9px 0;letter-spacing:2px}
+.card .h.grn{background:#2fbf63;color:#06140b}.card .h.red{background:#d3263f;color:#fff}
+.card .b{background:#141a2b;color:#fff;font-size:112px;font-weight:900;padding:18px 0 14px;line-height:1}
+.card .s{background:#141a2b;color:#ffd23a;font-size:30px;font-weight:900;padding:0 0 22px;letter-spacing:1px}
+.w3d{width:1080px;text-align:center;font-family:Silk;font-weight:700;font-size:150px;color:#f7d43a;-webkit-text-stroke:6px #111;paint-order:stroke fill;letter-spacing:6px;text-shadow:0 6px 0 #8a6a10,0 11px 0 #111,0 16px 18px rgba(0,0,0,.45)}
+.tag{background:#141a2b;color:#fff;font-weight:900;font-size:34px;padding:8px 22px;border-radius:8px;border:3px solid #fff;letter-spacing:1px;white-space:nowrap}
+.tag.red{background:#d3263f}
+#flash{position:absolute;inset:0;background:#fff;opacity:0}
+.wm{position:absolute;left:0;width:1080px;top:205px;text-align:center;font-family:Inter;font-weight:900;font-size:38px;letter-spacing:3px;color:rgba(255,255,255,.92);-webkit-text-stroke:5px rgba(0,0,0,.75);paint-order:stroke fill;text-shadow:0 2px 6px rgba(0,0,0,.35)}
+</style></head><body>
+<div class="el bug" id="bug1"><div class="row"><div class="t1"><span>MIA</span><span class="sc">0</span></div><div class="t2"><span>MIL</span><span class="sc">0</span></div><div class="clk"><span>1ST</span><span>12:00</span></div></div><div class="sub">WHAT IF • 1 vs 5 • MILWAUKEE, WI</div></div>
+<div class="el card" id="mvp" style="top:250px;width:620px"><div class="h">MVP</div><div class="b">2×</div><div class="s">2019 · 2020</div></div>
+<div class="el tag" id="h611" style="top:560px;font-size:48px">6'11"</div>
+<div class="el card" id="trade" style="top:520px"><div class="h">THE TRADE</div><div class="b" style="font-size:96px">4 PLAYERS</div><div class="s">+ A PILE OF DRAFT PICKS</div></div>
+<div class="el card" id="rec6" style="top:520px;width:720px"><div class="h grn">MILWAUKEE</div><div class="b">1–6</div><div class="s">THIS SEASON</div></div>
+<div class="el card" id="prob" style="top:520px"><div class="h">WIN PROBABILITY</div><div class="b" style="font-size:96px">GIANNIS 99.9%</div></div>
+<div class="el w3d" id="r25" style="top:90px">2–5</div>
+<div class="el bug" id="bug2"><div class="row"><div class="t1"><span>GIANNIS</span><span class="sc" id="b2g">0</span></div><div class="t2"><span>BUCKS</span><span class="sc" id="b2b">0</span></div><div class="clk"><span>1ST</span><span id="b2c">12:00</span></div></div><div class="sub">WHAT IF • 1 vs 5 • MILWAUKEE, WI</div></div>
+<div class="el tag red" id="three" style="top:640px;font-size:44px">+3</div>
+<div class="el tag" id="ftl" style="top:600px;font-size:44px">FREE THROW</div>
+<div class="el card" id="ftc" style="top:520px;width:640px"><div class="h">FREE THROW CLOCK</div><div class="b" id="ftn">0:08</div></div>
+<div class="el w3d" id="fin" style="top:250px;font-size:120px">FINAL</div>
+<div class="el card" id="fin2" style="top:430px;width:820px"><div class="b" style="font-size:84px">GIANNIS 21 · BUCKS 19</div></div>
+<div class="el card" id="rec7" style="top:520px;width:720px"><div class="h grn">MILWAUKEE</div><div class="b">1–7</div><div class="s">NOW</div></div>
+<div class="el tag red" id="t34" style="top:1420px;font-size:50px">#34</div>
+<div class="wm" id="wm">AbsurdPlay</div>
+<div id="flash"></div>
+<script type="module">
+import {SH,SUB} from './ep02_shots.js';
+const at=(k,a=0,b=null)=>[SH[k][0]+a,b==null?SH[k][1]:(b<0?SH[k][1]+b:SH[k][0]+b)];
+// [id, vào, ra] theo shot (mốc shot chốt theo giọng)
+const TL=[['bug1',...at('s1')],['mvp',...at('s3',0.35)],['h611',...at('s4',0.5)],['trade',...at('s5',0.3)],['rec6',...at('s6',0.15)],['prob',...at('s7',0.4)],['r25',...at('s8',0.1)],
+ ['bug2',SH.s10[0],SH.s14[0]],['three',...at('s12',1.7)],['ftl',...at('s13',0.25)],['ftc',...at('s14',0.1)],['fin',...at('s15',1.7)],['fin2',...at('s15',1.85)],['rec7',...at('s16',0.25)],['t34',...at('s17',0.5)]];
+const ease=x=>1-Math.pow(1-x,3);
+document.fonts.ready.then(()=>{window.ready=true});
+window.renderFrame=t=>{
+  for(const [id,a,b] of TL){const e=document.getElementById(id);const on=t>=a&&t<b;const k=on?ease(Math.min(1,(t-a)/0.18)):0;
+    e.style.opacity=on?(a===0?1:Math.min(1,(t-a)/0.08)):0;const sc=id.startsWith('bug')?1:0.82+0.18*k;e.style.transform=`translateX(-50%) scale(${sc})`;}
+  // điểm: mỗi cú úp rổ +2 (lúc treo vành), Herro +3
+  const BB=[SH.s11[0],...SUB.s11,SH.s11[1]];let g=0;for(let q=0;q<3;q++)if(t>=BB[q]+(BB[q+1]-BB[q])*0.62)g+=2;if(t>=SH.s12[1])g=6;
+  document.getElementById('b2g').textContent=g;document.getElementById('b2b').textContent=t>=SH.s12[0]+1.7?3:0;
+  const el=Math.max(0,Math.floor((t-SH.s10[0])*4));document.getElementById('b2c').textContent=t<SH.s10[0]+0.6?'12:00':`${11-Math.floor(el/60)}:${String(59-el%60).padStart(2,'0')}`;
+  const k=Math.min(1,Math.max(0,(t-SH.s14[0])/(SH.s14[1]-SH.s14[0])));document.getElementById('ftn').textContent='0:'+String(Math.min(10,8+Math.floor(k*3))).padStart(2,'0');
+  const f=(t-SH.s8[0])*30;document.getElementById('flash').style.opacity=f>=0&&f<4?[1,0.85,0.45,0.15][Math.floor(f)]:0;
+};
+</script></body></html>

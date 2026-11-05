@@ -1,0 +1,14 @@
+<!doctype html><html><head><meta charset="utf-8"></head><body style="margin:0;background:#000"><canvas id="c"></canvas>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import {loadLibrary,makeCharacter} from './lib/nhanvat2.js';
+const W=innerWidth,H=innerHeight;const r=new THREE.WebGLRenderer({canvas:c,antialias:true,preserveDrawingBuffer:true});r.setSize(W,H,false);r.outputColorSpace=THREE.SRGBColorSpace;r.toneMapping=THREE.NeutralToneMapping;
+const s=new THREE.Scene();s.background=new THREE.Color('#d9dde4');s.add(new THREE.HemisphereLight('#fff','#887',2.4));const dl=new THREE.DirectionalLight('#fff',2);dl.position.set(2,4,5);s.add(dl);
+const lib=await loadLibrary();console.log('MH',Object.keys(lib.mh).join(','),lib.mh.afro01&&lib.mh.afro01.pos.length);
+const ST=(location.hash.slice(1)||'proc:buzz,proc:fade,proc:curlytop,proc:afro,proc:dreads,proc:twists,proc:cornrows,proc:braids,proc:hightop,proc:manbun,mh:afro01,mh:short02,mh:short04,mh:braid01,mh:ponytail01,mh:long01').split(',');
+const cols=4;ST.forEach((st,i)=>{const ch=makeCharacter(lib,{skin:['#5b3a29','#8a5634','#c68c5f','#e8b98f'][i%4],hairStyle:st,hairColor:i%5==4?'#6a4a2a':'#141010',jersey:'#98002E',number:i,brows:false,eyeScale:2.3});
+  ch.root.position.set((i%cols-1.5)*0.75,-Math.floor(i/cols)*1.9,-Math.floor(i/cols)*0.01);ch.root.rotation.y=i%2?0.5:-0.5;s.add(ch.root);ch.play('Idle_No_Loop');ch.mixer.setTime(0.3);});
+const cam=new THREE.OrthographicCamera(-1.55,1.55,3.9,-3.9,0.1,50);cam.position.set(0,-1.2,6);cam.lookAt(0,-1.2,0);
+window.renderFrame=t=>{r.render(s,cam)};window.ready=true;
+</script></body></html>

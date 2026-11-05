@@ -1,0 +1,24 @@
+<!doctype html><html><body style="margin:0"><canvas id="c"></canvas>
+<style>@font-face{font-family:Anton;src:url(fonts/anton-latin-400-normal.woff2)}</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';import {loadLibrary,makeCharacter,makeBaby} from './lib/nhanvat2.js';import {benchSit,babySit,akimbo,alive} from './lib/tuthe.js';import {football} from './lib/dovat.js';
+await document.fonts.load('100px Anton');
+const r=new THREE.WebGLRenderer({canvas:c,antialias:true,preserveDrawingBuffer:true});r.setSize(innerWidth,innerHeight,false);r.outputColorSpace=THREE.SRGBColorSpace;r.toneMapping=THREE.NeutralToneMapping;
+const s=new THREE.Scene();s.background=new THREE.Color('#9fb6cf');s.add(new THREE.HemisphereLight('#f4f6ff','#4a6a3a',2.3));const sun=new THREE.DirectionalLight('#fff3e0',1.4);sun.position.set(2,4,6);s.add(sun);
+const g=new THREE.Mesh(new THREE.PlaneGeometry(20,20),new THREE.MeshStandardMaterial({color:'#3d8a35'}));g.rotation.x=-Math.PI/2;s.add(g);
+const lib=await loadLibrary();const N='#0b2a5b';
+const COW={jersey:'#f4f4f4',numberColor:N,numberOutline:'#c0c8d0',pants:'#b9c0c8',socks:'#eef0f2',shoes:'#f4f4f4',gloves:'#f4f4f4',helmet:'#c3ccd6',helmetStripe:[N,'#ffffff',N],mask:N,maskThick:0.085,maskY:-0.1,skinMix:1,brows:false,eyeScale:2.3,smooth:{jersey:12,pants:10,socks:6,shoes:10,skin:4,head:8},puff:{jersey:0.022,pants:0.012,socks:0.006,shoes:0.02,skin:0}};
+const A=makeCharacter(lib,{...COW,skin:'#7b4b2e',number:9});A.root.position.set(-0.55,0,0);A.root.rotation.y=0.3;s.add(A.root);A.play('Idle_No_Loop');
+const Bk=makeCharacter(lib,{...COW,skin:'#7b4b2e',number:9});Bk.root.position.set(0.15,0,-0.2);Bk.root.rotation.y=Math.PI-0.3;s.add(Bk.root);Bk.play('Idle_No_Loop');
+const S=makeCharacter(lib,{...COW,skin:'#4a2c1c',number:88});S.root.position.set(0.85,0,0.3);S.root.rotation.y=-0.3;s.add(S.root);
+const seat=new THREE.Mesh(new THREE.BoxGeometry(0.8,0.1,0.5),new THREE.MeshStandardMaterial({color:'#16336a'}));s.add(seat);
+const bb=makeBaby(lib,{skin:'#9a6744',skinMix:1,jersey:'#f8a9c9',pants:'#ffffff',socks:'#9a6744',shoes:'#9a6744',number:23,numberColor:'#ffffff',numberOutline:'#d23a4a',helmet:'#ffffff',helmetMetal:0.05,mask:'#ff7fb0',maskThick:0.09,maskBars:1,maskY:-0.28,toonHead:false,eyeScale:2.0,headRatio:1.75});
+bb.root.position.set(-0.2,0,1.0);bb.root.rotation.y=0.4;s.add(bb.root);
+const ball=football(0.26);s.add(ball);
+const cam=new THREE.PerspectiveCamera(34,innerWidth/innerHeight,.05,100);cam.position.set(0.1,1.0,5.6);cam.lookAt(0.1,0.7,0.3);
+window.renderFrame=t=>{A.mixer.setTime(t);akimbo(A);alive(A,t,1);Bk.mixer.setTime(t);
+ benchSit(S,t,0.5,1);seat.position.set(S.root.position.x,0.45,S.root.position.z-0.05);
+ const bp=bb.root.position.clone().add(new THREE.Vector3(-0.2,ball.userData.R,0.12));ball.position.copy(bp);ball.rotation.y=0.6;babySit(bb,t,bp);
+ bb.face({look:[0.6,0.2],browAngle:-0.15});A.face({look:[-0.8,0],lid:0.35});r.render(s,cam)};window.ready=true;
+</script></body></html>

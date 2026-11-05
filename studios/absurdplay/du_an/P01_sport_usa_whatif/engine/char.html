@@ -1,0 +1,14 @@
+<!doctype html><html><body style="margin:0"><canvas id="c" width="1080" height="1920"></canvas>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';import * as SkeletonUtils from 'three/addons/utils/SkeletonUtils.js';
+const r=new THREE.WebGLRenderer({canvas:c,antialias:true,preserveDrawingBuffer:true});r.setSize(1080,1920,false);r.shadowMap.enabled=true;r.outputColorSpace=THREE.SRGBColorSpace;
+const s=new THREE.Scene();s.background=new THREE.Color(0x9ec9f0);const cam=new THREE.PerspectiveCamera(40,1080/1920,.1,300);
+s.add(new THREE.HemisphereLight(0xffffff,0x557744,1.3));const sun=new THREE.DirectionalLight(0xffffff,2.4);sun.position.set(5,10,6);sun.castShadow=true;s.add(sun);
+const g=new THREE.Mesh(new THREE.PlaneGeometry(100,100),new THREE.MeshStandardMaterial({color:0x4f9a3c}));g.rotation.x=-Math.PI/2;g.receiveShadow=true;s.add(g);
+const gl=await new GLTFLoader().loadAsync('./ual/AnimationLibrary_Godot_Standard.gltf');
+const mixers=[];const names=['Sprint_Loop','Idle_Talking_Loop','Punch_Cross','Jump_Loop','Dance_Loop'];
+names.forEach((n,i)=>{const m=SkeletonUtils.clone(gl.scene);m.position.set((i-2)*1.3,0,0);m.traverse(o=>{if(o.isMesh){o.castShadow=true;o.material=o.material.clone();o.material.color.setHSL(i/5,.5,.55);}});s.add(m);const mx=new THREE.AnimationMixer(m);mx.clipAction(gl.animations.find(a=>a.name==n)).play();mixers.push(mx);});
+cam.position.set(0,1.6,6);cam.lookAt(0,1,0);
+window.renderFrame=(t)=>{mixers.forEach(m=>m.setTime(t));r.render(s,cam);};window.ready=true;
+</script></body></html>
