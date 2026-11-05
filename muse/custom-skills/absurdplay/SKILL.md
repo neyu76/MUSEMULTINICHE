@@ -37,6 +37,10 @@ owner ONLY with the finished video + report (+ the 3 viral titles and hashtags t
   - `elevenlabs`: if the owner re-creates the clone in ElevenLabs and gives a VOICE_ID — send the TTS request through the ElevenLabs
     connector (host api.elevenlabs.io, header xi-api-key, model eleven_v4), then the kit's rut_nghi.py / tempo steps.
   - `magnific_browser`: only if the owner signs in to Magnific in your browser and says so.
+- **Music**: `MUSIC_ROUTE` in channel.env — `cc0_library` (kit default: alvana-audio CC0, a different track each episode, 100–110 BPM,
+  never `music/corporate`), `elevenlabs` (ElevenLabs Music through the connector with MUSIC_PROMPT, instrumental forced, length ≥ video + 5 s),
+  or `owner_mp3` (the owner makes it, e.g. on Suno, and sends the mp3 — ask in the same single message as the voice). Record the track in
+  the "đã dùng" table either way.
 - **Stadium SFX (`magnific_sfx/`)** are not in the kit: generate equivalents with ElevenLabs Sound Effects through the connector
   (crowd_cheer, crowd_boo, ref_whistle, buzzer, sneaker_squeak, swish, football_hit, sad_trombone, crowd_ambience loop …), save under
   ~/work/assets/audio/magnific_sfx/ with the same names, or skip a cue rather than use a wrong sound.
