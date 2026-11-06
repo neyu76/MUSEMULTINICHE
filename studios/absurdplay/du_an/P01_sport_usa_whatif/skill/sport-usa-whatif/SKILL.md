@@ -1,6 +1,6 @@
 ---
 name: "sport-usa-whatif"
-description: "Sản xuất video TikTok dọc kiểu 'What If' thể thao Mỹ (format kênh @whatifbagel) cho dự án P01 Sport USA: tìm tin NFL/NBA mới nhất, viết kịch bản, giọng clone Sport USA, dựng 3D three.js, phụ đề vàng, đồ hoạ truyền hình, ráp Kdenlive. Dùng khi người dùng yêu cầu kịch bản/video mới hoặc sửa video cho dự án P01."
+description: "Sản xuất video TikTok dọc kiểu 'What If' thể thao Mỹ (format kênh @whatifbagel) cho dự án P01 Sport USA: tìm tin NFL/NBA/MLB/WWE mới nhất, viết kịch bản, giọng clone Sport USA, dựng 3D three.js, phụ đề vàng, đồ hoạ truyền hình, ráp Kdenlive. Dùng khi người dùng yêu cầu kịch bản/video mới hoặc sửa video cho dự án P01."
 ---
 # Sport USA "What If" — v0.6 (05/11/2026)
 
@@ -72,6 +72,28 @@ Kho lưu bộ hồ sơ: GitHub `mailcontentnba76-cell/absurdplay-kit` (riêng t�
 - NFL (E03): `lib/bongbau.js` — `CAST3` (herbert/dicker/bolt), mẫu áo `CHARGERS`; `makeMannequin` (ma-nơ-canh bóng, khớp tròn, cọc inox, mác giá); tư thế `qbHold, qbSignal, qbThrow, kick, yawn, thumbsUp, sadWalk, sprint, mannequinPose`; `liven`. Mũ NFL: `helmet, helmetStripe, mask`.
 - Tên sau lưng (`backName`) tự co chữ; đặt `backNameMax` (px trên texture 256, NFL ≈150) để tên không tràn qua vai (E03 lỗi "ERBER"). Luôn render 1 ảnh cận lưng áo để kiểm.
 - Ảnh kiểm nhân vật trước/sau (test_nba.html) trước khi dựng shot.
+
+## 4b. MLB và WWE (gói môn mới 06/11/2026 — CHƯA kiểm bằng mắt: tập đầu tiên của mỗi môn phải chạy trang thử và sửa trước)
+**Trang thử bắt buộc trước tập đầu:** `node render.js "test_mlb.html#tv" out 30 0 1 540 960 0,15,30,45,60` (các view: tv, batter, pitcher, field, slide, night)
+và `node render.js "test_wwe.html#ring" out ...` (ring, slam, pin, top, entrance, belt, chair). Xem từng ảnh: sân/đài đúng hướng, nhân vật đứng trên mặt đất/thảm,
+tay cầm đúng gậy/đai/ghế, 2 người chạm nhau khớp (lock-up, slam, pin), không xuyên người. Sửa trong `lib/` rồi mới dựng tập; ghi lỗi vào NHAT_KY_LOI.md.
+- **MLB** — `lib/mlb.js`: `buildBallpark(scene,{night, grassLight, wall, seat, fans, boardTitle, adText1/2, wallR})` (home ở gốc, +z ra ngoài sân, base 1 ở -x),
+  `ballparkLights`, `BASES`, `MOUND_Z`, `baseball()`, `bat()`, `glove()`, `cap(ch,{color,text})`, `batterHelmet(ch,{color,side})`, `catcherGear(ch)`,
+  `scoreboard.set({away,home,innings,awayRHE,homeRHE,inning,outs,count})`, `crowd.uT/uCheer/uSleep`. Động tác `lib/bongchay.js`: `batStance`, `swing(k)` (chạm bóng
+  k≈0,45, trả `contact`), `pitch(k)` (nhả bóng k=0,7) + `pitchPath`, `fielderReady`, `catchBall`, `catcherSquat`, `slide`, `umpireCall('out'|'safe'|'strike')`, `batFlip`;
+  chạy base: `sprint` (bongbau.js). Đồng phục `lib/cast_mlb.js`: `BASE_MLB` (quần tới gối + tất cao), `LONG_PANTS`, `KITS` mẫu, `mlbPlayer(lib, kit, {head:'cap'|'helmet', glove})`.
+  Người đánh tay trái/ném tay trái: lật dấu x trong hàm (chưa có tham số — thêm khi cần). Pinstripe chưa hỗ trợ trong shader áo.
+  Đồ hoạ: `TV({league:'MLB'})` — `setBug({q:'TOP 9', clock:'2 OUT', down:'3-2'})` + `setBases(b1,b2,b3)`.
+  Tin: MLB.com + trang đội, AP/ESPN/The Athletic; mùa giải ~cuối 3 → 10, tháng 11–2 là mùa nghỉ (chuyển nhượng, giải thưởng, Hall of Fame).
+- **WWE** — `lib/wwe.js`: `buildRingArena(scene,{apronLabel, ropeColor, accent, screenTitle})` (thảm cao `MAT_Y` 1,22 m, đài `RING` 6,1 m, ramp theo -z),
+  `ringLights` (`spot(t)`, `dark(k)` khi ra sân), `ring.ropes.push(side, level, amount)` (dây nhún khi bật dây), `screen.set(title, sub)`, đồ vật `champBelt`, `steelChair`,
+  `commentaryTable`, `microphone`. Động tác `lib/vatlo.js`: `wrestlerStance`, `taunt('flex'|'point'|'ear'|'belt')`, `lockUp(A,B)`, `clothesline(A,B,k)`, `bodySlam(A,B,k)`,
+  `lieBack`, `pinCover(A,B)` + `refCount(ref,k)` (đập thảm 1-2-3, trả `count`/`slap` để chèn SFX), `climbTurnbuckle`, `diveSplash`, `ropeRebound` (trả `push`), `raiseHand`,
+  `holdBeltUp`, `chairSwing`. Nhân vật `lib/cast_wwe.js`: `wrestler(lib,{trunks, boots, pads, robe, tattoo, build, heightM})`, `kneepads`, `robe`, `CAST_WWE` mẫu + trọng tài.
+  Đồ hoạ: `TV({league:'WWE'})` — không bug tỉ số; `plate(id,{name,sub})` thẻ tên ra sân, `card()`, `tag('▶ REPLAY')`, `final()` = "WINNER".
+  Nội dung: WWE là kịch bản giải trí — đùa về NHÂN VẬT trên sàn, câu khẩu hiệu, kết quả trận/cốt truyện công khai; không bịa đời tư, chấn thương thật, pháp lý.
+  Tin: WWE.com (kết quả Raw/SmackDown/PLE), ESPN WWE, AP; ghi rõ "storyline" khi là cốt truyện.
+- Không logo MLB/đội/WWE/show trên hình (chữ thường, màu, số được phép) — như mọi môn.
 
 ## 5. Chuỗi công cụ
 ```

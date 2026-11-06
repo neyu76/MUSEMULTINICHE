@@ -1,6 +1,6 @@
 ---
 name: absurdplay
-description: Make a finished AbsurdPlay "What If" sports short (TikTok 9:16, 60–72 s, NFL/NBA stars vs absurd opponents, three.js 3D characters, TV graphics, yellow captions, "Sport USA" voice) from a sport name, a news item, an idea or a script — fully on autopilot: latest news, script, voice, 3D scene, render, QA, Kdenlive project, deliver. Use whenever the owner names a sport/team/player or sends an idea/script for AbsurdPlay / Sport USA (project P01).
+description: Make a finished AbsurdPlay "What If" sports short (TikTok 9:16, 60–72 s, NFL/NBA/MLB/WWE stars vs absurd opponents, three.js 3D characters, TV graphics, yellow captions, "Sport USA" voice) from a sport name, a news item, an idea or a script — fully on autopilot: latest news, script, voice, 3D scene, render, QA, Kdenlive project, deliver. Use whenever the owner names a sport/team/player or sends an idea/script for AbsurdPlay / Sport USA (project P01).
 ---
 # AbsurdPlay / Sport USA "What If" — Muse autopilot (install: copy this folder to ~/workspace/custom-skills/absurdplay/)
 
@@ -41,6 +41,10 @@ owner ONLY with the finished video + report (+ the 3 viral titles and hashtags t
   never `music/corporate`), `elevenlabs` (ElevenLabs Music through the connector with MUSIC_PROMPT, instrumental forced, length ≥ video + 5 s),
   or `owner_mp3` (the owner makes it, e.g. on Suno, and sends the mp3 — ask in the same single message as the voice). Record the track in
   the "đã dùng" table either way.
+- **MLB / WWE (new sport packs, not yet checked by eye)**: before the first episode of each, render the test pages listed in the kit SKILL §4b,
+  look at every frame, fix `lib/mlb.js` / `bongchay.js` / `wwe.js` / `vatlo.js` until they pass, and commit the fixes on a branch.
+  SFX to generate for them: bat_crack, glove_pop, umpire_strike, organ_charge, crowd_wave (MLB); ring_bell, mat_slam, rope_creak, ref_count_slap,
+  crowd_boo/cheer, pyro_whoosh, entrance_hit (WWE).
 - **Stadium SFX (`magnific_sfx/`)** are not in the kit: generate equivalents with ElevenLabs Sound Effects through the connector
   (crowd_cheer, crowd_boo, ref_whistle, buzzer, sneaker_squeak, swish, football_hit, sad_trombone, crowd_ambience loop …), save under
   ~/work/assets/audio/magnific_sfx/ with the same names, or skip a cue rather than use a wrong sound.

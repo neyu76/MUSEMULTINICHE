@@ -10,3 +10,9 @@ real height). Every person moves (breathing, weight shift, head turns) — no fr
 never under the caption band (caption baseline y ≈ 1309 @1920); graphics never over a face in close-ups. Back names fit (no "ERBER").
 Bug + cards from the one TV package; white flashes at the story beats (3–10 per video). Crowd animated. Nothing covers > 40 % of a frame.
 Colour inside the measured bands (kiem_theo_mau.py). Captions Inter ExtraBold (not DejaVu — font install check).
+
+**MLB**: bat held by both hands on the handle (not floating, not through the body); swing contact in front of the plate; pitcher faces home;
+base layout correct (first base on the catcher's RIGHT); counts/innings/outs on the bug match the narration; no MLB/team logos (wordmark text only).
+**WWE**: feet on the mat (y = MAT_Y), nobody standing in the ropes; two-person moves line up (hands on the other wrestler's body, no clipping);
+the ref's 1-2-3 slaps match the count SFX; storyline facts labelled as storyline; only in-ring character/performance is mocked — no real injuries,
+private life, legal matters; no WWE/show logos.

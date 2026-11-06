@@ -1,0 +1,41 @@
+<!doctype html><html><head><meta charset="utf-8"></head><body style="margin:0;background:#000"><canvas id="c"></canvas>
+<style>@font-face{font-family:Inter;font-weight:900;src:url(fonts/inter-latin-900-normal.woff2)}@font-face{font-family:Inter;font-weight:800;src:url(fonts/inter-latin-800-normal.woff2)}</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+// Trang kiểm gói MLB: node render.js "test_mlb.html#VIEW" out 30 0 1 540 960 0,15,30   VIEW = tv | batter | pitcher | field | slide | night
+import * as THREE from 'three';
+import {buildBallpark,ballparkLights,baseball,bat,BASES,MOUND_Z,catcherGear} from './lib/mlb.js';
+import {batStance,swing,pitch,pitchPath,catcherSquat,fielderReady,slide,umpireCall} from './lib/bongchay.js';
+import {loadLibrary} from './lib/nhanvat2.js';
+import {CAST_MLB,mlbPlayer,KITS} from './lib/cast_mlb.js';
+import {liven} from './lib/bongbau.js';
+await Promise.all(['900 60px Inter','800 40px Inter'].map(f=>document.fonts.load(f)));
+const view=(location.hash.slice(1).split('&')[0]||'tv'), night=view==='night';
+const W=innerWidth,H=innerHeight;
+const r=new THREE.WebGLRenderer({canvas:c,antialias:true,preserveDrawingBuffer:true});r.setSize(W,H,false);
+r.shadowMap.enabled=true;r.shadowMap.type=THREE.PCFSoftShadowMap;r.outputColorSpace=THREE.SRGBColorSpace;r.toneMapping=THREE.NeutralToneMapping;r.toneMappingExposure=1.08;
+const s=new THREE.Scene();const P=buildBallpark(s,{night});ballparkLights(s,{night});
+P.scoreboard.set({away:'NYY',home:'LAD',innings:[[0,1],[2,0],[0,0]],awayRHE:[2,5,0],homeRHE:[1,4,1],inning:'TOP 4',outs:1,count:'2-1'});
+const lib=await loadLibrary();
+const batter=CAST_MLB.slugger(lib);s.add(batter.root);const B=bat();s.add(B);
+const pit=CAST_MLB.pitcher(lib);s.add(pit.root);
+const cat=mlbPlayer(lib,KITS.LAD_HOME,{skin:'#8a5634',number:9,head:null,glove:true,heightM:1.83});catcherGear(cat);s.add(cat.root);
+const ump=CAST_MLB.ump(lib);s.add(ump.root);
+const ss=mlbPlayer(lib,KITS.LAD_HOME,{skin:'#e3b48c',number:5,glove:true,heightM:1.8});s.add(ss.root);
+const runner=mlbPlayer(lib,KITS.NYY_ROAD,{skin:'#6b4026',number:22,head:'helmet',heightM:1.85});s.add(runner.root);
+const ball=baseball();s.add(ball);
+const cam=new THREE.PerspectiveCamera(45,W/H,.05,600);
+const V={tv:[[0,4.2,MOUND_Z+9],[0,1.0,0]],batter:[[2.6,1.5,2.6],[0.9,1.2,0.1]],pitcher:[[1.5,2.0,MOUND_Z-4.5],[0,1.6,MOUND_Z]],field:[[0,38,-22],[0,0,40]],slide:[[-3,1.6,BASES.second.z-4],[0,0.5,BASES.second.z]],night:[[0,4.2,MOUND_Z+9],[0,1.0,0]]};
+window.renderFrame=t=>{
+  const k=(t%2.5)/2.5;
+  batter.root.rotation.y=-Math.PI/2; const sw=k>0.5?swing(batter,(k-0.5)/0.5,0.95,0.15,B):batStance(batter,0.95,0.15,t,B);
+  pit.root.rotation.y=Math.PI; const pr=pitch(pit,Math.min(1,k*1.3),0,MOUND_Z);
+  cat.root.rotation.y=0; catcherSquat(cat,0,-0.9,t);
+  ump.root.rotation.y=0; umpireCall(ump,'strike',Math.max(0,(k-0.7)/0.3),0.2,-1.8);
+  ss.root.rotation.y=Math.PI*0.85; fielderReady(ss,4,BASES.second.z-3,t,2);
+  slide(runner,k,BASES.second.clone().add(new THREE.Vector3(5,0,-5)),BASES.second.clone().add(new THREE.Vector3(0.5,0,-0.5)));
+  if(pr.released){const u=Math.min(1,(k*1.3-0.7)/0.25);ball.position.copy(pitchPath(pr.ball,new THREE.Vector3(0.1,0.9,0.2),u,0.3));}else ball.position.copy(pr.ball);
+  P.crowd.uT.value=t;P.crowd.uCheer.value=0.4;
+  const v=V[view]||V.tv;cam.position.set(...v[0]);cam.lookAt(...v[1]);r.render(s,cam);};
+window.ready=true;
+</script></body></html>

@@ -1,6 +1,6 @@
 # Niche: sport-usa-whatif (TikTok "AbsurdPlay", English, 60–72 s)
 
-"Could [star / losing team] beat [absurd opponent]?" sports comedy: NFL/NBA players as stylised three.js 3D characters (Quaternius
+"Could [star / losing team] beat [absurd opponent]?" sports comedy: NFL/NBA/MLB/WWE players as stylised three.js 3D characters (Quaternius
 UBC/UAL CC0 bodies + code-built hair, kits, numbers, cartoon eyes), TV graphics package, yellow Inter ExtraBold captions, "Sport USA"
 voice, CC0 music/SFX, Kdenlive project.
 
@@ -10,3 +10,6 @@ voice, CC0 music/SFX, Kdenlive project.
 - Delivered so far: E01 Cowboys vs 50 grandmas, E02 Giannis vs Bucks, E03 Chargers vs 11 mannequins; E04 Eagles vs tube men (cut awaiting).
 - Left out of this repo: the per-video analyses of the reference channel (they quote its full scripts); only the aggregated
   `PHAN_TICH_MAU/TONG_HOP.md` and `HIEU_CHINH_V06.md` are kept. Sample videos are never stored here.
+
+Sport packs: NFL (`svd.js`, `ngoaitroi.js`, `bongbau.js`), NBA (`nba.js`, `bongro.js`, `cast2.js`), **MLB** (`mlb.js`, `bongchay.js`, `cast_mlb.js`, test page `test_mlb.html`),
+**WWE** (`wwe.js`, `vatlo.js`, `cast_wwe.js`, `test_wwe.html`). MLB/WWE were added 06/11/2026 without a visual check: run their test pages first.

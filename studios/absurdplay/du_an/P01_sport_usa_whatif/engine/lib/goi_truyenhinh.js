@@ -14,6 +14,10 @@
 export const THEME = {
   NFL: { gold: '#C9A227', navy: '#0B0F24', clock: '#12121E', yellow: '#F5D50E', sub: '#F2D21B', head: '#1D1A33' },
   NBA: { gold: '#E8B21C', navy: '#0D1226', clock: '#141420', yellow: '#FFD31A', sub: '#FFD31A', head: '#1D1A33' },
+  // MLB: bug dùng q = hiệp ('TOP 9' / 'BOT 9'), clock = số out ('2 OUT'), down = đếm bóng ('3-2'); 3 ô base vẽ bằng setBases()
+  MLB: { gold: '#D4A017', navy: '#0C1A33', clock: '#101826', yellow: '#F5D50E', sub: '#F2D21B', head: '#14213D' },
+  // WWE: không tỉ số — dùng plate() (thẻ tên đô vật góc dưới), card(), tag('▶ REPLAY'); bug có thể tắt cả tập
+  WWE: { gold: '#C0C4CC', navy: '#0A0A10', clock: '#16161E', yellow: '#F2C230', sub: '#F2C230', head: '#0A0A10' },
 };
 const CSS = (T) => `
 @font-face{font-family:TVI;font-weight:800;src:url(fonts/inter-latin-800-normal.woff2)}
@@ -38,6 +42,12 @@ const CSS = (T) => `
 .tv-card .rows div{display:flex;justify-content:space-between;padding:10px 0}.tv-card .rows b{color:${T.yellow}}
 .tv-tag{top:330px;right:40px;padding:8px 20px;font-size:34px;color:#fff;background:#D0021B;font-weight:900}
 .tv-tag.navy{background:${T.navy};border:3px solid #fff}
+.tv-plate{left:70px;top:1050px;min-width:560px;padding:0}
+.tv-plate .n{background:${T.navy};color:#fff;font-weight:900;font-size:64px;padding:10px 28px;border-left:14px solid ${T.yellow};white-space:nowrap}
+.tv-plate .s{background:${T.yellow};color:#111;font-size:32px;font-weight:900;padding:6px 28px;display:inline-block}
+.tv-bug .bases{position:absolute;right:120px;top:14px;width:62px;height:62px}
+.tv-bug .bases i{position:absolute;width:22px;height:22px;border:3px solid #fff;transform:rotate(45deg);box-sizing:border-box}
+.tv-bug .bases i.on{background:${T.yellow};border-color:${T.yellow}}
 .tv-final{left:0;width:1080px;top:560px;text-align:center}
 .tv-final .t{font-style:italic;font-weight:900;font-size:230px;color:#fff;line-height:1;-webkit-text-stroke:6px #000;paint-order:stroke fill}
 .tv-final .l{font-size:96px;font-weight:900;line-height:1.15;-webkit-text-stroke:5px #000;paint-order:stroke fill}
@@ -59,6 +69,12 @@ export function TV({ league = 'NFL', teams, sub = '' } = {}) {
       items[id] = mk('tv-card', `<div class="h" style="${headColor ? 'background:' + headColor : ''}">${head}</div><div class="b">${body}</div>`); return items[id];
     },
     tag(id, text, { navy = false, top, right, left } = {}) { const e = mk('tv-tag' + (navy ? ' navy' : ''), text); if (top != null) e.style.top = top + 'px'; if (right != null) e.style.right = right + 'px'; if (left != null) { e.style.left = left + 'px'; e.style.right = 'auto'; } items[id] = e; return e; },
+    // thẻ tên đô vật / nhân vật góc dưới (WWE ra sân, nhân vật mới): đặt top ngoài vùng phụ đề (mặc định 1050 < chân phụ đề 1309 − 2 dòng)
+    plate(id, { name, sub = '', top } = {}) { const e = mk('tv-plate', `<div class="n">${name}</div>${sub ? `<div class="s">${sub}</div>` : ''}`); if (top != null) e.style.top = top + 'px'; items[id] = e; return e; },
+    // MLB: 3 ô base trong bug (b1, b2, b3 = có người)
+    setBases(b1 = false, b2 = false, b3 = false) { let el = bug.querySelector('.bases'); if (!el) { el = document.createElement('div'); el.className = 'bases';
+      el.innerHTML = '<i style="left:36px;top:22px"></i><i style="left:20px;top:4px"></i><i style="left:4px;top:22px"></i>'; bug.querySelector('.ck').appendChild(el); }
+      const [i1, i2, i3] = el.querySelectorAll('i'); i1.classList.toggle('on', !!b1); i2.classList.toggle('on', !!b2); i3.classList.toggle('on', !!b3); },
     final(id, { a, b, colA = '#fff', colB = '#fff', subline = '' }) { items[id] = mk('tv-final', `<div class="t">FINAL</div><div class="l" style="color:${colA}">${a}</div><div class="l" style="color:${colB}">${b}</div><div class="s">${subline}</div>`); return items[id]; },
     // trạng thái bug mỗi khung
     setBug({ on = true, a, b, q, clock, down } = {}) {

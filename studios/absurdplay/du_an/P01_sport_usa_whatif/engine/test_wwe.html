@@ -1,0 +1,35 @@
+<!doctype html><html><head><meta charset="utf-8"></head><body style="margin:0;background:#000"><canvas id="c"></canvas>
+<style>@font-face{font-family:Inter;font-weight:900;src:url(fonts/inter-latin-900-normal.woff2)}@font-face{font-family:Inter;font-weight:800;src:url(fonts/inter-latin-800-normal.woff2)}</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+// Trang kiểm gói WWE: node render.js "test_wwe.html#VIEW" out 30 0 1 540 960 0,20,40,60   VIEW = ring | slam | pin | top | entrance | belt | chair
+import * as THREE from 'three';
+import {buildRingArena,ringLights,champBelt,steelChair,MAT_Y,RING} from './lib/wwe.js';
+import {wrestlerStance,taunt,lockUp,clothesline,bodySlam,pinCover,refCount,climbTurnbuckle,diveSplash,lieBack,holdBeltUp,chairSwing,raiseHand} from './lib/vatlo.js';
+import {loadLibrary} from './lib/nhanvat2.js';
+import {CAST_WWE} from './lib/cast_wwe.js';
+await Promise.all(['900 60px Inter','800 40px Inter'].map(f=>document.fonts.load(f)));
+const view=(location.hash.slice(1).split('&')[0]||'ring');
+const W=innerWidth,H=innerHeight;
+const r=new THREE.WebGLRenderer({canvas:c,antialias:true,preserveDrawingBuffer:true});r.setSize(W,H,false);
+r.shadowMap.enabled=true;r.shadowMap.type=THREE.PCFSoftShadowMap;r.outputColorSpace=THREE.SRGBColorSpace;r.toneMapping=THREE.NeutralToneMapping;r.toneMappingExposure=1.08;
+const s=new THREE.Scene();const A=buildRingArena(s,{screenTitle:'WHAT IF',apronLabel:'WHAT IF'});const Lt=ringLights(s);
+A.screen.set('THE CHAMP','WORLD CHAMPION');
+const lib=await loadLibrary();
+const champ=CAST_WWE.champ(lib),ch2=CAST_WWE.challenger(lib),ref=CAST_WWE.ref(lib);[champ,ch2,ref].forEach(x=>s.add(x.root));
+const belt=champBelt();s.add(belt);const chair=steelChair(true);s.add(chair);
+const cam=new THREE.PerspectiveCamera(45,W/H,.05,300);
+const V={ring:[[0,MAT_Y+1.9,8.5],[0,MAT_Y+1.0,0]],slam:[[3.5,MAT_Y+1.6,4.5],[0,MAT_Y+1.0,0]],pin:[[2.2,MAT_Y+2.4,2.2],[0,MAT_Y,0]],top:[[0,MAT_Y+2.2,-1.0],[2.4,MAT_Y+2.2,2.4]],entrance:[[0,2.6,-6],[0,2,-30]],belt:[[0,MAT_Y+1.7,3.2],[0,MAT_Y+1.7,0]],chair:[[3,MAT_Y+1.6,3.5],[0,MAT_Y+1,0]]};
+window.renderFrame=t=>{
+  const k=(t%3)/3; Lt.spot(t); A.crowd.uT.value=t; A.crowd.uCheer.value=0.6;
+  belt.visible=false; chair.visible=false;
+  if(view==='slam'){bodySlam(champ,ch2,k,0,0,0);wrestlerStance(ref,-2,-1.5,t);}
+  else if(view==='pin'){pinCover(champ,ch2,t,0,0,0);const rc=refCount(ref,k,0.9,-0.4,-Math.PI/2);}
+  else if(view==='top'){const h=RING/2;climbTurnbuckle(champ,Math.min(1,k*1.5),new THREE.Vector3(h,0,h),t);lieBack(ch2,0,0,t,0);wrestlerStance(ref,-2,1.5,t);}
+  else if(view==='entrance'){champ.root.rotation.y=Math.PI;taunt(champ,'flex',Math.min(1,k*2),0,-20,t,0.9);ch2.root.visible=false;ref.root.visible=false;A.screen.set('THE CHAMP','IS HERE');}
+  else if(view==='belt'){belt.visible=true;champ.root.rotation.y=0;holdBeltUp(champ,belt,Math.min(1,k*2),0,0,t);raiseHand(ref,champ,Math.min(1,k*2),0.7,0.6);ch2.root.visible=false;}
+  else if(view==='chair'){chair.visible=true;chairSwing(champ,chair,k,0,-0.6,0);lieBack(ch2,0,0.6,t,0);ref.root.visible=false;}
+  else {lockUp(champ,ch2,t,0,0,Math.PI/2);wrestlerStance(ref,0,-2,t);}
+  const v=V[view]||V.ring;cam.position.set(...v[0]);cam.lookAt(...v[1]);r.render(s,cam);};
+window.ready=true;
+</script></body></html>
