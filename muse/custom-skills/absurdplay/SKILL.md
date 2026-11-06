@@ -32,7 +32,16 @@ owner ONLY with the finished video + report (+ the 3 viral titles and hashtags t
   write the "Tin đã chọn" table with URLs and dates. Verify current team, jersey number, home/away kit, hair/beard, height (heightM) on the web.
 - **Voice "Sport USA"**: the clone lives in the owner's Magnific account (not ElevenLabs). Route = `niches/sport-usa-whatif/channel.env`
   VOICE_ROUTE:
-  - `owner_mp3` (default until the owner decides): after the CRITIC passes the script, send the owner ONE message with the exact script
+  - `sonicvoice` (owner's choice): SonicVoice API through a connector — once per account `credentials.request_api_access`: provider
+    sonicvoice, host sonicvoice.pro, api_key in header `X-API-Key`; the requests MUST carry a non-default `User-Agent` (e.g.
+    "AbsurdPlay-TTS/1.0") or Cloudflare answers 403. Flow (same as production/sonicvoice_tts.py, which needs the key in the shell and so is
+    only the reference): `GET https://sonicvoice.pro/api/v1/voices/mine/clones` → pick the clone named "Sport USA" (ask the owner once if
+    none) → write VOICE_ID in channel.env; `GET /api/v1/me/balance` (stop and tell the owner if the script needs more chars than available);
+    `POST /api/v1/tts/jobs` JSON {"kind":"single","provider":SONIC_PROVIDER,"voice_id":VOICE_ID,"text":<script>,"speed":SONIC_SPEED,
+    "language":"English","split_mode":"keep","srt_out":true,"title":"<EP>"} → poll `GET /api/v1/tts/jobs/{id}` every ~5 s until status
+    succeeded/failed → download `GET /api/v1/tts/jobs/{id}/audio` (WAV) → `giong/voice_raw.wav` (+ `/srt` optional). Then the kit's
+    `rut_nghi.py` / wpm check (158–164; outside → regenerate once with SONIC_SPEED ±0.1, or doi_nhip.py). One job per take; never loop.
+  - `owner_mp3`: after the CRITIC passes the script, send the owner ONE message with the exact script
     text + tag `[energetic, fast-paced narrator]` and ask for the mp3 (this is the only allowed stop); continue when it arrives.
   - `elevenlabs`: if the owner re-creates the clone in ElevenLabs and gives a VOICE_ID — send the TTS request through the ElevenLabs
     connector (host api.elevenlabs.io, header xi-api-key, model eleven_v4), then the kit's rut_nghi.py / tempo steps.
