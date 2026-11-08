@@ -35,7 +35,7 @@ videos. Muse is the worker; you write code/docs, push to this repo, and give the
 | rickclips | root (`engine_v4/`, `tools/ep/`) | `muse/custom-skills/rickclips` | T015 rebuilt on Muse (QA 21/21, 720p); N02 made by Muse |
 | animal-toon-eyes | `studios/toon-studio/` | `muse/custom-skills/toon-studio` | pilot ATE01-901 made; redo with realism rules pending |
 | sport-usa-whatif (AbsurdPlay) | `studios/absurdplay/` | `muse/custom-skills/absurdplay` | NFL/NBA proven (E01–E04); MLB + WWE packs added 06/11, load-checked only, Muse must run test pages first |
-| how-you-invented (P02) | kit P02 in `mailcontentnba76-cell/absurdplay-kit` (branch `du-an-moi`) | topic/script skills in `skills/` | 5 videos viral (trampoline, fan, door, fridge, toilet paper); skills v1.0 08/11 |
+| how-you-invented (P02) | kit P02 in `mailcontentnba76-cell/absurdplay-kit` (branch `du-an-moi`) | `muse/custom-skills/invention-chain` (+ overlay `studios/p02-invention`, skills in `skills/`) | 5 videos viral (door = kit DEMO); overlay v1.0 08/11 tested here except real Parakeet/TTS/full render on Muse |
 | 3D explainer (course) | owner's `~/explainer_kit` on Muse | none in repo (license) | studio set up on one Muse account; needs repo clone + SonicVoice connector |
 
 ## Open items
