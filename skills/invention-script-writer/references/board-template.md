@@ -4,7 +4,7 @@
 ```text
 # | t EST (s) | Vế lời (neo chính xác) | Loại (A/B) | Hình / hành động | Cắt vào shot này (quan hệ) | Chữ/âm | claim_id / CREATIVE
 ```
-- Mốc EST = số từ trước vế ÷ 3,67 + nghỉ (0,3 s sau hook, 0,5 s sau câu khen). Gắn nhãn ESTIMATED tới khi có words.json từ audio thật.
+- Mốc EST = số từ trước vế ÷ 3,67 + ~0,3 s sau hook và sau câu khen (lời ngắt, có ding/SFX lấp). Gắn nhãn ESTIMATED tới khi có words.json từ audio thật.
 - Một câu qua nhiều shot: ghi neo (3–5 từ đầu vế), không chép lại cả câu.
 - "Cắt vào" ghi quan hệ: cause→effect, action cut, reveal, contrast, callback.
 

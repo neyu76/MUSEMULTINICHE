@@ -29,7 +29,7 @@ Thiếu chuỗi bộ phận thật → tự tra nguồn (mục 7) trước khi v
 ```
 [0,0 s]   HOOK ≤ 12 từ: động cơ/khó chịu cá nhân, ngôi "you", có 1 từ thô.  (+ "but <vật cản>" nếu hook là mong muốn)
 [1–3,5 s] "So you <giải pháp thô sơ bằng vật tự nhiên>."
-[5–9 s]   "Clever!" / "Genius!"                      ← nghỉ 0,5 s sau câu khen
+[5–9 s]   "Clever!" / "Genius!"                      ← ding ở câu khen (không để lặng)
           "But/Except <lỗi thấy được>, so you <bộ phận thật #2>."
           … 4–5 vòng, chu kỳ 5–7 s; mỗi "so you" = 1 bộ phận có thật của đồ vật hiện đại
 [14–22 s] khen lần 2: "Much better!" / "Genius!"
@@ -69,7 +69,7 @@ Khi viết cả tập: nháp nội bộ 3 hook khác mã, chấm theo kiểm tra
 | Hook | A-roll: động cơ/vấn đề thấy ở khung 0, mặt khoa trương, ≥ 2 lớp phụ (mồ hôi, sóng mùi, ruồi, tim) | rộng→đẩy vào, thấy mặt ngay |
 | "so you <bộ phận>" | B-roll MACRO đồ vật: bộ phận bật ra/biến hình đúng lúc đọc danh từ | sát vật, trôi dọc vật |
 | Câu cơ chế | B-roll + 1 đồ hoạ khoa học (mũi tên lực, dòng khí, mũi tên nhiệt, sóng) | quay quanh vật |
-| Câu khen | Đồ vật hoàn chỉnh lấp lánh hoặc nhân vật tự hào | đẩy nhẹ, giữ 0,5 s nghỉ |
+| Câu khen | Đồ vật hoàn chỉnh lấp lánh hoặc nhân vật tự hào | đẩy nhẹ |
 | "But/Except <lỗi>" | A-roll: thất bại vật lý (ngã ngửa, gãy sập, kẹt, bị bắn văng, gió lật) + phản ứng 1–2 s | rộng/trung, bám theo vật bay |
 | Vòng "your friend" | A-roll 2 người, friend gây chuyện, chữ chửi VIẾT HOA trên phụ đề | qua vai |
 | "Now…" | Gọi lại khung mở đầu với động cơ đã đạt, hoặc rộng 2 người; có thể kéo lùi lộ gag phi lý | kéo lùi/rộng |
@@ -84,7 +84,7 @@ Khi viết cả tập: nháp nội bộ 3 hook khác mã, chấm theo kiểm tra
 ## 6. Quy trình viết (một lượt, tự QA)
 1. Đọc topic/outline (ID, chuỗi bộ phận, nguồn, hook đề xuất). Không có thì dựng nhanh chuỗi 5–6 bộ phận có nguồn.
 2. Chọn hook + kết đi cặp (mục 4). Ghi `hook_code`.
-3. Viết lời theo khung mục 3; đếm từ; ước tính mốc từng chữ nối = (số từ trước nó / 3,67) + nghỉ (0,5 s sau khen, 0,3 s sau hook).
+3. Viết lời theo khung mục 3; đếm từ; ước tính mốc từng chữ nối = (số từ trước nó / 3,67) + ~0,3 s ở hook và mỗi câu khen.
 4. Lập bảng shot theo mục 5 + `references/board-template.md`.
 5. QA mục 8; lỗi P0/P1 → sửa (tối đa 2 vòng) → QA lại vùng đổi.
 6. Xuất file mục 9.
@@ -104,7 +104,7 @@ Khi viết cả tập: nháp nội bộ 3 hook khác mã, chấm theo kiểm tra
 | Số giải pháp "so you" | 5–6 | P1 nếu < 4 |
 | Mỗi giải pháp = bộ phận thật, có nguồn | 100 % | P0 nếu sai cơ chế |
 | Nguồn lỗi | không 2 vòng liền cùng loại; có ≥ 1 lỗi do người bạn/người thứ ba | P1 |
-| Câu khen | 1–2, nghỉ 0,5 s sau | P2 |
+| Câu khen | 1–2, có ding | P2 |
 | Câu cơ chế | 1–2 | P2 |
 | Từ thô | 2–5; "fucking" ≤ 1 | P2 (P0 nếu xúc phạm nhóm người/trẻ em) |
 | Câu kết | bắt đầu ở T−1,8…−2,6 s, ≤ 10 từ, gọi lại từ khoá hook | P0 nếu không khép vòng |
