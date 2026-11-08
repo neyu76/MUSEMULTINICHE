@@ -1,0 +1,6 @@
+interface:
+  display_name: "Invention Script Writer"
+  short_description: "Kịch bản 30-43 s How you invented X: hook, vòng lỗi-sửa, cắt đúng chữ nối, kết nước đôi"
+  default_prompt: "Dùng $invention-script-writer viết kịch bản How you invented <đồ vật> từ topic đã chọn, xuất loi_doc.txt + KICH_BAN.md + QA."
+policy:
+  allow_implicit_invocation: true

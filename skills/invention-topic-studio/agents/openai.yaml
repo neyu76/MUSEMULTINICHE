@@ -1,0 +1,6 @@
+interface:
+  display_name: "Invention Topic Studio"
+  short_description: "Topic + outline cho kênh How you invented X, chấm điểm theo DNA 5 video viral"
+  default_prompt: "Dùng $invention-topic-studio tìm 10 topic mới cho kênh How you invented, chấm điểm theo DNA viral, kiểm fact chuỗi bộ phận, xuất topic_data + outline."
+policy:
+  allow_implicit_invocation: true
