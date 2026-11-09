@@ -63,11 +63,20 @@ The owner writes Vietnamese: answer in Vietnamese. Message the owner ONLY with t
    keep FAST ranges short (only real fast action). Target ≤ 4 h per episode; over that, shorten FAST ranges before rendering. Watchdog: `cron.add` every 15 min (agent turn) → `render_nen.sh --dem …`; "không chạy" and not complete →
    run the same `render_nen.sh` line again (skips finished frames). Delete the cron when complete. Keep `$T/checkpoint.json` (stage, fix_rounds).
 9. **SFX + mix** — action sounds (fall, snap, pop, wind, the object's own sound) → `$T/cues_tay.json` [[t,"name",dB]…]; names from
-   `tai_nguyen/sfx/README.md`; a missing sound → ElevenLabs Sound Effects through the connector (save as `tai_nguyen/sfx/<name>.mp3`) or drop the cue.
+   `tai_nguyen/sfx/README.md`; a missing sound → CC0 libraries (once: `mkdir -p ~/sfx_cc0 && cd ~/sfx_cc0` + `git clone --depth 1` of
+   github.com/wyzowl/sfx-kit, seyedpouramir/alvana-audio (never its music/corporate — CC BY), EternityForest/Free-SFX, facebookincubator/Meta-open-sound),
+   convert/trim with ffmpeg to `tai_nguyen/sfx/<name>.mp3` and add a line to sfx/README.md with the source path; nothing fits → drop the cue.
+   (The ElevenLabs API key is dead and the owner does not want it.)
    `python3 -I $P/cong_cu/tron_am_auto.py $T` (2-pass loudnorm −14 LUFS, music −19 dB).
 10. **Encode** — kit B13 ffmpeg line (frames + `$T/am_thanh/mix.wav` + `ass=$T/phu_de_1080.ass:fontsdir=$P/engine/fonts`, crf 15, +faststart).
-11. **Final QA** — `python3 -I $P/cong_cu/qa_tap.py <mp4> $T` (all ĐẠT) + open every `$T/qa/sheet_*.jpg` against CRITIC.md V1–V11. You cannot
-    hear: the audio checks are the numbers + words.json match. Max 2 fix rounds after the full render, then deliver with the remaining notes.
+11. **Final QA** — `python3 -I $P/cong_cu/qa_tap.py <mp4> $T` (all ĐẠT) + open every `$T/qa/sheet_*.jpg` against CRITIC.md V1–V11.
+    **CRITIC-A (listen with Gemini)** — you cannot hear, Gemini can: Gemini connector (host generativelanguage.googleapis.com, header
+    x-goog-api-key), model gemini-3-flash-preview (gemini-2.5-* return 404 on this key). `ffmpeg -i <mp4> -vn -ac 1 -b:a 64k /tmp/a.mp3` →
+    `POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent` with contents.parts =
+    [{"inline_data":{"mime_type":"audio/mp3","data":<base64>}}, {"text": <loi_doc.txt> + "Listen to this short-video audio. Report with timestamps:
+    words that differ from the script or are unclear; any tag spoken aloud as a word; emotion per sentence vs the tag asked (loi_tts.txt);
+    music too loud under the voice; SFX that sound wrong, late or clipped; clicks, cuts, silences. Answer as JSON list."}].
+    Fix real problems (re-mix, move a cue, regenerate one take); Gemini's opinion is a second ear, not proof — the numbers stay the gate. Max 2 fix rounds after the full render, then deliver with the remaining notes.
 12. **Deliver** — MP4 as a storage link (48 h) + a short Vietnamese report: object, hook/ending, numbers from qa_tap, what is not perfect, credits used.
     Then update: kit SKILL "đã dùng" tables (7a/7b), `topic-bank.md` §1 in ~/wynn-media, `$T/KICH_BAN.md`; commit on a branch `ep/<EP>` (no mp4/wav/mp3).
     If you cannot push, say so in the report.

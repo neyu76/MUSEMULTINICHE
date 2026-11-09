@@ -54,7 +54,7 @@ Quy tắc câu:
 ## 3b. Tag cảm xúc cho giọng (chủ kênh 09/11 — giọng 7EzWGsX10sAS4c9m9cPf qua SonicVoice, model eleven_v4/v3)
 - Hai file: `loi_doc.txt` = lời SẠCH (không tag) cho phụ đề và so khớp ASR; `loi_tts.txt` = cùng lời + tag, gửi TTS. Chữ phải trùng từng từ.
 - Tag đặt ngay trước vế đổi cảm xúc, giữ tới tag sau; 6–10 tag/tập, không tag mỗi câu. Tag tả CÁCH NÓI, không tả hành động.
-- Gợi ý theo vế: hook `[frustrated]`/`[disgusted]`/`[mischievously]` · "so you" `[excited]`/`[proudly]` · câu khen `[smug]`/`[laughs]` · "But/Except" `[annoyed]`/`[groans]` · câu cơ chế `[curious]` · vòng người bạn `[angry]`/`[shouting]` · kết `[mischievously]`/`[laughs]`.
+- **Bộ tag CHỐT của kênh (09/11, đã thử trên giọng Jack John):** `[mischievously]` hook + "so you" đầu · `[frustrated]` nhịp But/Except · `[exasperated]` lỗi leo thang (lần 2–3) · `[smug]` / `[proudly]` câu khen (luân phiên) · `[deadpan]` từ thô / punchline · `[matter-of-factly]` câu cơ chế · `[knowingly]` hoặc `[smug]` câu kết "Now…". Chỉ dùng 8 tag này trừ khi chủ kênh thêm.
 - Vẫn VIẾT HOA 1–3 từ đắt (FAT ASS, FUCKING, EVERY DAY) như kit; `...` trước cú nảy. Tốc độ chỉnh bằng atempo ở `giong_chuan.py`. Model không phải v3/v4 thì bỏ hết tag (đọc thành tiếng), chỉ giữ chữ HOA.
 - Ví dụ: `[frustrated] Your friend keeps barging in while you're naked, [mischievously] so you tell him to knock first. [smug] Big brain. [groans] But he knocks with his FAT fist…`
 
