@@ -9,6 +9,8 @@ P="$KIT/du_an/P02_oddtilt"
 # render.js: lấy lại bản của kit (bản v1.0 của overlay từng thay cả file → mất #acc motion blur) rồi vá tại chỗ
 if [ -f "$P/engine/render.js.goc" ]; then cp "$P/engine/render.js.goc" "$P/engine/render.js"; rm -f "$P/engine/render.js.goc"
 elif git -C "$KIT" rev-parse >/dev/null 2>&1; then git -C "$KIT" checkout -- du_an/P02_oddtilt/engine/render.js 2>/dev/null || true; fi
+# v1.0 để lại overlay/.../engine/render.js trong ~/wynn-media (unzip -o không xoá file cũ) → bỏ nó, không bao giờ chép đè render.js
+rm -f "$HERE/overlay/du_an/P02_oddtilt/engine/render.js"
 cp -r "$HERE/overlay/du_an/P02_oddtilt/." "$P/"
 python3 -I "$P/cong_cu/va_render.py" "$P/engine/render.js"
 mkdir -p "$P/engine/moc"

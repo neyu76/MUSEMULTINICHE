@@ -23,7 +23,7 @@ Script-ready ≠ có giọng ≠ có video ≠ đã đăng. Không tự gọi TT
 
 ## 2. Brief tối thiểu (tự điền mặc định, chỉ hỏi khi đổi lớn)
 Đồ vật · chuỗi bộ phận thật (5–6) · động cơ hook · từ nước đôi của câu kết · người bạn/người thứ ba · bối cảnh 1 địa điểm · thời đại (hiện đại mặc định; tiền sử khi đồ vật rất cổ) · thời lượng.
-Mặc định đã chốt của kênh: tiếng Anh, giọng "bựa" (ass/shit + tối đa 1 "fucking"), 33–42 s, ~218 từ/phút, kết "Now …" khép vòng hook; giọng ElevenLabs `eleven_v4` CÓ tag cảm xúc (mục 3b).
+Mặc định đã chốt của kênh: tiếng Anh, giọng "bựa" (ass/shit + tối đa 1 "fucking"), 33–42 s, ~218 từ/phút, kết "Now …" khép vòng hook; giọng "Jack John" (ElevenLabs 7EzWGsX10sAS4c9m9cPf qua SonicVoice, model v4/v3) CÓ tag cảm xúc (mục 3b).
 Thiếu chuỗi bộ phận thật → tự tra nguồn (mục 7) trước khi viết; không bịa cơ chế.
 
 ## 3. Công thức lời (đo 5/5 video viral)
@@ -51,11 +51,11 @@ Quy tắc câu:
 7. Câu ≤ 22 từ; không câu dạo đầu, không tự giới thiệu, không "wait till the end", không CTA.
 8. Câu kết **dùng lại đúng động cơ/từ khoá của hook** (shower → shower, sweaty → blow, watch → come inside, meat → meat, shit → crust). Nước đôi ngụ ý, không mô tả tình dục trực tiếp.
 
-## 3b. Tag cảm xúc cho giọng (chủ kênh 09/11 — `eleven_v4`, giọng 7EzWGsX10sAS4c9m9cPf)
+## 3b. Tag cảm xúc cho giọng (chủ kênh 09/11 — giọng 7EzWGsX10sAS4c9m9cPf qua SonicVoice, model eleven_v4/v3)
 - Hai file: `loi_doc.txt` = lời SẠCH (không tag) cho phụ đề và so khớp ASR; `loi_tts.txt` = cùng lời + tag, gửi TTS. Chữ phải trùng từng từ.
 - Tag đặt ngay trước vế đổi cảm xúc, giữ tới tag sau; 6–10 tag/tập, không tag mỗi câu. Tag tả CÁCH NÓI, không tả hành động.
 - Gợi ý theo vế: hook `[frustrated]`/`[disgusted]`/`[mischievously]` · "so you" `[excited]`/`[proudly]` · câu khen `[smug]`/`[laughs]` · "But/Except" `[annoyed]`/`[groans]` · câu cơ chế `[curious]` · vòng người bạn `[angry]`/`[shouting]` · kết `[mischievously]`/`[laughs]`.
-- Vẫn VIẾT HOA 1–3 từ đắt (FAT ASS, FUCKING, EVERY DAY) như kit; `...` trước cú nảy. `eleven_v4` không có tham số speed → tốc độ chỉnh bằng atempo ở `giong_chuan.py`.
+- Vẫn VIẾT HOA 1–3 từ đắt (FAT ASS, FUCKING, EVERY DAY) như kit; `...` trước cú nảy. Tốc độ chỉnh bằng atempo ở `giong_chuan.py`. Model không phải v3/v4 thì bỏ hết tag (đọc thành tiếng), chỉ giữ chữ HOA.
 - Ví dụ: `[frustrated] Your friend keeps barging in while you're naked, [mischievously] so you tell him to knock first. [smug] Big brain. [groans] But he knocks with his FAT fist…`
 
 ## 4. Hook — chọn 1 trong 4 cơ chế (đã thấy viral)

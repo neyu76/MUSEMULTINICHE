@@ -22,16 +22,18 @@ The owner writes Vietnamese: answer in Vietnamese. Message the owner ONLY with t
 2. Audio pack `AbsurdPlay_P02_am_thanh.zip` (SFX library + ukulele music + `giong_goc_E05.mp3`): the owner uploads it once → `unzip -o … -d $P`.
    Missing at the first episode = blocker (ask once, together with the voice question below).
 3. Voice (channel.env `VOICE_ROUTE`; the kit's "Odd Tilt" lives in the owner's Magnific account, which you cannot use):
-   - `elevenlabs` (owner's choice 09/11 — overrides the kit's "turbo v2.5, no tags" rule): connector once per account —
-     `credentials.request_api_access` provider elevenlabs, host api.elevenlabs.io, header `xi-api-key`. Voice VOICE_ID=7EzWGsX10sAS4c9m9cPf
-     ("Jack John"), model VOICE_MODEL=eleven_v4 (tags work only on eleven_v4/eleven_v3; turbo reads them aloud). Request:
-     `POST https://api.elevenlabs.io/v1/text-to-speech/<VOICE_ID>?output_format=mp3_44100_128` JSON {"text": <loi_tts.txt>, "model_id": "eleven_v4"}
-     → body = mp3 → `$T/am_thanh/giong_goc.mp3`. eleven_v4 has no speed setting: `giong_chuan.py` fixes the pace with atempo.
+   - `sonicvoice` (owner's choice 09/11 — do NOT use the ElevenLabs API/connector): SonicVoice connector (host sonicvoice.pro, header `X-API-Key`;
+     every request needs a custom `User-Agent`, e.g. "P02-TTS/1.0", or Cloudflare returns 403). Voice = ElevenLabs library voice
+     VOICE_ID=7EzWGsX10sAS4c9m9cPf ("Jack John") through provider `eleven`.
+     Once: `GET https://sonicvoice.pro/api/v1/models?provider=eleven` → write VOICE_MODEL in channel.env: eleven_v4 if listed, else eleven_v3
+     (emotion tags work only on these); neither → VOICE_TAGS=off (send loi_doc.txt with CAPS only — turbo/multilingual read tags aloud) and tell the owner.
+     Optional check: `GET /api/v1/voices?provider=eleven&q=Jack` shows the voice.
+     Per take: `GET /api/v1/me/balance` (enough chars?) → `POST /api/v1/tts/jobs` {"kind":"single","provider":"eleven","voice_id":VOICE_ID,
+     "model":VOICE_MODEL,"text":<loi_tts.txt>,"speed":SONIC_SPEED,"language":"English","split_mode":"keep","srt_out":true,"title":"<EP>",
+     "stability":0.3,"similarity_boost":0.75,"style":0.4,"use_speaker_boost":true} (production/sonicvoice_tts.py is the reference) → poll
+     `GET /api/v1/tts/jobs/{id}` every ~5 s until succeeded/failed → `GET /api/v1/tts/jobs/{id}/audio` (WAV) → `$T/am_thanh/giong_goc.wav`.
+     422 on a field (e.g. stability on v3/v4) → drop that field and resend once. `giong_chuan.py` fixes the pace with atempo.
      If ASR shows a tag spoken as a word (e.g. "excited") → remove/replace that tag and regenerate once.
-   - `sonicvoice`: connector once per account — `credentials.request_api_access` provider sonicvoice, host sonicvoice.pro, header `X-API-Key`;
-     every request needs a custom `User-Agent` (e.g. "P02-TTS/1.0") or Cloudflare returns 403. `GET https://sonicvoice.pro/api/v1/voices/mine/clones` →
-     a clone the owner names → write VOICE_ID in channel.env. No such clone → blocker: ask the owner to clone it on SonicVoice from
-     `$P/am_thanh/giong_goc_E05.mp3` (or switch the route).
    - `owner_mp3`: after CRITIC-S passes, send the owner the exact script once and wait for the mp3 (the only allowed stop).
 
 ## One episode (EP = E06, E07 … next free number; T=$P/tap/<EP>_<object>)
@@ -53,8 +55,11 @@ The owner writes Vietnamese: answer in Vietnamese. Message the owner ONLY with t
    TWIST = visible failure + reaction, MECH = science graphic, PAYOFF = callback of the opening framing (kit SKILL §1b, §5–7a2).
 7. **Stills → CRITIC-V** — kit B11 (360p, 2 frames/s, `anh_ghep.py`), open every sheet, CRITIC.md V1–V10. Fix, re-render only those frames.
 8. **Render** — 360p full + `qa_giat.py` (kit B12), then 1080p in the background:
-   `bash $P/cong_cu/render_nen.sh <scene>.html ~/p02_work/<EP>/r1080 <frames=dur×30> 2`. Measured on Muse: ≈ 13.6 s/frame at 1080p with MSAA,
-   2 processes → a 35 s episode ≈ 2 h. Watchdog: `cron.add` every 15 min (agent turn) → `render_nen.sh --dem …`; "không chạy" and not complete →
+   `bash $P/cong_cu/render_nen.sh "<scene>.html?mb=3" ~/p02_work/<EP>/r1080 <frames=dur×30> 2`. Measured on Muse: ≈ 12–14 s/frame at 1080p
+   with MSAA and no blur; a motion-blur frame costs blurN × that (E08 opening, 5 subframes: 59.9 s/frame). Before the 1080p render:
+   `cd $P/engine && node liet_ke_khung.js <scene>.html <frames>` lists the blur frames → estimate = blur×(subframes×13) + rest×13 s ÷ 2 processes.
+   In new scenes make blurN return `+q.get('mb')||5` instead of 5 and render with `?mb=3` (≈ 40 % less time on blur frames, still smooth);
+   keep FAST ranges short (only real fast action). Target ≤ 4 h per episode; over that, shorten FAST ranges before rendering. Watchdog: `cron.add` every 15 min (agent turn) → `render_nen.sh --dem …`; "không chạy" and not complete →
    run the same `render_nen.sh` line again (skips finished frames). Delete the cron when complete. Keep `$T/checkpoint.json` (stage, fix_rounds).
 9. **SFX + mix** — action sounds (fall, snap, pop, wind, the object's own sound) → `$T/cues_tay.json` [[t,"name",dB]…]; names from
    `tai_nguyen/sfx/README.md`; a missing sound → ElevenLabs Sound Effects through the connector (save as `tai_nguyen/sfx/<name>.mp3`) or drop the cue.
