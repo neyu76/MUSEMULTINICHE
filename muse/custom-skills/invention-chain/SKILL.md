@@ -21,7 +21,7 @@ The owner writes Vietnamese: answer in Vietnamese. Message the owner ONLY with t
    download Chromium, point `CHROME_PATH` at an existing headless Chromium. Every session: re-check ffmpeg (apt may vanish after a VM replacement).
 2. Audio pack `AbsurdPlay_P02_am_thanh.zip` (SFX library + ukulele music + `giong_goc_E05.mp3`): the owner uploads it once → `unzip -o … -d $P`.
    Missing at the first episode = blocker (ask once, together with the voice question below).
-3. Voice (channel.env `VOICE_ROUTE`; the kit's "Odd Tilt" lives in the owner's Magnific account, which you cannot use):
+3. Voice (channel.env `VOICE_ROUTE`; the kit's Magnific "Odd Tilt" and the ElevenLabs API are NOT used — owner 09/11):
    - `sonicvoice` (owner's choice 09/11 — do NOT use the ElevenLabs API/connector): SonicVoice connector (host sonicvoice.pro, header `X-API-Key`;
      every request needs a custom `User-Agent`, e.g. "P02-TTS/1.0", or Cloudflare returns 403). Voice = ElevenLabs library voice
      VOICE_ID=7EzWGsX10sAS4c9m9cPf ("Jack John") through provider `eleven`.
@@ -56,7 +56,8 @@ The owner writes Vietnamese: answer in Vietnamese. Message the owner ONLY with t
 7. **Stills → CRITIC-V** — kit B11 (360p, 2 frames/s, `anh_ghep.py`), open every sheet, CRITIC.md V1–V10. Fix, re-render only those frames.
 8. **Render** — 360p full + `qa_giat.py` (kit B12), then 1080p in the background:
    `bash $P/cong_cu/render_nen.sh "<scene>.html?mb=3" ~/p02_work/<EP>/r1080 <frames=dur×30> 2`. Measured on Muse: ≈ 12–14 s/frame at 1080p
-   with MSAA and no blur; a motion-blur frame costs blurN × that (E08 opening, 5 subframes: 59.9 s/frame). Before the 1080p render:
+   with MSAA and no blur; a motion-blur frame costs blurN × that (E08: 5 subframes = 59.9 s/frame; 366 of 1255 frames (29 %) blurred → ≈ 4 h 39 min,
+   ≈ 3 h 26 min with 3 subframes). Before the 1080p render:
    `cd $P/engine && node liet_ke_khung.js <scene>.html <frames>` lists the blur frames → estimate = blur×(subframes×13) + rest×13 s ÷ 2 processes.
    In new scenes make blurN return `+q.get('mb')||5` instead of 5 and render with `?mb=3` (≈ 40 % less time on blur frames, still smooth);
    keep FAST ranges short (only real fast action). Target ≤ 4 h per episode; over that, shorten FAST ranges before rendering. Watchdog: `cron.add` every 15 min (agent turn) → `render_nen.sh --dem …`; "không chạy" and not complete →
