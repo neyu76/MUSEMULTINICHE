@@ -15,7 +15,11 @@ Vế ngắn < 0,9 s được gộp vào shot trước (không cắt), trừ PAYO
 """
 import json, re, sys, pathlib
 
-PRAISE = {"clever", "genius", "brilliant", "lovely", "perfect", "nice", "beautiful"}
+import os
+# câu khen 1–2 chữ (kit §1d: kênh dùng câu khen RIÊNG, không chép "Clever!/Genius!" của kênh mẫu) — thêm bằng KHEN="word1,word2"
+PRAISE = {"clever", "genius", "brilliant", "lovely", "perfect", "nice", "beautiful", "bullseye", "gotcha", "nailed", "boom", "sweet", "jackpot"} | \
+    {x.strip().lower() for x in os.environ.get("KHEN", "").split(",") if x.strip()}
+PRAISE2 = {("much", "better"), ("big", "brain"), ("nailed", "it")}
 ROUGH = {"ass", "shit", "fat", "lazy", "dumbass", "dumb", "fucking", "poop", "fart", "balls", "crap", "damn", "hell", "idiot", "fatass"}
 
 
@@ -40,7 +44,7 @@ def clauses(W):
             k = "TWIST"
         elif a == "so" and nx == "you":
             k = "FIX"
-        elif endp and (a in PRAISE or (a == "much" and nx == "better")):
+        elif endp and (a in PRAISE or (a, nx) in PRAISE2):
             k = "PRAISE"
         elif a == "now" and endp:
             k = "MECH" if nx in ("when", "if", "whenever") else "NOW"

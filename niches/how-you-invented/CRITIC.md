@@ -7,18 +7,20 @@ Verdict per item: PASS / FIX (what, where). Any P0 = do not continue. Max 2 fix 
 ## CRITIC-S — script (before voice)
 | # | Check | Pass | Level |
 |---|---|---|---|
-| S1 | Word count | 115–135 (33–36 s at 220 wpm); hard range 110–158 | P0 outside 100–165 |
+| S1 | Word count (loi_doc.txt, no tags) | 120–150 (33–42 s at 218 wpm); hard range 110–158 | P0 outside 100–165 |
 | S2 | Hook | ≤ 12 words, "you", one crude word, motive visible in frame 0, object not named yet | P1 |
 | S3 | First "so you" | ≤ 12 words into the script (≈ ≤ 3.4 s) | P1 |
 | S4 | Fix loops | 5–6 "so you" fixes, each a REAL part of the modern object with a source in facts.json | P0 if a mechanism is wrong |
 | S5 | Failure sources | escalate, no two neighbours of the same type; ≥ 1 caused by the friend / a third person | P1 |
-| S6 | Praise | 1–2 ("Clever!", "Genius!", "Much better!") | P2 |
+| S6 | Praise | 1–2, from channel.env PRAISE_WORDS; "Clever!/Genius!/Much better!" (reference channel's lines) = FIX | P1 |
 | S7 | Mechanism line | 1–2 ("Now when you…", "As the…") | P2 |
 | S8 | Crude words | 2–5; "fucking" ≤ 1; no slurs; children only in slapstick, never in an innuendo | P0 if slur / minor in innuendo |
 | S9 | Ending | starts "Now…", ≤ 10 words, reuses the hook's motive/keyword, double meaning implied not explicit | P0 if it does not close the loop |
 | S10 | Every sentence opens with so you / But / Except / Now / praise | ≥ 90 % | P2 |
 | S11 | New | object, motive, cast, setting, opening gag not in the "đã dùng" tables or `skills/invention-topic-studio/references/topic-bank.md` §1 | P0 |
-| S12 | Nuclear gag | per channel.env NUCLEAR_GAG (allowed_once: at most one, 30–50 % in) | P2 |
+| S12 | Nuclear gag | per channel.env NUCLEAR_GAG (never = no cooling towers in words or pictures) | P1 |
+| S13 | Own words | no hook/ending/pun line reused from the reference videos (`skills/invention-script-writer/references/viral-analysis.md` §2) or from earlier episodes | P0 |
+| S14 | Tags (VOICE_TAGS=on) | loi_tts.txt = loi_doc.txt word for word + 6–10 tags describing delivery; 1–3 CAPS words | P1 |
 
 ## CRITIC-V — stills, 360p cut, final (open every contact sheet)
 | # | Check | Pass |

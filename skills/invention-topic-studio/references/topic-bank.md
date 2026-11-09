@@ -11,12 +11,14 @@ Cập nhật file này (hoặc tracker Notion) sau mỗi tập: chuyển dòng t
 | tủ lạnh | viral |
 | giấy vệ sinh | viral (E03 bản tiền sử + bản hiện đại) |
 | lều (E01), cửa sổ (E02), khử mùi (E04), xe đạp (E05) | kit P02 |
+| kính tiềm vọng (E06), máy bắn đá trebuchet (E07), đèn bắt muỗi (E08) | kit P02 (08/11) |
 
 ## 2. Đã đề xuất, chưa làm (ưu tiên xét trước khi sinh mới)
 cần câu · que diêm · khoá kéo · vòi rửa (bidet) · bồn tắm · kem chống nắng · súng nước.
+Đọc thêm mọi `KICH_BAN/Y_TUONG_DOT*.md` của kit (đợt 5–12 có thêm đề xuất, gồm định dạng "Roommate War" ở đợt 10) trước khi đề xuất.
 
 ## 3. Đồ vật kênh tham chiếu đã làm (chỉ làm khi động cơ + lỗi + kết đều mới)
-ghế · điều hoà · đồng hồ báo thức · bút bi · giường · kẹp hạt · lò quay gà · vòi sen · thước cuộn · bồn cầu xả · ô · bóng rổ · bóng golf.
+ghế · điều hoà · đồng hồ báo thức · bút bi · giường · cửa · quạt · kẹp hạt · lò quay gà · vòi sen · thước cuộn · bồn cầu xả · ô · bóng rổ · bóng golf · trampoline · tủ lạnh.
 
 ## 4. Ứng viên mới (chưa chấm điểm đầy đủ, chưa kiểm fact — làm bước 4–5 của SKILL trước khi giao)
 | Đồ vật | Chuỗi bộ phận (đề xuất, cần kiểm nguồn) | Động cơ hook | Từ kết | Đồ hoạ khoa học |

@@ -8,6 +8,7 @@ The owner writes Vietnamese: answer in Vietnamese. Message the owner ONLY with t
 
 ## Sources (read before the first episode of a session)
 - Kit (public): `git clone https://github.com/mailcontentnba76-cell/absurdplay-kit -b du-an-moi ~/absurdplay-kit` → `P=~/absurdplay-kit/du_an/P02_oddtilt`.
+  Before `git pull` of the kit: `git -C ~/absurdplay-kit checkout -- du_an/P02_oddtilt/engine/render.js`, then re-run cai_overlay.sh (it re-patches).
   Read `~/absurdplay-kit/skill/invention-chain-shorts/SKILL.md` (style law) and `QUY_TRINH_DAY_DU.md` (14 steps) — follow them with the Muse changes below.
 - This repo (MUSEMULTINICHE, cloned at `~/wynn-media`): `bash ~/wynn-media/studios/p02-invention/cai_overlay.sh ~/absurdplay-kit` after every clone/pull
   (adds `cong_cu/moc_shot.py giong_chuan.py tron_am_auto.py qa_tap.py tao_phu_de.py render_nen.sh`, `engine/render.js` with resume + CHROME_PATH).
@@ -15,29 +16,36 @@ The owner writes Vietnamese: answer in Vietnamese. Message the owner ONLY with t
 - Settings: `~/wynn-media/niches/how-you-invented/channel.env`; critic: `~/wynn-media/niches/how-you-invented/CRITIC.md` + `~/wynn-media/docs/AUTOPILOT.md`.
 
 ## First-time setup on an account
-1. `bash $P/cai_dat/cai_dat.sh` (pip, npm, Playwright, Parakeet + MakeHuman into `~/.p02`) → `bash $P/cai_dat/kiem_tra.sh --render`. If Playwright cannot
+1. `bash $P/cai_dat/cai_dat.sh` (pip, npm, Playwright, Parakeet + MakeHuman into `~/.p02`) → `bash $P/cai_dat/kiem_tra.sh --render` (if your safety check blocks kiem_tra.sh, run the same checks yourself and render 3 test frames of
+   `engine/e8_den_bat_muoi.html` at 1080×1920 with render.js to measure s/frame). If Playwright cannot
    download Chromium, point `CHROME_PATH` at an existing headless Chromium. Every session: re-check ffmpeg (apt may vanish after a VM replacement).
 2. Audio pack `AbsurdPlay_P02_am_thanh.zip` (SFX library + ukulele music + `giong_goc_E05.mp3`): the owner uploads it once → `unzip -o … -d $P`.
    Missing at the first episode = blocker (ask once, together with the voice question below).
 3. Voice (channel.env `VOICE_ROUTE`; the kit's "Odd Tilt" lives in the owner's Magnific account, which you cannot use):
-   - `sonicvoice` (default): connector once per account — `credentials.request_api_access` provider sonicvoice, host sonicvoice.pro, header `X-API-Key`;
+   - `elevenlabs` (owner's choice 09/11 — overrides the kit's "turbo v2.5, no tags" rule): connector once per account —
+     `credentials.request_api_access` provider elevenlabs, host api.elevenlabs.io, header `xi-api-key`. Voice VOICE_ID=7EzWGsX10sAS4c9m9cPf
+     ("Jack John"), model VOICE_MODEL=eleven_v4 (tags work only on eleven_v4/eleven_v3; turbo reads them aloud). Request:
+     `POST https://api.elevenlabs.io/v1/text-to-speech/<VOICE_ID>?output_format=mp3_44100_128` JSON {"text": <loi_tts.txt>, "model_id": "eleven_v4"}
+     → body = mp3 → `$T/am_thanh/giong_goc.mp3`. eleven_v4 has no speed setting: `giong_chuan.py` fixes the pace with atempo.
+     If ASR shows a tag spoken as a word (e.g. "excited") → remove/replace that tag and regenerate once.
+   - `sonicvoice`: connector once per account — `credentials.request_api_access` provider sonicvoice, host sonicvoice.pro, header `X-API-Key`;
      every request needs a custom `User-Agent` (e.g. "P02-TTS/1.0") or Cloudflare returns 403. `GET https://sonicvoice.pro/api/v1/voices/mine/clones` →
-     the clone named VOICE_NAME ("Odd Tilt") → write VOICE_ID in channel.env. No such clone → blocker: ask the owner to clone it on SonicVoice from
+     a clone the owner names → write VOICE_ID in channel.env. No such clone → blocker: ask the owner to clone it on SonicVoice from
      `$P/am_thanh/giong_goc_E05.mp3` (or switch the route).
-   - `elevenlabs`: connector host api.elevenlabs.io, header `xi-api-key`, model VOICE_MODEL, the owner gives VOICE_ID.
    - `owner_mp3`: after CRITIC-S passes, send the owner the exact script once and wait for the mp3 (the only allowed stop).
 
 ## One episode (EP = E06, E07 … next free number; T=$P/tap/<EP>_<object>)
 1. **Topic** — object given → check it against `topic-bank.md` §1–2 and the kit's "đã dùng" tables; nothing given → `invention-topic-studio` quick_pick.
    Need: object, motive, 5–6 real parts with sources, ending keyword, cast, one setting, opening gag, accent colour. Score ≥ 75.
-2. **Script** — `invention-script-writer` → `$T/loi_doc.txt`, `$T/KICH_BAN.md`, `$T/facts.json`. **CRITIC-S** (CRITIC.md) — max 2 rounds.
+2. **Script** — `invention-script-writer` → `$T/loi_doc.txt` (clean), `$T/loi_tts.txt` (tags), `$T/KICH_BAN.md`, `$T/facts.json`. Praise lines from
+   channel.env PRAISE_WORDS; never the reference channel's lines (kit SKILL §1d). Choose the kit's trampoline (§1b) or fridge (§1c) template by object. **CRITIC-S** — max 2 rounds.
    Owner sent a script → small edits only (facts, word count, ending loop).
-3. **Voice** — one TTS job per take (SonicVoice: `POST /api/v1/tts/jobs` {"kind":"single","provider":SONIC_PROVIDER,"voice_id":VOICE_ID,"text":<loi_doc>,
-   "speed":SONIC_SPEED,"language":"English","split_mode":"keep","title":"<EP>"} → poll `GET /api/v1/tts/jobs/{id}` ~5 s → `GET …/{id}/audio`) → `$T/am_thanh/giong_goc.wav`.
+3. **Voice** — one TTS request per take from `$T/loi_tts.txt` (tags + CAPS, script skill §3b) by VOICE_ROUTE (setup step 3) → `$T/am_thanh/giong_goc.mp3|wav`.
    Then `python3 -I $P/cong_cu/giong_chuan.py $T` (silenceremove → atempo to 218 wpm → Parakeet → words.json → word match). atempo outside 0.8–1.25
    or match < 95 % → regenerate once (speed ±0.1); never loop.
-4. **Timing** — `python3 -I $P/cong_cu/moc_shot.py $T --kieu $CUT_STYLE` → `moc_shot.json`, `engine/moc/<EP>_<object>.js`, `cues_auto.json` and the
-   formula check on the REAL audio. LỆCH lines: fix the script (back to 2) or write the reason in KICH_BAN.md.
+4. **Timing** — `KHEN="<praise words, comma separated>" python3 -I $P/cong_cu/moc_shot.py $T --kieu $CUT_STYLE` → `moc_shot.json`, `engine/moc/<EP>_<object>.js`, `cues_auto.json` and the
+   formula check on the REAL audio. LỆCH lines are advice (the kit's own E07/E08 end ~4 s before the end): fix the script only for a P0/P1 in CRITIC.md,
+   otherwise write the reason in KICH_BAN.md.
 5. **Captions** — `python3 -I $P/cong_cu/tao_phu_de.py $T/am_thanh/words.json $T/phu_de_1080.ass` (insults like DUMBASS in caps).
 6. **Cast, textures, scene** — kit B8–B10. Textures/backdrops: `media.generate_image` with the kit's prompts (square output; tileable textures are square
    anyway; backdrops: use MirroredRepeat or reuse `engine/assets/tex/mag/*`) → `tex_magnific.py`. Scene = copy `engine/e5_xe_dap.html`, then

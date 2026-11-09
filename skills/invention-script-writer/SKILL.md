@@ -3,10 +3,12 @@ name: invention-script-writer
 description: Viết, sửa và QA kịch bản TikTok/Shorts dọc 30–43 s kiểu "How you invented X" (ngôi "you" phát minh đồ vật qua chuỗi lỗi→sửa, hài bựa, kết nước đôi khép vòng hook) theo công thức đo từ 5 video viral của kênh. Nhận topic/outline từ invention-topic-studio hoặc một đồ vật/brief; giao lời đọc sạch + bảng shot A-roll/B-roll có điểm cắt + QA. Dùng khi được yêu cầu viết/sửa/remake kịch bản, hook, nhịp, kết cho ngách này; không dựng, không gọi TTS, không đăng.
 ---
 
-# Invention Script Writer — v1.0 (08/11/2026)
+# Invention Script Writer — v1.1 (09/11/2026)
 
 Chuyển thể từ `tiktok-script-all-in-one` (nguyên tắc chung: hook từ khung đầu, beat theo thay đổi, cắt có quan hệ, payoff đúng lời hứa, QA P0/P1/P2) và **chuyên hoá cho một format đã đo**. Trao đổi tiếng Việt; lời đọc tiếng Anh (trừ khi brief đổi ngôn ngữ).
 Số đo gốc và lý do viral: `references/viral-analysis.md`. Mẫu bảng shot: `references/board-template.md`.
+
+> **Không chép câu chữ kênh mẫu (chủ kênh 08/11, kit §1d):** công thức dưới đây là NHỊP và CẤU TRÚC đo từ video mẫu. Câu khen, câu kết, chữ chơi chữ phải là của kênh mình: câu khen lấy từ `PRAISE_WORDS` trong `niches/how-you-invented/channel.env` (vd "Bullseye.", "Gotcha.", "Big brain.", "Nailed it."), **không dùng "Clever!/Genius!/Much better!"**; câu kết "Now …" viết mới mỗi tập, không lặp câu kết của video mẫu.
 
 ## 1. Việc được giao → làm tới đâu
 
@@ -21,7 +23,7 @@ Script-ready ≠ có giọng ≠ có video ≠ đã đăng. Không tự gọi TT
 
 ## 2. Brief tối thiểu (tự điền mặc định, chỉ hỏi khi đổi lớn)
 Đồ vật · chuỗi bộ phận thật (5–6) · động cơ hook · từ nước đôi của câu kết · người bạn/người thứ ba · bối cảnh 1 địa điểm · thời đại (hiện đại mặc định; tiền sử khi đồ vật rất cổ) · thời lượng.
-Mặc định đã chốt của kênh: tiếng Anh, giọng "bựa" (ass/shit + tối đa 1 "fucking"), 33–36 s, ~220 từ/phút, kết B.
+Mặc định đã chốt của kênh: tiếng Anh, giọng "bựa" (ass/shit + tối đa 1 "fucking"), 33–42 s, ~218 từ/phút, kết "Now …" khép vòng hook; giọng ElevenLabs `eleven_v4` CÓ tag cảm xúc (mục 3b).
 Thiếu chuỗi bộ phận thật → tự tra nguồn (mục 7) trước khi viết; không bịa cơ chế.
 
 ## 3. Công thức lời (đo 5/5 video viral)
@@ -29,15 +31,15 @@ Thiếu chuỗi bộ phận thật → tự tra nguồn (mục 7) trước khi v
 ```
 [0,0 s]   HOOK ≤ 12 từ: động cơ/khó chịu cá nhân, ngôi "you", có 1 từ thô.  (+ "but <vật cản>" nếu hook là mong muốn)
 [1–3,5 s] "So you <giải pháp thô sơ bằng vật tự nhiên>."
-[5–9 s]   "Clever!" / "Genius!"                      ← ding ở câu khen (không để lặng)
+[5–9 s]   <câu khen riêng 1–2 chữ>                 ← ding ở câu khen (không để lặng)
           "But/Except <lỗi thấy được>, so you <bộ phận thật #2>."
           … 4–5 vòng, chu kỳ 5–7 s; mỗi "so you" = 1 bộ phận có thật của đồ vật hiện đại
-[14–22 s] khen lần 2: "Much better!" / "Genius!"
+[14–22 s] khen lần 2 (câu khen riêng khác lần 1)
 [60–75 %] "your friend" phá (kèm "fucking"/"dumbass") → bộ phận cuối
 [T−2,2 s] "Now <động cơ hook đã đạt, nói nước đôi>!"   ≤ 10 từ, kết thúc ~0,4 s trước hết video
 ```
 
-Ngân sách: **số từ ≈ thời lượng × 3,67** (220 từ/phút). 33 s ≈ 120 từ, 36 s ≈ 132 từ, 43 s ≈ 158 từ. Viết 115–135 từ cho bản chuẩn.
+Ngân sách: **số từ ≈ thời lượng × 3,63** (218 từ/phút; tag không tính). 33 s ≈ 120 từ, 36 s ≈ 131 từ, 42 s ≈ 152 từ. Viết 120–150 từ.
 
 Quy tắc câu:
 1. **Mọi câu mở bằng chữ nối**: So you / But / Except / Now / câu khen. Chữ nối là điểm cắt hình và là động cơ nhân quả; không dùng "Then", "Next", "After that".
@@ -48,6 +50,13 @@ Quy tắc câu:
 6. Từ thô 2–5/video: tính từ chửi gắn vào người ("your fat ass", "your lazy ass", "your dumbass friend"); "fucking" tối đa 1, đặt ở vòng người bạn. Không nhắm vào chủng tộc, giới, khuyết tật, trẻ em; trẻ em (em họ) chỉ bị slapstick, không bao giờ trong câu nước đôi.
 7. Câu ≤ 22 từ; không câu dạo đầu, không tự giới thiệu, không "wait till the end", không CTA.
 8. Câu kết **dùng lại đúng động cơ/từ khoá của hook** (shower → shower, sweaty → blow, watch → come inside, meat → meat, shit → crust). Nước đôi ngụ ý, không mô tả tình dục trực tiếp.
+
+## 3b. Tag cảm xúc cho giọng (chủ kênh 09/11 — `eleven_v4`, giọng 7EzWGsX10sAS4c9m9cPf)
+- Hai file: `loi_doc.txt` = lời SẠCH (không tag) cho phụ đề và so khớp ASR; `loi_tts.txt` = cùng lời + tag, gửi TTS. Chữ phải trùng từng từ.
+- Tag đặt ngay trước vế đổi cảm xúc, giữ tới tag sau; 6–10 tag/tập, không tag mỗi câu. Tag tả CÁCH NÓI, không tả hành động.
+- Gợi ý theo vế: hook `[frustrated]`/`[disgusted]`/`[mischievously]` · "so you" `[excited]`/`[proudly]` · câu khen `[smug]`/`[laughs]` · "But/Except" `[annoyed]`/`[groans]` · câu cơ chế `[curious]` · vòng người bạn `[angry]`/`[shouting]` · kết `[mischievously]`/`[laughs]`.
+- Vẫn VIẾT HOA 1–3 từ đắt (FAT ASS, FUCKING, EVERY DAY) như kit; `...` trước cú nảy. `eleven_v4` không có tham số speed → tốc độ chỉnh bằng atempo ở `giong_chuan.py`.
+- Ví dụ: `[frustrated] Your friend keeps barging in while you're naked, [mischievously] so you tell him to knock first. [smug] Big brain. [groans] But he knocks with his FAT fist…`
 
 ## 4. Hook — chọn 1 trong 4 cơ chế (đã thấy viral)
 
@@ -104,7 +113,7 @@ Khi viết cả tập: nháp nội bộ 3 hook khác mã, chấm theo kiểm tra
 | Số giải pháp "so you" | 5–6 | P1 nếu < 4 |
 | Mỗi giải pháp = bộ phận thật, có nguồn | 100 % | P0 nếu sai cơ chế |
 | Nguồn lỗi | không 2 vòng liền cùng loại; có ≥ 1 lỗi do người bạn/người thứ ba | P1 |
-| Câu khen | 1–2, có ding | P2 |
+| Câu khen | 1–2, từ PRAISE_WORDS của kênh, có ding; dùng "Clever!/Genius!/Much better!" = chép kênh mẫu | P1 |
 | Câu cơ chế | 1–2 | P2 |
 | Từ thô | 2–5; "fucking" ≤ 1 | P2 (P0 nếu xúc phạm nhóm người/trẻ em) |
 | Câu kết | bắt đầu ở T−1,8…−2,6 s, ≤ 10 từ, gọi lại từ khoá hook | P0 nếu không khép vòng |
@@ -116,7 +125,8 @@ P0 = cản dùng; P1 = yếu rõ; P2 = chỉnh nhỏ. READY khi không còn P0/P
 
 ## 9. File bàn giao
 Trong thư mục tập (`tap/EXX_<ten>/` của kit P02, hoặc `outputs/<run_id>/<topic_id>/`):
-- `loi_doc.txt` — chỉ lời đọc sạch (không mốc, không chú thích) — đầu vào TTS.
+- `loi_doc.txt` — chỉ lời đọc sạch (không mốc, không chú thích, không tag) — phụ đề + so khớp ASR.
+- `loi_tts.txt` — `loi_doc.txt` + tag cảm xúc + chữ HOA (mục 3b) — đầu vào TTS.
 - `KICH_BAN.md` — tiêu đề, `topic_id`, `hook_code`, lời, nhân vật, bối cảnh, bảng shot (`references/board-template.md`), màu nhấn, gag mở đầu.
 - `facts.json` — claim_id, câu, nguồn, trạng thái.
 - `script_qa.json` — số từ, thời lượng ước tính, mốc chữ nối, kết quả từng dòng mục 8, P0/P1 còn lại.

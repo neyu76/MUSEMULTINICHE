@@ -1,6 +1,7 @@
 # Phân tích 5 video viral của kênh — "How you invented X" (08/11/2026)
 
 Nguồn: 5 file mp4 chủ kênh gửi (trampoline, quạt, cửa, tủ lạnh, giấy vệ sinh).
+> Ghi chú 09/11: theo kit P02, ít nhất trampoline và tủ lạnh là video của **kênh mẫu** (`PHAN_TICH_MAU/16`, `17`), bản DEMO "cửa" của kit chép lời video mẫu để thử chuỗi dựng. Dùng file này cho NHỊP/CẤU TRÚC; câu khen, câu kết, chữ chơi chữ trích dưới đây là của video mẫu — không dùng lại (kit §1d).
 Đo bằng: faster-whisper "small" lấy mốc từng từ; ffmpeg scene-cut ngưỡng 0,3; ebur128; contact sheet 2 khung/giây xem toàn bộ.
 Nhãn: [ĐO] = số đo · [QS] = quan sát hình · [SL] = suy luận. Claude không nghe nhạc/SFX nên phần âm chỉ có số đo tín hiệu.
 Số view/like từng video: không có → "viral" là theo chủ kênh, chưa so được video nào hơn video nào.
