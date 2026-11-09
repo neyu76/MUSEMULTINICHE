@@ -47,6 +47,15 @@ def main():
     if kieu == "cat":
         chk.append(("Cắt cứng", len(cuts), 7 <= len(cuts) <= 16, "10–14"))
         chk.append(("Cắt rơi đúng chữ nối ±0,35 s", f"{len(on)}/{len(cuts)}", bool(cuts) and len(on) / len(cuts) >= 0.7, "≥ 70 % (viral 79 %)"))
+    # beat = điểm cắt + cue âm (cues_auto.json + cues_tay.json); đích ≥ 8 / 10 s, không khoảng > 3 s trống (nguyên tắc "3 giây không có gì mới")
+    ev = sorted(set([round(c, 2) for c in cuts] + [round(float(c[0]), 2) for f in ("cues_auto.json", "cues_tay.json")
+                                                   if (tap / f).exists() for c in json.loads((tap / f).read_text())]))
+    ev = [0.0] + [e for e in ev if 0 < e < dur] + [dur]
+    gaps = [(round(ev[i], 2), round(ev[i + 1] - ev[i], 2)) for i in range(len(ev) - 1)]
+    big = [g for g in gaps if g[1] > 3.0]
+    bp10 = (len(ev) - 2) / dur * 10
+    chk.append(("Beat / 10 s (cắt + cue âm)", round(bp10, 1), bp10 >= 8, "≥ 8"))
+    chk.append(("Khoảng > 3 s không beat", [f"{t}s+{g}s" for t, g in big] or 0, not big, "0"))
     for f in q.glob("sheet_*.jpg"):
         f.unlink()
     sh(["ffmpeg", "-loglevel", "error", "-y", "-i", str(mp4), "-vf",
@@ -55,7 +64,7 @@ def main():
     sheets = sorted(str(p) for p in q.glob("sheet_*.jpg"))
     bad = [c for c in chk if not c[2]]
     rep = {"video": str(mp4), "checks": [{"muc": c[0], "gia_tri": c[1], "dat": bool(c[2]), "dich": c[3]} for c in chk],
-           "cuts": cuts, "silences": sil, "sheets": sheets, "pass_so_do": not bad,
+           "cuts": cuts, "silences": sil, "beat_gaps_over_3s": big, "sheets": sheets, "pass_so_do": not bad,
            "con_phai_xem_bang_mat": ["khung 0 có động cơ/vấn đề + mặt khoa trương", "mỗi 'so you' có bộ phận mới thấy rõ trên đồ vật",
                                      "mỗi 'But/Except' có thất bại vật lý thấy được", "phụ đề không che mặt/bộ phận đang nói tới",
                                      "không vật lơ lửng, không xuyên vật, không nhấp nháy 1 khung", "khung kết gọi lại khung mở đầu",

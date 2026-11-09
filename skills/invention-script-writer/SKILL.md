@@ -3,7 +3,7 @@ name: invention-script-writer
 description: Viết, sửa và QA kịch bản TikTok/Shorts dọc 30–43 s kiểu "How you invented X" (ngôi "you" phát minh đồ vật qua chuỗi lỗi→sửa, hài bựa, kết nước đôi khép vòng hook) theo công thức đo từ 5 video viral của kênh. Nhận topic/outline từ invention-topic-studio hoặc một đồ vật/brief; giao lời đọc sạch + bảng shot A-roll/B-roll có điểm cắt + QA. Dùng khi được yêu cầu viết/sửa/remake kịch bản, hook, nhịp, kết cho ngách này; không dựng, không gọi TTS, không đăng.
 ---
 
-# Invention Script Writer — v1.1 (09/11/2026)
+# Invention Script Writer — v1.2 (09/11/2026)
 
 Chuyển thể từ `tiktok-script-all-in-one` (nguyên tắc chung: hook từ khung đầu, beat theo thay đổi, cắt có quan hệ, payoff đúng lời hứa, QA P0/P1/P2) và **chuyên hoá cho một format đã đo**. Trao đổi tiếng Việt; lời đọc tiếng Anh (trừ khi brief đổi ngôn ngữ).
 Số đo gốc và lý do viral: `references/viral-analysis.md`. Mẫu bảng shot: `references/board-template.md`.
@@ -90,6 +90,18 @@ Khi viết cả tập: nháp nội bộ 3 hook khác mã, chấm theo kiểm tra
 - Phụ đề: 1–3 từ/cụm, trắng đậm, giữa, ~60 % chiều cao; từ chửi/cảm xúc VIẾT HOA.
 - Âm (đề xuất cho kit): ding ở câu khen, whoosh ở mỗi cắt, "uh-oh" ở But/Except, tiếng vật theo hành động; nhạc nền nhẹ dưới lời.
 
+## 5b. Nhịp beat và khung 0 (bổ sung v1.2 — nguyên tắc từ khóa What If Academy, diễn giải)
+- **Beat** = một sự kiện hình hoặc âm: điểm cắt, bộ phận bật ra, cú ngã, SFX nhấn, đồ hoạ khoa học, chữ HOA trên phụ đề.
+  **Không để quá 3 s không có gì mới.** Đích kênh: ≥ 8 beat / 10 s tính trên cắt + cue âm (`qa_tap.py` đo). Bảng shot phải ghi beat cho mọi khoảng > 2,5 s.
+- **Khung 0 có đủ 4 thứ:** chuyển động ĐANG diễn ra (không ảnh tĩnh, sự kiện lớn đầu tiên trước 0,6 s) · một âm nhấn ở 0 s · câu hook · một câu hỏi còn mở (chưa nói đồ vật).
+- **2 giây cuối nối về khung 0** (cùng khung hình/động cơ) để video lặp mượt khi xem lại.
+- Chủ đề yếu không cứu được bằng nhiều beat — beat chỉ giữ người xem khi topic đã đạt điểm.
+
+## 5c. Biến thể theo mục tiêu kênh (chủ kênh chọn; mặc định bản ngắn)
+- **Bản ngắn 33–42 s** (mặc định, tăng follower).
+- **Bản ≥ 65 s** (khi tài khoản đã vào Creator Rewards — kiểm lại điều kiện trong TikTok Studio): 8–10 vòng lỗi→sửa, 2 câu cơ chế, 2–3 lần người bạn phá; 230–250 từ. Kéo dài bằng diễn biến mới, **không lặp cảnh/câu**.
+- **Series 2 phần:** Part 1 kết bằng câu bỏ lửng (vấn đề mới chưa giải) + thẻ ~1 s "PART 2" + một câu hỏi bình luận; Part 2 trả lời trong 5 s đầu, cùng nhân vật và công thức tiêu đề.
+
 ## 6. Quy trình viết (một lượt, tự QA)
 1. Đọc topic/outline (ID, chuỗi bộ phận, nguồn, hook đề xuất). Không có thì dựng nhanh chuỗi 5–6 bộ phận có nguồn.
 2. Chọn hook + kết đi cặp (mục 4). Ghi `hook_code`.
@@ -120,6 +132,7 @@ Khi viết cả tập: nháp nội bộ 3 hook khác mã, chấm theo kiểm tra
 | Mọi câu mở bằng chữ nối | ≥ 90 % | P2 |
 | Bảng shot | mỗi chữ nối có thay đổi hình; mỗi danh từ bộ phận có B-roll | P1 |
 | Khả thi sản xuất | 1 địa điểm, ≤ 3 người, mọi bộ phận dựng được bằng khối/lưới code hoặc asset có sẵn | P1 |
+| Khung 0 / beat | khung 0 có chuyển động + âm nhấn + hook + câu hỏi mở; bảng shot không có khoảng > 3 s thiếu beat | P1 |
 
 P0 = cản dùng; P1 = yếu rõ; P2 = chỉnh nhỏ. READY khi không còn P0/P1. Điểm "cuốn" là đánh giá biên tập, không phải dự đoán view.
 
@@ -131,6 +144,8 @@ Trong thư mục tập (`tap/EXX_<ten>/` của kit P02, hoặc `outputs/<run_id>
 - `facts.json` — claim_id, câu, nguồn, trạng thái.
 - `script_qa.json` — số từ, thời lượng ước tính, mốc chữ nối, kết quả từng dòng mục 8, P0/P1 còn lại.
 - `change_log.md` — phiên bản và thay đổi.
+- `dang_bai.md` — tiêu đề "How you invented the X", caption ≤ 150 ký tự cùng lời hứa với hook, chữ ảnh bìa ≤ 5 từ, 3–5 hashtag có từ khóa người xem tìm; ghi `test_element` của tập.
+- Sau khi đăng (khi chủ kênh dán số liệu D+7): ghi 3 dòng "điều làm tốt / điều kém / quy tắc đề xuất" vào `change_log.md`; quy tắc chỉ vào skill khi chủ kênh duyệt.
 Có Notion và được giao thì cập nhật đúng record topic (giữ tiến độ cũ, chỉ đánh "Có script").
 
 ## 10. Câu gọi mẫu

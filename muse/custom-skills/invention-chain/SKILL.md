@@ -77,7 +77,9 @@ The owner writes Vietnamese: answer in Vietnamese. Message the owner ONLY with t
     words that differ from the script or are unclear; any tag spoken aloud as a word; emotion per sentence vs the tag asked (loi_tts.txt);
     music too loud under the voice; SFX that sound wrong, late or clipped; clicks, cuts, silences. Answer as JSON list."}].
     Fix real problems (re-mix, move a cue, regenerate one take); Gemini's opinion is a second ear, not proof — the numbers stay the gate. Max 2 fix rounds after the full render, then deliver with the remaining notes.
-12. **Deliver** — MP4 as a storage link (48 h) + a short Vietnamese report: object, hook/ending, numbers from qa_tap, what is not perfect, credits used.
+12. **Deliver** — MP4 as a storage link (48 h) + `dang_bai.md` (title, caption, cover text, hashtags, test_element) + a short Vietnamese report:
+    object, hook/ending, numbers from qa_tap, what is not perfect, credits used. When the owner later pastes D+3/D+7 numbers: fill topic_tracker.csv,
+    follow `skills/invention-topic-studio/references/series-and-data.md` §3 (Part 2 / sibling / move on), propose rules — owner approves before they enter the skills.
     Then update: kit SKILL "đã dùng" tables (7a/7b), `topic-bank.md` §1 in ~/wynn-media, `$T/KICH_BAN.md`; commit on a branch `ep/<EP>` (no mp4/wav/mp3).
     If you cannot push, say so in the report.
 

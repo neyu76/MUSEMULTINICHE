@@ -39,7 +39,7 @@ Bối cảnh: <1 địa điểm>   Nhân vật: chính <...>, bạn <...>, ngư�
 
 ## 4. File xuất (`outputs/<niche>/<run_id>/`)
 brief.json · COMMAND.txt · topic_data.json · outlines.md · fact_ledger.json · performance_sources.json · plugin_coverage.json · overlap_report.md · topic_tracker.csv · qa_report.json · HANDOFF.md · file_manifest.json (+ notion_sync.json khi lưu Notion) · ZIP.
-`topic_tracker.csv`: topic_id, channel_id, object, score, status, topic_done, outline_done, facts_verified, script_done, video_done, published, version, updated_at, blocker. Chỉ đánh hoàn thành khi có artifact.
+`topic_tracker.csv`: topic_id, channel_id, object, score, status, topic_done, outline_done, facts_verified, script_done, video_done, published, version, updated_at, blocker, test_element, published_at, length_s, first_event_s, beats_per_10s, views_d3, views_d7, avg_watch_pct, ret_3s, ret_30s, us_share, new_followers, part2_decision. Chỉ đánh hoàn thành khi có artifact; số liệu D+3/D+7 do chủ kênh dán từ TikTok Studio (`references/series-and-data.md` §3).
 
 ## 5. QA trước khi giao
 - Đủ N topic (hoặc nói rõ đã giao bao nhiêu và vì sao thiếu).
