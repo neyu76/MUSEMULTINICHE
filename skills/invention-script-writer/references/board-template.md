@@ -9,6 +9,7 @@
 - "Cắt vào" ghi quan hệ: cause→effect, action cut, reveal, contrast, callback.
 
 ## Ví dụ (đồ vật mới, không có trong 5 video mẫu): "How you invented the doorbell" — hook F, kiểu CẮT
+> **Chỉ là ví dụ định dạng — KHÔNG dùng lại lời/đồ vật này cho tập thật** (E09 đã dùng chuông cửa). Điểm yếu của ví dụ cần tránh: vòng "kids yank the cord → electromagnet" chưa giải đúng lỗi.
 
 Lời (`loi_doc.txt`, 125 từ, EST ≈ 35,4 s + đuôi 0,4 s):
 > Your friend keeps barging in while you're naked, so you tell him to knock first. Big brain. But he knocks with his fat fist and cracks the door, so you bolt a heavy iron knocker on the outside. Except you can't hear it from the shower, so you hang a brass bell inside and run a pull cord through the wall. But the neighbor kids yank the cord all night, so you wire a battery to an electromagnet. Now when you press a button, the magnet snaps a tiny hammer against the bell, over and over. Nailed it. Except your dumbass friend holds the fucking button down for ten minutes, so you add a camera that shows who's there. Now your friend rings your bell every day!
