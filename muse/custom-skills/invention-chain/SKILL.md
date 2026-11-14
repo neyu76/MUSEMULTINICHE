@@ -59,6 +59,7 @@ The owner writes Vietnamese: answer in Vietnamese. Message the owner ONLY with t
    with MSAA and no blur; a motion-blur frame costs blurN × that (E08: 5 subframes = 59.9 s/frame; 366 of 1255 frames (29 %) blurred → ≈ 4 h 39 min,
    ≈ 3 h 26 min with 3 subframes). Before the 1080p render:
    `cd $P/engine && node liet_ke_khung.js <scene>.html <frames>` lists the blur frames → estimate = blur×(subframes×13) + rest×13 s ÷ 2 processes.
+   blurN must return 1 within ±2 frames of every cut / camera jump (subframes straddling a cut = double-exposure ghosts, E09 v2 25.0 s).
    In new scenes make blurN return `+q.get('mb')||5` instead of 5 and render with `?mb=3` (≈ 40 % less time on blur frames, still smooth);
    keep FAST ranges short (only real fast action). Target ≤ 4 h per episode; over that, shorten FAST ranges before rendering. Watchdog: `cron.add` every 15 min (agent turn) → `render_nen.sh --dem …`; "không chạy" and not complete →
    run the same `render_nen.sh` line again (skips finished frames). Delete the cron when complete. Keep `$T/checkpoint.json` (stage, fix_rounds).

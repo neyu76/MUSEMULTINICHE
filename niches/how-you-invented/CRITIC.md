@@ -43,5 +43,6 @@ Verdict per item: PASS / FIX (what, where). Any P0 = do not continue. Max 2 fix 
 | V13 | Who acts | "you" (the hero) performs every fix with HIS body/clothes; the friend only causes failures — never the friend's sleeve on a "so you" shot | P0 |
 | V14 | Staging | the hook happens where it would (barging in = a room interior with the hero inside, friend through the door); no arm entering from the frame edge without a shoulder/body; parts mounted (bracket, wires connected); a "so you" part does what it is said to do on screen (hammer hits the bell) | P1 |
 | V15 | Sets + failures | wide shots have foreground/mid/background detail (no bare wall + sky); every But/Except shows a PHYSICAL failure with a reaction (hit, fall, crash), not just a still | P1 |
+| V16 | No ghosting | no frame shows two overlapping copies of a person/door (motion-blur subframes must not straddle a cut or a teleport: blurN = 1 within ±2 frames of every cut; E09 v2 25.0 s); steam/fog overlays never wash out the face in the hook (E09 v2 0–2 s, 11.5–13.5 s) | P1 |
 | V12 | Beats | `qa_tap.py`: ≥ 8 beats / 10 s (cuts + sound cues), no gap > 3 s; last 2 s loop back to frame 0 |
 | V11 | Numbers | `qa_tap.py` all ĐẠT (1080×1920, 30 fps, 30–43 s, −14 ± 1 LUFS, TP ≤ −1, no silence > 0.45 s, 205–235 wpm) |
